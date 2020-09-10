@@ -1,0 +1,48 @@
+
+
+sc_node_not_relation->concept_container;;
+
+sc_node_not_relation->concept_data_type;;
+sc_node_not_relation->concept_collection;;
+sc_node_not_relation->concept_data_structure;;
+
+
+
+sc_node_norole_relation -> nrel_encapsulation;;
+sc_node_norole_relation -> nrel_object;;
+
+
+
+concept_container=> nrel_main_idtf: [контейнер](* <- lang_ru;; *);;
+concept_container=> nrel_main_idtf: [container](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_container;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Контейнер в программировании - тип, позволяющий инкапсулировать в себе объекты других типов.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (контейнер)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_data_type;
+   nrel_object;
+    nrel_encapsulation
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_container;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Контейнеры, в отличие от коллекций, реализуют конкретную структуру данных. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(Кконтейнер)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_programm_collection;
+   concept_data_structure
+};;
+*);;
+
+program => nrel_inclusion : concept_container;;
+
+
+
+

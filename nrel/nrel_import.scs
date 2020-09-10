@@ -1,0 +1,84 @@
+sc_node_not_relation ->concept_class;;
+sc_node_not_relation ->concept_interface;;
+sc_node_not_relation ->concept_abstract_class;;
+
+sc_node_norole_relation ->nrel_import;;
+sc_node_norole_relation->nrel_method;;
+
+
+//identificatori
+nrel_import=> nrel_main_idtf: [имплементация* ](*<- lang_ru;;*);;
+nrel_import=> nrel_main_idtf: [implementation* ](*<- lang_en;;*);;
+
+//opredelenie
+definition ->...
+(*
+->rrel_key_sc_element:nrel_import;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[импорт - подключение к одному jar-файлу других. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (импорт*)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+concept_jar_file;
+nrel_connection
+};;
+*);;
+
+
+//utverjdenie
+statement ->...
+(*
+->rrel_key_sc_element:nrel_import;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[импортировать можно не только файлы, но и пакеты.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(импорт*)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{ 
+concept_jar_file;
+concept_package
+};;
+*);;
+
+
+
+//domains
+nrel_import
+=>nrel_first_domain:concept_jar_file;
+=>nrel_second_domain:concept_jar_file;
+=>nrel_definitional_domain: ...(*
+    <=nrel_combination:
+    {
+      concept_jar_file;
+        concept_jar_file
+    };;
+*);;
+
+
+//otnosheniya
+relation                    => nrel_inclusion: oriented_relation;; 
+relation                    => nrel_inclusion: norole_relation;;
+oriented_relation           -> nrel_import;;
+norole_relation             -> nrel_import;;
+binary_relation             => nrel_inclusion: antireflexive_relation;;
+binary_relation             => nrel_inclusion: transitive_relation;;
+
+binary_relation             => nrel_inclusion: asymetric_relation;;
+
+//binary_relation => nrel_inclusion: antisymmetric_relation;; 
+antireflexive_relation      -> nrel_import;; 
+transitive_relation         -|> nrel_import;;
+asymetric_relation          ->nrel_import;;
+//symmetric_relation -> nrel_processor_speed;;
+
+
+
+//arnost
+arity                       -> ..concept_arity_1;;
+..concept_arity_1           ->nrel_import;;
+..concept_arity_1           =>nrel_measurement:2;;
+number                      ->2;;
+
+
+
+//primer
+concept_jar_file -> ..jar1;;
+concept_jar_file -> ..jar2;;
+..jar1=>nrel_import:..jar2;;

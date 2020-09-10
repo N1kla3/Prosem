@@ -1,0 +1,42 @@
+sc_node_not_relation -> concept_interface;;
+sc_node_not_relation -> concept_class;;
+sc_node_not_relation -> concept_functional_interface;;
+
+sc_node_norole_relation -> nrel_method;;
+sc_node_norole_relation -> nrel_realization;;
+sc_node_norole_relation -> nrel_default_method;;
+
+concept_interface
+	=> nrel_main_idtf:
+		[interface]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [интерфейс]
+	    (* <- lang_ru;; *);;
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_interface;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[интерфейс -определяет методы не имеющие конкретной реализации](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (интерфейс)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_method;
+		nrel_realization
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_interface;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[интерфейс может реализовываться многими классами, а так же интерфейс может быить функциональным и иметь дефолтный метод.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(интерфейс)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_realization;
+		concept_class;
+        concept_functional_interface;
+        nrel_default_method
+	};;
+*);;
+

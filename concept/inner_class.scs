@@ -1,0 +1,63 @@
+
+
+sc_node_not_relation ->  concept_inner_class;;
+sc_node_not_relation ->  java;;
+sc_node_not_relation ->  concept_object;;
+sc_node_not_relation ->  concept_static_variable;;
+sc_node_not_relation ->  concept_private_field;;
+sc_node_not_relation ->  concept_class;; 
+sc_node_not_relation ->  concept_non_static_class;;      
+sc_node_not_relation ->  concept_reference;;
+
+sc_node_norole_relation -> nrel_realization;;
+
+
+
+concept_inner_class=> nrel_main_idtf: [вложенные классы](* <- lang_ru;; *);;
+concept_inner_class=> nrel_main_idtf: [inner class](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_inner_class;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[вложенные классы - классы, реализованные внутри другого классф](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (вложенные классы)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_realization;
+        concept_non_static_class
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_inner_class;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[вложенные классы в джава существуют только у объектов, внутри вложенного класса не может быть статических переменных,у внутреннего класса полный жоступ к приватным полям класса внутри которого он реализован и можно получить ссылку на экземпляр класса внутри которого он реализован.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(вложенные классы)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+       java;
+       concept_object;
+       concept_static_variable;
+       concept_private_field;
+       concept_class;
+       nrel_realization;
+       concept_reference
+	};;
+*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

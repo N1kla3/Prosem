@@ -1,0 +1,49 @@
+
+sc_node_not_relation -> concept_key_word;;
+sc_node_not_relation -> concept_compiler;;
+sc_node_not_relation -> concept_programming_language;;
+
+sc_node_norole_relation -> nrel_condition;;
+
+concept_key_word
+	=> nrel_main_idtf:
+		[key word]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [ключевые слова]
+	    (* <- lang_ru;; *);;
+
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_key_word;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Ключевые слова — это  <b><sc_element sys_idtf="sc_identifier">идентификаторы</b></sc_element>, которые имеют специальное значение для компилятора языка.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+
+	=> nrel_main_idtf: [Определение (ключевые слова)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		sc_identifier;
+		concept_compiler
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_key_word;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Во всех языках программирования есть ключевые слова.](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Утверждение(ключевые слова)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_programming_language
+	};;
+*);;
+
+
+
+
+
+

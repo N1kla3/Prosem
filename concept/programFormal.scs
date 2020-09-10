@@ -1,0 +1,324 @@
+    sc_node_not_relation -> Example(*<-nrel_jar_file;;*);;
+    concept__jar_file->{Serializable;ElementType;Retenrion;RetetentionPolicy;Target;ArrayList;Comparator;List};;
+    Example =>nrel_import:{Serializable;ElementType;Retenrion;RetetentionPolicy;Target;ArrayList;Comparator;List};;
+    number->1;;
+    concept_namespace -> test_1
+    (*<=nrel_inclusion:Example;;
+        =>nrel_list_of_operators: ..operators
+        (*
+            <-sc_node_not_relation;;
+                ->Example
+                (*
+                    <-concept_class;;
+                    =>nrel_access_modifier:public
+                        (*<-concept_key_word_access_modifier;;*);;
+                    =>nrel_super_class:TestClass
+                            (*
+                            <-concept_class;;
+                                <-String
+                                (*
+                                    <-concept_class;;
+                                    <-concept_generic;;
+                                *);;  
+
+                            *);;
+                        
+                    =>nrel_implementation:TestInterface
+                    (* 
+                        <-concept_interface;;
+                    *);;
+
+                    =>nrel_constructor:..example_constructor
+                    (*
+                        <-concept_code_block;;
+
+                        =>nrel_argument_type:
+                            s(*
+                            <-concept_variable;;
+                            <-String;;
+                            *);;
+
+
+                        =>nrel_argument_type:
+                            list
+                            (*
+                            <-concept_collection;; 
+                            =>nrel_generic: ...(*
+                                <-String
+                                    (*
+                                    <-concept_class;;                                    
+                                    *);;
+                                *);;
+                                <-concept_variable;;  
+                            *);;
+                        =>nrel_superclass_constructor_call:
+                        ..super
+                        (*
+                            <-concept_key_word;;
+                            =>nrel_argument:s;;
+                            =>nrel_argument:list;;
+
+                        *);;
+                        
+                    *);;
+                =>nrel_static_field:c
+                (*
+                    <-concept_variable;;
+                    <-concept_integer;;
+                    =>nrel_value: 0(*<-number;;*);;
+                    =>nrel_access_modifier:private(*<-concept_key_word_access_modifier;;*);;
+
+
+                *);;
+                =>nrel_final_field:INPUT_STRING
+                    (*
+                        <-concept_variable;;
+                        <-String;;
+                        =>nrel_access_modifier:private(*<-concept_key_word_access_modifier;;*);;
+                        =>nrel_value:[second];;
+
+                    *);;
+
+                =>nrel_static_method:main
+                (*
+                    <-concept_block_code;;
+                    =>nrel_access_modifier:public(*<-concept_key_word_access_modifier;;*);;
+                    =>nrel_return_value:concept_void;;
+                    =>nrel_argument:args
+                    (*
+                        <-String;;
+                        <-concept_array;;
+                    *);;
+                <-Thread
+                (*
+                    <-concept_anonymous_class;;
+                    <-concept_thread;;
+                    =>nrel_lyamda: ...
+                    (*
+                        <-concept_block_code;;
+                        =>nrel_try_block: ...
+                        (*
+                            <-concept_code_block;;
+                            =>nrel_class_field:justClassField
+                            (*
+                                =>nrel_identifier:justClass(*
+                                    <-concept_variable;;
+                                *);;
+                                <-concept_JustClass;;
+                                <-concept_data_type;;
+                                =>nrel_constructor_call:JustClass_constructor(*
+                                    =>nrel_argument:c;;
+                                    =>nrel_argument:1(*<-number;;*);;
+                                *);;
+
+                            *);;
+                            =>nrel_class_field:strings_field
+                            (*
+                                =>nrel_identifier:strings(*
+                                    <-concept_variable;;
+                                *);;
+                                =>nrel_data_type:concept_List
+                                (*
+                                    =>nrel_generic:String;;
+                                *);;
+                                =>nrel_constructor_call:ArrayList_constructor;;
+                                
+
+                                =>nrel_constructor_call:ArrayList_constructor;;
+
+                            *);;
+                            =>nrel_class_field:example_field
+                            (*
+                                =>nrel_data_type:Example;;
+                                =>nrel_constructor_call: ..example_constructor
+                                (*
+                                    =>nrel_argument: ..first
+                                    (*
+                                    =>nrel_value:[first];;
+
+                                    *);;
+                                    =>nrel_argument:strings;;
+
+                                *);;
+                            *);;
+
+                            =>nrel_class_field:k_field
+                            (*
+                                =>nrel_identifier:k
+                                (*
+                                    <-concept_variable;;
+                                    <-integer;;
+                                    =>nrel_value:4(*<-number;;*);;
+                                *);;
+
+                            *);;
+                        <-..iteration1
+                        (*
+                            <-concept_iteration_statements;;
+                            <-for(*<-concept_key_word;;*);;
+                            =>nrel_iteration_var:i
+                            (*
+                                <-concept_variable;;
+                                <-integer;;
+                                =>nrel_value:0(*<-number;;*);;
+                            
+                            *);;
+                            =>nrel_iteration_change:i(*=>nrel_increment:1(*<-number;;*);;*);;
+                            =>nrel_iteration_border:i(*=>nrel_less_then:k;;*);;
+                           
+                            =>nrel_iteration_body: ...
+                            (*
+                                <-..if
+                                (*
+                                    <-concept_code_block;;
+                                    <-concept_conditional_statements;;
+                                    =>nrel_condition: ..bool
+                                    (*
+                                        <-concept_boolean;;
+                                        <-res(*   
+                                            <-concept_variable;;
+                                            <-number;;
+                                            =>nrel_remainder_of_division://maybe no
+                                            {
+                                                i;
+                                                k
+                                            };;
+                                            
+                                            *);;
+                                        =>nrel_equals_numbers:
+                                            {
+                                                res;
+                                                1
+                                            };;                                                               
+                                    *);;
+                                        =>nrel_condition_block:..if_block
+                                            (*
+                                                <-concept_code_block;;
+                                                    <-c
+                                                    (*
+                                                    =>nrel_value:1;;
+                                                    *);;
+                                            *);;
+                                    
+                                *);;
+                                <-..else_if
+                                (*
+                                    <-concept_conditional_statements;;
+                                    =>nrel_condeition: ..bool2
+                                        (*
+                                         <-concept_boolean;;
+                                         <-res(*=>nrel_equal_numbers:0;;*);;//maybe no
+
+                                        *);;
+                                        =>nrel_condition_block:..else_if_block
+                                            (*
+                                             <-concept_code_block;;
+                                            <-c
+                                                (*
+                                                    =>nrel_value:1;;
+                                                *);;
+
+
+                                            *);;
+
+                                        
+                                *);;
+                                <-justClass(*
+                                    =>nrel_method_call:..justClass_increm;;
+                                *);;
+
+
+
+
+
+                            *);;
+
+                        *);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        *);;
+
+                    *);;
+                *);;
+
+
+                *);;
+                *);;
+                ->TestClass
+                (*
+                    <-concept_class;;
+                    =>nrel_constructor:testClass_constructor
+                    (*
+                        <-concept_code_block;;
+                    *);;
+
+                *);;
+                ->JustClass
+                (*
+                    <-concept_class;;
+                    <-numberVar
+                    (*
+                        <-integer;;
+                         =>nrel_access_modifier:private
+                        (*<-concept_key_word_access_modifier;;*);;
+
+                    *);;
+                     <-boundVar
+                    (*
+                        <-integer;;
+                         =>nrel_access_modifier:private
+                        (*<-concept_key_word_access_modifier;;*);;
+
+                    *);;
+                    =>nrel_method:..justClass_increm
+                    (*
+                        <-..iteration2
+                        (*
+                            <-concept_iteration_statements;;
+                            =>nrel_iteration_border:..border
+                            (*
+                                 <-concept_conditional_statements;;
+                                    =>nrel_condition:..bool3
+                                    (*
+                                        <-numberVar(*=>less_then:boundVar;;*);;
+
+                                    *);;
+                                    
+                            *);;
+                            =>nrel_iteration_body: ...
+                            (*
+                                =>nrel_method_call:system_out_println(*=>nrel_argument:numberVar(*=>nrel_increment:1(*<-number;;*);;*);;
+                            *);;
+
+                        *);;
+
+
+                    *);;
+
+                *);;
+
+        *);;
+
+
+    *);;

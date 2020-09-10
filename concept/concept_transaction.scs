@@ -1,0 +1,57 @@
+
+
+sc_node_not_relation ->concept_transaction;;
+sc_node_not_relation ->concept_data;;
+sc_node_not_relation ->concept_program_instruction;;
+
+sc_node_norole_relation -> nrel_realization;;
+
+
+
+concept_transaction=> nrel_main_idtf: [транзакция](* <- lang_ru;; *);;
+concept_transaction=> nrel_main_idtf: [transaction](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_transaction;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[транзакиця - минимальная единица выполнения<b><sc_element sys_idtf="ptogram">программы</b></sc_element> .]
+(*
+<-lang_ru;;
+=>nrel_format:format_html;;
+*);; 
+*);;
+	=> nrel_main_idtf: [Определение (транзакиця)](*<- lang_ru;;*);;
+    => nrel_using_constants:
+	{
+       program     
+	};; 
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_transaction;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Транзакция включает в себя одну или несколько программных инструкций, которые могут выполниться только все вместе .](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(транзакция)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+       concept_program_instruction
+     
+	};;
+*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

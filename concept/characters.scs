@@ -1,0 +1,38 @@
+sc_node_not_relation -> concept_character_type;;
+
+sc_node_norole_relation ->nrel_value;;
+
+
+concept_character_type=> nrel_main_idtf: [символьный тип данных](* <- lang_ru;; *);;
+concept_character_type=> nrel_main_idtf: [character data type](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_character_type;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[символьный тип данных - тип данных, в качестве значения переменной которого принимается символ заключенный в одинарные кавычки](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (символьный тип данных)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_data_type;
+        nrel_value;
+        concept_basic_programming_language_unit
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_character_type;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[в отличие от String символы не создают объект.]	(*
+            <-lang_ru;;
+            
+        *);;
+*);;
+    => nrel_main_idtf: [Утверждение(символьный тип данных)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+        string;
+        concept_object
+
+	};;
+*);;

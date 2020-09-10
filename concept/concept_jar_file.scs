@@ -1,0 +1,6 @@
+sc_node_not_relation ->concept_jar_file;;
+
+
+//identificatori
+concept_jar_file=> nrel_main_idtf: [jar файл](*<- lang_ru;;*);;
+concept_jar_file=> nrel_main_idtf: [jar file ](*<- lang_en;;*);;

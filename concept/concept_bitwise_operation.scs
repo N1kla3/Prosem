@@ -1,0 +1,54 @@
+sc_node_not_relation -> concept_bitwise_operation;;
+sc_node_not_relation -> concept_class;;
+sc_node_not_relation -> concept_bitwise_operation;;
+sc_node_not_relation -> concept_bit_chain;;
+sc_node_not_relation -> concept_digital_technology;;
+sc_node_not_relation -> concept_programming_language;;
+
+//sc_node_norole_relation -> ;;
+
+
+
+
+
+
+concept_bitwise_operation
+	=> nrel_main_idtf:
+		[bitwise operation]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [битовая операция]
+	    (* <- lang_ru;; *);;
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_bitwise_operation;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Би́товая опера́ция в программировании — операция над цепочками битов, как правило в этот класс <b><sc_element sys_idtf="nrel_inclusion">включаются</b></sc_element> логические побитовые операции и битовые сдвиги.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Определение (битовая операция)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_class;
+		concept_bit_chain;
+		concept_bitwise_operation
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_bitwise_operation;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Битовы операции применяются в языках программирования и цифровой технике, изучаются в дискретной математике.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(битовая операция)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_programming_language;
+		concept_digital_technology
+	};;
+*);;
+
+
+
+
+
+
+
+

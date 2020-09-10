@@ -1,0 +1,37 @@
+sc_node_not_relation -> concept_key_word_access_modifier;;
+sc_node_not_relation->concept_key_word;;
+sc_node_not_relation ->concept_access_modifier;;
+
+
+concept_key_word_access_modifier=> nrel_main_idtf: [ключевые слова для модификаторов доступа](* <- lang_ru;; *);;
+concept_key_word_access_modifier=> nrel_main_idtf: [key word access modifier](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_key_word_access_modifier;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[ключевые слова для модификаторов доступа - ключевые слова, использующиеся для объявления модификатора доступа](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (ключевые слова для объявления примитивных типов)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_key_word;
+        concept_access_modifier
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concep_key_word_access_modifier;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[в ключевые слова для модификаторов доступа входят такие  ключевые слова, как private protected public package.]	(*
+            <-lang_ru;;
+            
+        *);;
+*);;
+    => nrel_main_idtf: [Утверждение(ключевые слова для объявления примитивных типов)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+        concept_key_word
+        
+
+	};;
+*);;

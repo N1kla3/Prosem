@@ -1,0 +1,65 @@
+
+sc_node_not_relation -> concept_collection;;
+sc_node_not_relation -> concept_data_structure;;
+
+sc_node_not_relation -> conept_basic_functionality;;
+sc_node_norole_relation -> nrel_determine;;
+sc_node_norole_relation -> nrel_application;;
+
+concept_collection
+	=> nrel_main_idtf:
+		[collection]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [коллекция]
+	    (* <- lang_ru;; *);;
+
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_collection;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Коллекция — общее название для нескольких структур данных в Java.](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Определение (коллекция)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		java;
+		concept_data_structure
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_collection;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[В основе всех коллекций лежит применение того или иного <b><sc_element sys_idtf="concept_interface">интерфейса</b></sc_element>, который определяет базовый функционал.](*
+<-lang_ru;;
+=>nrel_format:format_html;;
+*);;
+*);;
+	=> nrel_main_idtf: [Утверждение(коллекция)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_application;
+		concept_interface;
+		conept_basic_functionality;
+		nrel_determine
+	};;
+*);;
+
+concept_collection <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/collection.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+

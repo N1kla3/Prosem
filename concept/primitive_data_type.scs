@@ -1,0 +1,46 @@
+sc_node_not_relation -> concept_primirive_data_type;;
+sc_node_norole_relation -> concept_floating_point_numbers;;
+sc_node_not_relation -> concept_logic_type;;
+sc_node_not_relation ->concept_character_type;;
+sc_node_not_relation -> concept_data_type;;
+sc_node_not_relation ->concept_programming_language;;
+sc_node_not_relation ->concept_basic_programming_language_unit;;
+
+
+
+
+concept_primirive_data_type=> nrel_main_idtf: [примитивный тип данных](* <- lang_ru;; *);;
+concept_primirive_data_type=> nrel_main_idtf: [primirive data type](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_primirive_data_type;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[примитивный тип данных - тип данных, предоставляемый языком программирования как базовая встроенная единица языка](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (примитивный тип данных)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_data_type;
+        concept_programming_language;
+        concept_basic_programming_language_unit
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_primirive_data_type;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[в java  есть 8 примитивных типов, которые делят на 4 группы: <b><sc_element sys_idtf="integer">целые числа</b></sc_element>,числа с плавающей точкой, логический и символьный .]	(*
+            <-lang_ru;;
+                =>nrel_format:format_html;;
+        *);;
+*);;
+    => nrel_main_idtf: [Утверждение(примитивный тип данных)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+     integer;
+     concept_floating_point_numbers;
+     concept_logic_type;
+     concept_character_type
+
+	};;
+*);;

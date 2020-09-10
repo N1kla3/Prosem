@@ -1,0 +1,57 @@
+sc_node_not_relation -> concept_computer_memory;;
+
+sc_node_norole_relation -> concept_computer;;
+sc_node_norole_relation -> concept_environment;;
+sc_node_norole_relation -> concept_physical_device;;
+sc_node_norole_relation -> concept_central_processor;;
+sc_node_not_relation -> nrel_storage;;
+
+
+concept_computer_memory
+	=> nrel_main_idtf:
+		[computer memory]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [память компьютера]
+	    (* <- lang_ru;; *);;
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_computer_memory;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Компью́терная па́мять — часть вычислительной машины, физическое устройство или среда для хранения данных](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (память компьютера)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_computer;
+		concept_physical_device;
+		nrel_storage;
+		concept_environment
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_computer_memory;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Память, как и центральный процессор, является неизменной частью компьютера](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(па́мять компьютера)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_central_processor;
+		concept_computer
+	};;
+*);;
+
+concept_computer_memory <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/memory.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+

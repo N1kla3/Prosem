@@ -1,0 +1,61 @@
+
+sc_node_not_relation -> concept_anonymous_class;;
+sc_node_not_relation -> concept_nested_class;;
+sc_node_not_relation -> concept_subclass;;
+sc_node_not_relation -> concept_interface;;
+
+sc_node_norole_relation -> nrel_constructor;;
+sc_node_norole_relation -> nrel_realization;;
+
+concept_anonymous_class
+	=> nrel_main_idtf:
+		[anonymous class]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [анонимный класс]
+	    (* <- lang_ru;; *);;
+
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_anonymous_class;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Анонимный класс - это вложенный класс без имени не имеющий явного конструктора](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Определение (анонимный класс)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+   concept_nested_class;
+   nrel_constructor
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_anonymous_class;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Анонимный класс является подклассом существующего класса  или реализации интерфейса.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(анонимный класс)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_subclass;
+    nrel_realization;
+    concept_interface
+	};;
+*);;
+
+concept_anonymous_class <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/anonimus.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+

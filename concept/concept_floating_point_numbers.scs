@@ -1,0 +1,61 @@
+
+sc_node_not_relation -> concept_floating_point_numbers;;
+sc_node_not_relation -> concept_fractional_number;;
+sc_node_not_relation -> concept_computing_system;;
+
+sc_node_norole_relation -> nrel_operation;;
+sc_node_norole_relation -> nrel_realization;;
+
+concept_floating_point_numbers
+	=> nrel_main_idtf:
+		[floating point numbers]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [число с плавающей точкой]
+	    (* <- lang_ru;; *);;
+
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_floating_point_numbers;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Число с плавающей точкой (или запятой) - это обыкновенное дробное число.](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Определение (число с плавающей точкой)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_fractional_number
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_floating_point_numbers;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Реализация арифметических <b><sc_element sys_idtf="arithmetic_operation">арифметических операций</b></sc_element> с числами с плавающей запятой в вычислительных системах может быть как аппаратная, так и программная.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(число с плавающей точкой)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_realization;
+		arithmetic_operation;
+		concept_computing_system
+
+	};;
+*);;
+
+
+concept_floating_point_numbers <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/float.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+

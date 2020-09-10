@@ -1,0 +1,43 @@
+sc_node_not_relation -> concept_handler;;
+sc_node_not_relation ->concept_java;;
+sc_node_not_relation ->concept_class;;
+sc_node_not_relation -> concept_thread;;
+
+sc_node_norole_relation -> nrel_compilation;;
+sc_node_norole_relation -> nrel_realization;;
+
+
+concept_handler=> nrel_main_idtf: [обработчик](* <- lang_ru;; *);;
+concept_handler=> nrel_main_idtf: [handler](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_handler;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[обработчик - класс в джава, позволяющий работать с очередью сообщений.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (обработчик)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+        concept_java;
+		concept_message_queue;
+        concept_class
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_handler;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[обработчик позволяет реализовать отложенную по времени в компиляцию и компиляцию не в своем потоке.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(обработчик)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+        nrel_realization;
+      nrel_compilation;
+       unit_of_time;
+       concepr_thread
+
+	};;
+*);;
+
+
+concept_class =>nrel_inclusion:concept_handler;;

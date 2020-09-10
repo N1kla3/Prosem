@@ -1,0 +1,61 @@
+
+sc_node_not_relation -> concept_nested_static_class;;
+sc_node_not_relation -> concept_outer_class;;
+sc_node_not_relation -> concept_static_class;;
+sc_node_not_relation -> concept_connected_class;;
+
+sc_node_norole_relation -> nrel_have_access;;
+sc_node_norole_relation -> nrel_use;;
+
+concept_nested_static_class
+	=> nrel_main_idtf:
+		[static class]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [вложенный статический класс]
+	    (* <- lang_ru;; *);;
+
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_nested_static_class;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Вложенный статический класс – статический класс внутри внешнего класса](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Определение (вложенный статический класс)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+    concept_static_class;
+    concept_outer_class
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_nested_static_class;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Вложенные статические классы используются для того, чтобы укомплектовать связанные классы рядышком.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(вложенный статический класс)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_connected_class;
+    nrel_use
+
+	};;
+*);;
+
+concept_nested_static_class <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/static_inner.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+

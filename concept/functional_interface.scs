@@ -1,0 +1,36 @@
+sc_node_not_relation -> concept_interface;;
+sc_node_not_relation -> concept_functional_interface;;
+
+sc_node_norole_relation -> nrel_abstract_method;;
+sc_node_norole_relation -> nrel_default_method;;
+
+concept_functional_interface
+	=> nrel_main_idtf:
+		[functional interface]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [функциональный интерфейс]
+	    (* <- lang_ru;; *);;
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_functional_interface;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[функциональный интерфейс - интерфейс, который содержит только один абстрактный метод](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (функциональный интерфейс)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_interface;
+		nrel_abstract_method
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_functional_interface;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[функциональный интерфейс может иметь несколько дефолтных методов.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(функциональный интерфейс)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+        nrel_default_method
+	};;
+*);;

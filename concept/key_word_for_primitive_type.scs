@@ -1,0 +1,41 @@
+sc_node_not_relation -> concept_key_word_for_primitive_type;;
+sc_node_not_relation ->concept_variable;;
+sc_node_not_relation ->concept_key_word;;
+sc_node_not_relation ->concept_primirive_data_type;;
+
+
+
+
+concept_key_word_for_primitive_type=> nrel_main_idtf: [ключевые слова для объявления примитивных типов](* <- lang_ru;; *);;
+concept_key_word_for_primitive_type=> nrel_main_idtf: [key word for primitive type](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_key_word_for_primitive_type;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[ключевые слова для объявления примитивных типов - ключевые слова, использующиеся для объявления переменных примитивного типа](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (ключевые слова для объявления примитивных типов)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_key_word;
+        concept_primirive_data_type;
+        concept_variable
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_key_word_for_primitive_type;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[в ключевые слова для объявления примитивных типов входят такие ключевые слова, как,  byte, short, int, long, char, float, double, boolean.]	(*
+            <-lang_ru;;
+            
+        *);;
+*);;
+    => nrel_main_idtf: [Утверждение(ключевые слова для объявления примитивных типов)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+        concept_key_word
+        
+
+	};;
+*);;

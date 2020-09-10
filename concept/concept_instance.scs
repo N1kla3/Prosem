@@ -1,0 +1,6 @@
+sc_node_not_relation ->concept_instance;;
+
+
+//identificatori
+concept_instance=> nrel_main_idtf: [ экземпляр](*<- lang_ru;;*);;
+concept_instance=> nrel_main_idtf: [instance ](*<- lang_en;;*);;

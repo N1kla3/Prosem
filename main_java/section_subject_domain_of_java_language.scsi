@@ -1,0 +1,26 @@
+subject_domain_of_java_language
+	=> nrel_main_idtf:[Предметная область язык Java](* <- lang_ru;; *);
+	=> nrel_main_idtf:[Subject domain of Java language](* <- lang_en;; *);
+<- subject_domain;
+
+-> rrel_maximum_studied_object_class: java;
+
+-> rrel_not_maximum_studied_object_class:
+		concept_stack;
+		concept_java_annotation;
+		concept_interface;
+		concept_heap;
+		concept_string_pull;
+		concept_optional_value;
+		concept_handler;
+		concept_jar_file;
+		concept_listener;
+		concept_transaction;
+		concept_instance;
+		concept_anonymous_class;
+		concept_data_type;
+		concept_container;
+		concept_collection;;
+
+
+

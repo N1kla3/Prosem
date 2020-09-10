@@ -1,0 +1,63 @@
+
+sc_node_not_relation -> concept_listener;;
+sc_node_not_relation -> concept_object;;
+sc_node_not_relation -> concept_source;;
+
+sc_node_norole_relation -> nrel_registration;;
+
+
+concept_listener
+	=> nrel_main_idtf:
+		[listener]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [слушатель]
+	    (* <- lang_ru;; *);;
+
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_listener;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Слушатель - это уведомляемый о некотором <b><sc_element sys_idtf="nrel_event">событии</b></sc_element> объект.]
+(*
+<-lang_ru;;
+=>nrel_format:format_html;;
+*);;
+*);;
+	=> nrel_main_idtf: [Определение (слушатель)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+    concept_object;
+    nrel_event
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_listener;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Слушатель находится в постоянном ожидании, пока в источнике, в котором он зарегистрирован, не наступит соответствующее <b><sc_element sys_idtf="nrel_event">событие</b></sc_element>.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(слушатель)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_source;
+		nrel_registration;
+		nrel_event
+    
+	};;
+*);;
+
+concept_listener <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/listener.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+
