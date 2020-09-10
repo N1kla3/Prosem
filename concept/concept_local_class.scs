@@ -1,0 +1,64 @@
+
+sc_node_not_relation -> concept_local_class;;
+sc_node_not_relation -> concept_class;;
+sc_node_not_relation -> concept_method;;
+sc_node_not_relation -> concept_class_member;;
+
+sc_node_norole_relation -> nrel_realization;;
+sc_node_norole_relation -> nrel_be_in;;
+sc_node_norole_relation -> nrel_announce;;
+sc_node_norole_relation -> nrel_have_access;;
+
+concept_local_class
+	=> nrel_main_idtf:
+		[local class]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [локальный класс]
+	    (* <- lang_ru;; *);;
+
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_local_class;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Локальный класс  – класс внутри методов](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Определение (локальный класс)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+    nrel_be_in;
+    concept_class;
+    concept_method
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_local_class;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Локальный класс имеет доступ к членам класса, в котором он объявлен..](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(локальный класс)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_have_access;
+    concept_class_member;
+    nrel_announce
+	};;
+*);;
+
+concept_local_class <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/localClass.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+

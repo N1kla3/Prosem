@@ -1,0 +1,71 @@
+
+sc_node_not_relation -> concept_regular_expression;;
+
+sc_node_not_relation -> concept_symbol;;
+sc_node_norole_relation -> nrel_help;;
+sc_node_not_relation -> concept_string;;
+sc_node_not_relation -> concept_row_set;;
+sc_node_norole_relation -> nrel_find;;
+sc_node_norole_relation -> nrel_sequence;;
+sc_node_norole_relation -> nrel_registration;;
+sc_node_not_relation -> concept_programming_language;;
+sc_node_not_relation -> concept_code_editor;;
+sc_node_norole_relation -> nrel_support;;
+
+
+concept_regular_expression
+	=> nrel_main_idtf:
+		[regular expression]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [регулярное выражение]
+	    (* <- lang_ru;; *);;
+
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_regular_expression;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Регулярное выражение — это специальная последовательность символов, которая помогает вам сопоставлять или находить другие строки или наборы строк](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Определение (регулярное выражение)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+    		concept_symbol;
+		nrel_help;
+		concept_string;
+		concept_row_set;
+		nrel_find;
+		nrel_sequence
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_regular_expression;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Большинство современных языков программирования и текстовых редакторов  поддерживают регулярные выражения.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(регулярное выражение)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_programming_language;
+		concept_code_editor;
+		nrel_support
+	};;
+*);;
+
+concept_regular_expression <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/regular.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+

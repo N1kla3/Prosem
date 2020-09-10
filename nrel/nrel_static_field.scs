@@ -1,0 +1,87 @@
+sc_node_not_relation ->concept_class;;
+sc_node_not_relation ->concept_variable;;
+sc_node_not_relation ->concept_object;;
+sc_node_not_relation ->concept_key_word;;
+sc_node_not_relation ->concept_code_block;;
+
+sc_node_norole_relation ->nrel_static_field;;
+sc_node_norole_relation->nrel_field;;
+
+
+//identificatori
+nrel_static_field=> nrel_main_idtf: [статическое поле* ](*<- lang_ru;;*);;
+nrel_static_field=> nrel_main_idtf: [static field* ](*<- lang_en;;*);;
+
+//opredelenie
+definition ->...
+(*
+->rrel_key_sc_element:nrel_static_field;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[статическое поле - поле, являющееся общим для всего класса, а не для конкретного объекта ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (статическое поле*)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+nrel_field;
+ concept_class;
+ concept_object
+};;
+*);;
+
+
+//utverjdenie
+statement ->...
+(*
+->rrel_key_sc_element:nrel_static_field;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[в джава статические поля помечаются ключевым словом static.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(статическое поле*)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{ 
+java;
+concept_key_word
+};;
+*);;
+
+
+
+//domains
+nrel_static_field
+=>nrel_first_domain:concept_class;
+=>nrel_second_domain:concept_variable;
+=>nrel_definitional_domain: ...(*
+    <=nrel_combination:
+    {
+       concept_class;
+        concept_variable
+    };;
+*);;
+
+
+//otnosheniya
+relation                    => nrel_inclusion: oriented_relation;; 
+relation                    => nrel_inclusion: norole_relation;;
+oriented_relation           -> nrel_static_field;;
+norole_relation             ->nrel_static_field;;
+binary_relation             => nrel_inclusion: antireflexive_relation;;
+binary_relation             => nrel_inclusion: transitive_relation;;
+
+binary_relation             => nrel_inclusion: asymetric_relation;;
+
+//binary_relation => nrel_inclusion: antisymmetric_relation;; 
+antireflexive_relation          -> nrel_static_field;; 
+transitive_relation         -|> nrel_static_field;;
+asymetric_relation          ->nrel_static_field;;
+//symmetric_relation -> nrel_processor_speed;;
+
+
+
+//arnost
+arity                       -> ..concept_arity_1;;
+..concept_arity_1           ->nrel_static_field;;
+..concept_arity_1           =>nrel_measurement:2;;
+number                      ->2;;
+
+
+
+//primer
+concept_class ->..class;;
+concept_variable ->..variable;;
+..class=>nrel_static_field:..variable;;

@@ -1,0 +1,53 @@
+
+
+sc_node_not_relation ->  concept_thread;;
+sc_node_not_relation ->concept_interface;;
+sc_node_not_relation ->java;;
+
+
+sc_node_norole_relation -> nrel_realization;;
+
+
+
+concept_thread=> nrel_main_idtf: [поток](* <- lang_ru;; *);;
+concept_thread=> nrel_main_idtf: [thread](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_thread;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[поток(thread) – это путь программного выполнения](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (поток)](*<- lang_ru;;*);;
+
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_thread;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[поток в джава реализван классом Thread и интерфейсом Runnable .](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(поток)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+       java;
+       concept_interface;
+       concept_class;
+       nrel_realization
+     
+	};;
+*);;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

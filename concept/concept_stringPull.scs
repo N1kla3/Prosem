@@ -1,0 +1,64 @@
+concept_string_pull=[*
+
+sc_node_not_relation -> concept_string_pull;;
+sc_node_not_relation -> concept_string;;
+sc_node_not_relation -> concept_heap;;
+sc_node_not_relation -> concept_memory_heap;;
+sc_node_not_relation -> concept_amount_of_memory;;
+
+sc_node_norole_relation -> nrel_store;;
+sc_node_norole_relation -> nrel_helps;;
+sc_node_norole_relation -> nrel_conserve;;
+
+
+concept_string_pull
+	=> nrel_main_idtf:
+		[string pool]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [пул строк]
+	    (* <- lang_ru;; *);;
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_string_pull;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Пул строк — это множество строк, которое хранится в памяти heap](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (пул строк)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+    set;
+		concept_string;
+        concept_heap;
+    concept_memory_heap;
+    nrel_store
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_string_pull;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Пул строк помогает экономить объем памяти](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(пул строк)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_amount_of_memory;
+		nrel_helps;
+    concept_description;
+    nrel_conserve
+	};;
+*);;
+
+concept_string_pull <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/stringPull.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+*];;

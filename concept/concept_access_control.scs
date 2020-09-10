@@ -1,0 +1,54 @@
+sc_node_not_relation -> concept_access_control;;
+sc_node_not_relation -> cooncept_technical_means;;
+sc_node_not_relation -> concept_user;;
+
+sc_node_norole_relation -> nrel_availability;;
+sc_node_norole_relation -> nrel_integrity;;
+sc_node_norole_relation -> nrel_increase;;
+sc_node_norole_relation -> nrel_privacy;;
+
+
+
+
+
+
+concept_access_control
+	=> nrel_main_idtf:
+		[access control]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [контроль доступа]
+	    (* <- lang_ru;; *);;
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_access_control;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Контроль доступа - это технические средства, посредством которых ограничиваются <b><sc_element sys_idtf="set">множества</b></sc_element> пользователей или <b><sc_element sys_idtf="program">программ</b></sc_element>](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Определение (контроль доступа)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		cooncept_technical_means;
+		set;
+		concept_user;
+		program
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_access_control;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Основная цель контроля доступа - это повышение целостности, конфиденциальности и доступности.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(контроль доступа)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_increase;
+		concept_purpose;
+		nrel_privacy;
+		nrel_integrity;
+		nrel_availability
+	};;
+*);;
+
+
+
+

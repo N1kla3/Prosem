@@ -1,0 +1,54 @@
+
+sc_node_not_relation -> concept_applet_container;;
+sc_node_not_relation -> concept_container;;
+
+sc_node_not_relation -> concept_programming_model;;
+sc_node_not_relation -> concept_applet;;
+sc_node_not_relation -> concept_web_browser;; 
+sc_node_norole_relation -> nrel_accomplishment;;
+
+concept_applet_container
+	=> nrel_main_idtf:
+		[applet container]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [контейнер апплетов]
+	    (* <- lang_ru;; *);;
+
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_applet_container;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Контейнер апплетов - это контейнер, <b><sc_element sys_idtf="nrel_inclusion">включающий</b></dc_element> в себя поддержку модели программирования апплетов.](*
+<-lang_ru;;
+=>nrel_format:format_html;;
+*);;
+*);;
+	=> nrel_main_idtf: [Определение (контейнер апплетов)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_container;
+		nrel_inclusion;
+		concept_programming_model;
+		concept_applet
+		
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_applet_container;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Контейнеры апплетов выполняются большинством браузеров.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(контейнер апплетов)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_accomplishment;
+		concept_web_browser
+	};;
+*);;
+
+
+
+
+

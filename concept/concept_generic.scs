@@ -1,0 +1,61 @@
+sc_node_not_relation -> concept_generic;;
+sc_node_not_relation -> concept_cure;;
+sc_node_not_relation -> java;;
+sc_node_not_relation -> concept_programming_language;;
+sc_node_not_relation -> concept_generalized_programming;;
+sc_node_norole_relation -> nrel_realization;;
+sc_node_not_relation -> concept_data_type;;
+sc_node_norole_relation -> nrel_change;;
+sc_node_not_relation -> concept_description;;
+
+
+concept_generic
+	=> nrel_main_idtf:
+		[generic]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [дженерик]
+	    (* <- lang_ru;; *);;
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_generic;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Дженерик  — особое средство языка Java для реализации обобщённого программирования](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (дженерик)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+    concept_cure;
+		java;
+    concept_programming_language;
+    concept_generalized_programming;
+    nrel_realization
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_generic;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Дженерики позволяют работать с различными типами данных без изменения их описания](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(дженерик)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_data_type;
+		nrel_change;
+    concept_description
+	};;
+*);;
+
+concept_generic <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[класс дженерик с методами](*<-lang_ru;;*);
+		[class generic with methods](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/genericClass.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+

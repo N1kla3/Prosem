@@ -1,0 +1,62 @@
+sc_node_not_relation -> concept_string;;
+sc_node_not_relation ->concept_java;;
+sc_node_not_relation ->concept_class;;
+sc_node_not_relation -> concept_thread;;
+sc_node_not_relation -> concept_code_block;;
+
+sc_node_norole_relation -> nrel_case_convertion;;
+sc_node_norole_relation -> nrel_realization;;
+sc_node_norole_relation -> nrel_toUpperCase;;
+sc_node_norole_relation -> nrel_toLowerCase;;
+
+
+nrel_case_convertion=> nrel_main_idtf: [преобразование регистра](* <- lang_ru;; *);;
+nrel_case_convertion=> nrel_main_idtf: [case convertion](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : nrel_case_convertion;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[преобразование регистра - преобразование символа или строки в иной регистр.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (преобразование регистра)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+        concept_character;
+		concept_string;
+        concept_case
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : nrel_case_convertion;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[преобразование регистра в джава реализовано методами  toUpperCase и toLowerCase.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(обработчик)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+        nrel_toLowerCase;
+        nrel_toUpperCase;
+        concept_java;
+        nrel_realization
+
+	};;
+*);;
+
+nrel_case_convertion
+=>nrel_first_domain:string;
+=>nrel_second_domain:case;
+=>nrel_definitional_domain: ...(*
+    <=nrel_combination:
+    {
+       string;
+       case
+    };;
+*);;
+
+
+//primer
+concept_string -> ..text;;
+concept_code_block -> ..block;;
+concept_program -> ..program;;
+..program =>nrel_function:..block;;
+..text =>nrel_case_convertion:..bloc;;

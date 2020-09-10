@@ -1,0 +1,55 @@
+sc_node_not_relation -> concept_control_statements;;
+sc_node_not_relation -> concept_iteration_statements;;
+sc_node_not_relation ->concept_conditional_statements;;
+sc_node_not_relation -> concept_jump_statements;;
+sc_node_not_relation ->concept_algorithm;;
+
+
+sc_node_norole_relation -> nrel_realization;;
+
+
+
+concept_control_statements=> nrel_main_idtf: [управляющие конструкции](* <- lang_ru;; *);;
+concept_control_statements=> nrel_main_idtf: [control statement](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_control_statements;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[управляющие конструкции - конструкции, реализующие алгоритм](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (управляющие конструкции)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_realization;
+        concept_algorithm
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_control_statements;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[управляющие конструкции включают в себя условные конструкции, итерационные конструкции и прерывающие конструкции.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(управляющие конструкции)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+       inclusion;
+       concept_jump_statements;
+       concept_iteration_statements;
+       concept_conditional_statements
+
+	};;
+*);;
+
+concept_control_statements <- rrel_key_sc_element:...
+        (*
+            <-illustration;;
+         =>nrel_main_idtf:
+            [управляющие конструкции] (* <- lang_ru;; *);;
+         =>nrel_main_idtf:
+            [control statements](* <- lang_en;; *);;
+        <=nrel_sc_text_translation:...
+            (*
+                ->rrel_example: "file://pics/statements.png"(*=>nrel_format:format_png;;*);;
+            *);;
+
+        *);;

@@ -1,0 +1,89 @@
+sc_node_not_relation ->concept_class;;
+sc_node_not_relation ->concept_interface;;
+sc_node_not_relation ->concept_java;;
+sc_node_not_relation ->concept_reference_type;;
+sc_node_not_relation ->concept_data_type;;
+
+sc_node_norole_relation ->nrel_subtype;;
+sc_node_norole_relation->nrel_realization;;
+
+
+//identificatori
+nrel_subtype=> nrel_main_idtf: [подтип* ](*<- lang_ru;;*);;
+nrel_subtype=> nrel_main_idtf: [subtype* ](*<- lang_en;;*);;
+
+//opredelenie
+definition ->...
+(*
+->rrel_key_sc_element:nrel_subtype;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Все интерфейсы или классы, расширяющие или реализующие данный типом. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (супертип*)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ concept_interface;
+ concept_class;
+ nrel_realization;
+ concept_data_type
+};;
+*);;
+
+
+//utverjdenie
+statement ->...
+(*
+->rrel_key_sc_element:nrel_subtype ;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[в джава ссылочные типы связаны друг с другом как супертип и подтип .](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(подтип*)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{ 
+ concept_java;
+ concept_reference_type;
+ nrel_supertype
+};;
+*);;
+
+
+
+//domains
+nrel_subtype
+=>nrel_first_domain:concept_class;
+=>nrel_second_domain:concept_class;
+=>nrel_definitional_domain: ...(*
+    <=nrel_combination:
+    {
+       concept_class;
+        concept_class
+    };;
+*);;
+
+
+//otnosheniya
+relation                    => nrel_inclusion: oriented_relation;; 
+relation                    => nrel_inclusion: norole_relation;;
+oriented_relation           -> nrel_subtype;;
+norole_relation             ->nrel_subtype;;
+binary_relation             => nrel_inclusion: reflexive_relation;;
+binary_relation             => nrel_inclusion: transitive_relation;;
+
+binary_relation             => nrel_inclusion: asymetric_relation;;
+
+//binary_relation => nrel_inclusion: antisymmetric_relation;; 
+reflexive_relation          -> nrel_subtype;; 
+transitive_relation         -|> nrel_subtype;;
+asymetric_relation          ->nrel_subtype;;
+//symmetric_relation -> nrel_processor_speed;;
+
+
+
+//arnost
+arity                       -> ..concept_arity_1;;
+..concept_arity_1           ->nrel_subtype;;
+..concept_arity_1           =>nrel_measurement:2;;
+number                      ->2;;
+
+
+
+//primer
+concept_class ->..class;;
+concept_class ->..class2;;
+..class=>nrel_subtype:..code2;;

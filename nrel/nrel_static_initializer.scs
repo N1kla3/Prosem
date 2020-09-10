@@ -1,0 +1,87 @@
+sc_node_not_relation ->concept_class;;
+sc_node_not_relation ->concept_object;;
+sc_node_not_relation ->concept_key_word;;
+sc_node_not_relation ->concept_code_block;;
+
+
+sc_node_norole_relation ->nrel_static_initializer;;
+sc_node_norole_relation->nrel_method;;
+
+
+//identificatori
+nrel_static_initializer=> nrel_main_idtf: [статический инициализатор* ](*<- lang_ru;;*);;
+nrel_static_initializer=> nrel_main_idtf: [static initializer* ](*<- lang_en;;*);;
+
+//opredelenie
+definition ->...
+(*
+->rrel_key_sc_element:nrel_static_initializer;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Статические инициализаторы предназначены для инициализации статических переменных, либо для выполнения таких действий, которые выполняются при создании самого первого объекта. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (статический инициализатор*)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+nrel_method;
+ concept_class;
+ concept_object
+};;
+*);;
+
+
+//utverjdenie
+statement ->...
+(*
+->rrel_key_sc_element:nrel_static_initializer;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[в джава статический инициализатор является блоком кода после ключевого слова static.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(статический инициализатор*)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{ 
+java;
+concept_key_word
+};;
+*);;
+
+
+
+//domains
+nrel_static_initializer
+=>nrel_first_domain:concept_class;
+=>nrel_second_domain:concept_code_block;
+=>nrel_definitional_domain: ...(*
+    <=nrel_combination:
+    {
+       concept_class;
+        concept_code_block
+    };;
+*);;
+
+
+//otnosheniya
+relation                    => nrel_inclusion: oriented_relation;; 
+relation                    => nrel_inclusion: norole_relation;;
+oriented_relation           -> nrel_static_initializer;;
+norole_relation             ->nrel_static_initializer;;
+binary_relation             => nrel_inclusion: antireflexive_relation;;
+binary_relation             => nrel_inclusion: transitive_relation;;
+
+binary_relation             => nrel_inclusion: asymetric_relation;;
+
+//binary_relation => nrel_inclusion: antisymmetric_relation;; 
+antireflexive_relation          -> nrel_static_initializer;; 
+transitive_relation         -|> nrel_static_initializer;;
+asymetric_relation          ->nrel_static_initializer;;
+//symmetric_relation -> nrel_processor_speed;;
+
+
+
+//arnost
+arity                       -> ..concept_arity_1;;
+..concept_arity_1           ->nrel_static_initializer;;
+..concept_arity_1           =>nrel_measurement:2;;
+number                      ->2;;
+
+
+
+//primer
+concept_class ->..class;;
+concept_code_block ->..code_block;;
+..class=>nrel_static_initializer:..code_block;;

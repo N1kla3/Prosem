@@ -1,0 +1,59 @@
+
+sc_node_not_relation -> concept_heap;;
+sc_node_not_relation -> concept_object;;
+sc_node_not_relation -> concept_link;;
+sc_node_not_relation -> concept_young_generation;;
+sc_node_not_relation -> concept_old_generation;;
+sc_node_not_relation -> concept_permanent_generation;;
+
+
+sc_node_norole_relation -> nrel_garbage_collector;;
+
+
+concept_heap=> nrel_main_idtf: [куча](* <- lang_ru;; *);;
+concept_heap=> nrel_main_idtf: [heap](* <- lang_en;; *);;
+
+   
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_heap;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[куча- участок памяти, в котором хранятся объекты, которые разделяются на новое поколение, старое поколение и перманентное поколение](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (куча)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_memory;
+        concept_young_generation;
+        concept_old_generation;
+        concept_permanent_generation;
+		concept_object
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_heap;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[в куче работает сборщик мусора, удаляющий из неё объекты, на которые нет каких-либо ссылок.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(куча)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+       nrel_garbage_collector;
+       concept_object;
+       concept_link
+
+	};;
+*);;
+
+concept_heap <- rrel_key_sc_element:...
+        (*
+            <-illustration;;
+         =>nrel_main_idtf:
+            [визуализация кучи] (* <- lang_ru;; *);;
+         =>nrel_main_idtf:
+            [heap visualization](* <- lang_en;; *);;
+        <=nrel_sc_text_translation:...
+            (*
+                ->rrel_example: "file://pics/HeapModel.jpg"(*=>nrel_format:format_jpg;;*);;
+            *);;
+
+        *);;
+concept_object =>nrel_inclusion:concept_heap;;

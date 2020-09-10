@@ -1,0 +1,68 @@
+
+
+sc_node_not_relation->concept_stack;;
+
+sc_node_not_relation->concept_memory;;
+sc_node_not_relation->concept_data_type;;
+sc_node_not_relation->concept_list;;
+sc_node_not_relation->concept_primitive_data_type;;
+sc_node_not_relation->concept_referens;;
+sc_node_not_relation->concept_unidirectional_list;;
+
+sc_node_norole_relation -> nrel_method;;
+
+
+concept_stack=> nrel_main_idtf: [стек](* <- lang_ru;; *);;
+concept_stack=> nrel_main_idtf: [stack](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_stack;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Стек — область памяти в которой хранятся переменные примитивных типов и ссылки](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (стек)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_data_type;
+   concept_primitive_data_type;
+   concept_list;
+   concept_referens;
+   concept_memory
+
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_stack;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Стек работает по схеме LIFO (последним вошел, первым вышел). Всякий раз, когда вызывается новый метод, содержащий примитивные значения или ссылки на объекты, то на вершине стека под них выделяется блок памяти  ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(стек)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_unidirectional_list;
+   concept_list;
+   concept_referens;
+   concept_memory
+
+
+};;
+*);;
+
+concept_stack <- rrel_key_sc_element:...
+(*
+<-illustration;;
+=>nrel_main_idtf:
+[визуализация стека] (* <- lang_ru;; *);;
+=>nrel_main_idtf:
+[stack visualization](* <- lang_en;; *);;
+<=nrel_sc_text_translation:...
+(*
+->rrel_example: "file://image/stack_image.png"(*=>nrel_format:format_png;;*);;
+*);;
+
+*);;
+
+concept_stack => nrel_add_element : concept_element;;
+
+
+
+
