@@ -1,0 +1,37 @@
+
+
+sc_node_not_relation->concept_dymanic_library;;
+
+
+
+
+concept_dymanic_library=> nrel_main_idtf: [динамическая библиотека](* <- lang_ru;; *);;
+concept_dymanic_library=> nrel_main_idtf: [dymanic library](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_dymanic_library;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Динамическая библиотека —  <b><sc_element sys_idtf="file">файл</b></sc_element>, содержащий  <b><sc_element sys_idtf="machine_code">машинный код</b></sc_element>.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (динамическая библиотека)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   program;
+   concept_computer
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_dymanic_library;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[При написании программы программисту достаточно указать транслятору (компилятору или интерпретатору) путь к библиотеке и имя функции.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(динамическая библиотека)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+  
+};;
+*);;
+
+
+
+
+

@@ -1,0 +1,60 @@
+
+
+sc_node_not_relation->concept_access_modifier_protected;;
+
+
+
+
+concept_access_modifier_protected=> nrel_main_idtf: [модификатор доступа protected](* <- lang_ru;; *);;
+concept_access_modifier_protected=> nrel_main_idtf: [access modifier protected](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_access_modifier_protected;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Модификатор доступа protected ограничивает  <b><sc_element sys_idtf="nrel_area_of​_visibility">видимость</b></sc_element> <b><sc_element sys_idtf="concept_variable">переменных</b></sc_element> и<b><sc_element sys_idtf="nrel_method">методов</b></sc_element>  пределами всех <b><sc_element sys_idtf="concept_class">классов</b></sc_element> находящихся в том же пакете, что и наш , а так же в пределах всех классов-наследников нашего <b><sc_element sys_idtf="concept_class">класса</b></sc_element>. ](*
+<-lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Определение (модификатор доступа protected)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	concept_class;
+	nrel_method;
+	concept_access_modifier;
+	concept_variable;
+	nrel_area_of​_visibility
+
+  
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_access_modifier_protected;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Ограничение доступа к <b><sc_element sys_idtf="nrel_class_field">полям</b></sc_element>  — самый распространенный пример использования protected в реальной работе.](*<- lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Утверждение(модификатор доступа protected)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   nrel_class_field
+
+};;
+*);;
+
+concept_access_modifier_protected <- rrel_key_sc_element:...
+(*
+<-illustration;;
+=>nrel_main_idtf:
+[визуализация модификатора доступа protected ] (* <- lang_ru;; *);;
+=>nrel_main_idtf:
+[access modifier protected visualization](* <- lang_en;; *);;
+<=nrel_sc_text_translation:...
+(*
+->rrel_example: "file://IMG/protected.png"(*=>nrel_format:format_png;;*);;
+*);;
+
+*);;
+
+
+
+
+

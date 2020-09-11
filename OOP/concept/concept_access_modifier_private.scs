@@ -1,0 +1,58 @@
+
+
+sc_node_not_relation->concept_access_modifier_private;;
+
+
+
+
+concept_access_modifier_private=> nrel_main_idtf: [модификатор доступа private](* <- lang_ru;; *);;
+concept_access_modifier_private=> nrel_main_idtf: [access modifier private](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_access_modifier_private;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Модификатор доступа private — наиболее строгий  <b><sc_element sys_idtf="concept_access_modifier">модификатор доступа</b></sc_element>. Он ограничивает  <b><sc_element sys_idtf="nrel_area_of​_visibility">видимость</b></sc_element> <b><sc_element sys_idtf="concept_variable">переменных</b></sc_element> и <b><sc_element sys_idtf="nrel_method">методов</b></sc_element> пределами одного <b><sc_element sys_idtf="concept_class">класса</b></sc_element>. ](*
+<-lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Определение (модификатор доступа private)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	concept_class;
+	nrel_method;
+	concept_access_modifier
+
+  
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_access_modifier_private;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Ограничение доступа к <b><sc_element sys_idtf="nrel_class_field">полям</b></sc_element> и реализация геттеров-сеттеров — самый распространенный пример использования private в реальной работе.](*<- lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Утверждение(модификатор доступа private)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   nrel_class_field
+
+};;
+*);;
+
+concept_access_modifier_private <- rrel_key_sc_element:...
+(*
+<-illustration;;
+=>nrel_main_idtf:
+[визуализация модификатора доступа private ] (* <- lang_ru;; *);;
+=>nrel_main_idtf:
+[access modifier private visualization](* <- lang_en;; *);;
+<=nrel_sc_text_translation:...
+(*
+->rrel_example: "file://IMG/private.png"(*=>nrel_format:format_png;;*);;
+*);;
+
+*);;
+
+
+
+
+

@@ -1,0 +1,49 @@
+
+
+sc_node_not_relation->concept_catalog;;
+
+sc_node_not_relation->file;;
+sc_node_not_relation->concept_folder;;
+sc_node_not_relation->concept_object;;
+
+sc_node_not_relation->concept_file_system;;
+
+
+
+concept_catalog=> nrel_main_idtf: [jar файл](* <- lang_ru;; *);;
+concept_catalog=> nrel_main_idtf: [jar file](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_catalog;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Катало́г — директория, справочник, папка — <b><sc_element sys_idtf="concept_object">объект</b></sc_element> в файловой системе, упрощающий организацию <b><sc_element sys_idtf="file">файлов</b></sc_element>.](*
+<-lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Определение (каталог)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	concept_object;
+	concept_folder;
+	file
+
+   
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_catalog;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Типичная <b><sc_element sys_idtf="concept_file_system">файловая система</b></sc_element> содержит большое количество <b><sc_element sys_idtf="file">файлов</b></sc_element>, и каталоги помогают упорядочить её путём их группировки. ](*<-lang_ru;;
+=>nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Утверждение(каталог)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_file_system;
+   file
+
+};;
+*);;
+
+concept_catalog => nrel_inclusion: file;;
+
+

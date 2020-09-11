@@ -1,0 +1,36 @@
+
+
+sc_node_not_relation->machine_code;;
+
+
+
+machine_code=> nrel_main_idtf: [машинный код](* <- lang_ru;; *);;
+machine_code=> nrel_main_idtf: [machine code](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: machine_code;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Машинный код (платфо́рменно-ориенти́рованный код), машинный язык — система <b><sc_element sys_idtf="concept_comand">команд</b></sc_element> (набор кодов операций) конкретной вычислительной машины, которая интерпретируется непосредственно процессором или микропрограммами этой вычислительной машины.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (машинный код)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_comand
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: machine_code;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Компьютерная программа, записанная на машинном языке, состоит из машинных инструкций, каждая из которых представлена в машинном коде в виде т. н. опкода — двоичного кода отдельной операции из системы команд машины.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(машинный код)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+  concept_computer_program
+};;
+*);;
+
+program => nrel_connection : machine_code;;
+
+
+
+

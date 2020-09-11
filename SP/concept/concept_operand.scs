@@ -1,0 +1,37 @@
+
+
+sc_node_not_relation->concept_operand;;
+
+
+concept_operand=> nrel_main_idtf: [операнд](* <- lang_ru;; *);;
+concept_operand=> nrel_main_idtf: [operand](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_operand;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Операнд в языках программирования ―  <b><sc_element sys_idtf="concept_argument">аргумент</b></sc_element> операции;  <b><sc_element sys_idtf="concept_data">данные</b></sc_element>, которые обрабатываются  <b><sc_element sys_idtf="concept_comand">командой</b></sc_element>; грамматическая конструкция, обозначающая выражение, задающее значение <b><sc_element sys_idtf="concept_class">аргумента</b></sc_element> операции. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (операнд)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_argument;
+   concept_data;
+   concept_comand
+
+};;
+
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_operand;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Иногда операндом называют место, позицию в тексте, где должен стоять <b><sc_element sys_idtf="concept_argument">аргумент</b></sc_element> операции. Отсюда понятие местности операции, то есть числа  <b><sc_element sys_idtf="concept_argument">аргументов</b></sc_element> операции. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(операнд)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+ 	concept_argument
+};;
+*);;
+
+concept_operand->concept_postfix_operand;;
+
+
+

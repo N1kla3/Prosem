@@ -1,0 +1,73 @@
+// Лаба 1
+//
+// Условие:
+// В ромб, сторона которого равна a и острый угол равен 60о, 
+// вписана окружность. Найдите площадь четырехугольника, 
+// вершины которого совпадают с точками, в которых окружность 
+// касается сторон ромба.
+
+
+
+sc_node_not_relation->concept_compiler;;
+sc_node_not_relation->concept_program;;
+sc_node_not_relation->concept_technical_tool;;
+sc_node_not_relation->concept_physical_machine;;
+sc_node_not_relation->concept_machine_languare;;
+sc_node_not_relation->concept_program_machine;;
+sc_node_not_relation->concept_subroutine;;
+sc_node_not_relation->concept_machine_program;;
+sc_node_not_relation->concept_machine_code;;
+sc_node_not_relation->concept_program_code;;
+
+sc_node_norole_relation -> nrel_compilation;;
+
+sc_node_role_relation -> rrel_code;;
+sc_node_role_relation -> rrel_compiler;;
+
+
+
+concept_compiler=> nrel_main_idtf: [компилятор](* <- lang_ru;; *);;
+concept_compiler=> nrel_main_idtf: [compiler](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_compiler;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Компилятор - это программа или техническое средство, выполняющее компиляцию.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (компилятор)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+concept_technical_tool;
+concept_program;
+nrel_compilation
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_compiler;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Компилятор генирирует исполняемую машинную программу на машинном языке, такая программа непосредственно исполняется физической программной машиной.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(компилятор)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+concept_machine_program;
+concept_machine_languare;
+concept_physical_machine;
+concept_program_machine;
+concept_program
+};;
+*);;
+
+concept_compiler <= nrel_inclusion : concept_technical_tool;;
+
+concept_machine_code-> ..machinecode;;
+..machinecode <= nrel_compilation:
+{
+..compiler;
+..code
+};;
+rrel_compiler ->(..machinecode->..compiler);;
+rrel_code ->(..machinecode->..code);;
+concept_compiler -> ..compiler;;
+concept_program_code -> ..code;;
+
+
+

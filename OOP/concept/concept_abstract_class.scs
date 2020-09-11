@@ -1,0 +1,40 @@
+
+sc_node_not_relation->concept_abstract_class;;
+
+sc_node_not_relation->concept_program_class;;
+
+sc_node_norole_relation->nrel_program_base_class;;
+sc_node_norole_relation->nrel_program_abstract_method;;
+sc_node_norole_relation->nrel_program_instance;;
+
+
+
+
+concept_abstract_class=> nrel_main_idtf: [ абстрактный класс*](*<- lang_ru;;*);;
+concept_abstract_class=> nrel_main_idtf: [abstract class*](*<- lang_en;;*);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_abstract_class;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Абстрактный класс — базовый класс, который не предполагает создания экземпляров.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (абстрактный класс*)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+    concept_program_class;
+    nrel_program_instance;
+    nrel_program_base_class
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element:concept_abstract_class ;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Абстрактный класс может содержать абстрактные методы и свойства. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(абстрактный класс*)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+nrel_program_abstract_method;;
+};;
+*);;
+
+
+

@@ -1,0 +1,42 @@
+
+
+sc_node_not_relation->concept_library;;
+
+sc_node_norole_relation -> nrel_connection;;
+
+
+concept_library=> nrel_main_idtf: [библиотека](* <- lang_ru;; *);;
+concept_library=> nrel_main_idtf: [library](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_library;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Библиотека — сборник  <b><sc_element sys_idtf="concept_subprogramme">подпрограмм </b></sc_element>или <b><sc_element sys_idtf="concept_object">объектов</b></sc_element>, используемых для разработки <b><sc_element sys_idtf="concept_software">программного обеспечения</b></sc_element>.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (библиотека)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_subprogramme;
+   concept_object;
+   concept_software
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_library;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[С точки зрения <b><sc_element sys_idtf="concept_operating_system">операционной системы</b></sc_element> и прикладного <b><sc_element sys_idtf="concept_software">ПО</b></sc_element>, библиотеки разделяются на <b><sc_element sys_idtf="concept_dynamic_library">динамические</b></sc_element> и <b><sc_element sys_idtf="concept_statick_library">статические</b></sc_element>. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(библиотека)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_dynamic_library;
+   concept_statick_library;
+   concept_operating_system;
+	concept_software
+};;
+*);;
+
+program => nrel_connection : concept_library;;
+
+
+
+

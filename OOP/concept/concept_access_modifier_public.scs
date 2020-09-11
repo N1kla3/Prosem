@@ -1,0 +1,61 @@
+
+
+sc_node_not_relation->concept_access_modifier_public;;
+
+
+
+
+concept_access_modifier_public=> nrel_main_idtf: [модификатор доступа public](* <- lang_ru;; *);;
+concept_access_modifier_public=> nrel_main_idtf: [access modifier public](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_access_modifier_public;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Модификатор доступа public: публичный, общедоступный  <b><sc_element sys_idtf="concept_class">класс</b></sc_element> или  <b><sc_element sys_idtf="nrel_class_field">член класса</b></sc_element>. <b><sc_element sys_idtf="nrel_class_field">Поля</b></sc_element> и <b><sc_element sys_idtf="nrel_method">методы</b></sc_element>, объявленные с модификатором public, видны другим <b><sc_element sys_idtf="concept_class">классам</b></sc_element> из текущего <b><sc_element sys_idtf="concept_package">пакета</b></sc_element> и из внешних пакетов. ](*
+<-lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Определение (модификатор доступа public)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	concept_class;
+	nrel_method;
+	concept_access_modifier;
+	concept_variable;
+	concept_package
+
+  
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_access_modifier_public;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Создан для того, чтобы отдавать что-то <b><sc_element sys_idtf="concept_user">пользователям</b></sc_element>. Например, <b><sc_element sys_idtf="concept_interface">интерфейс</b></sc_element> программы](*<- lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Утверждение(модификатор доступа public)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_interface;
+   concept_user
+
+};;
+*);;
+
+concept_access_modifier_public <- rrel_key_sc_element:...
+(*
+<-illustration;;
+=>nrel_main_idtf:
+[визуализация модификатора доступа public ] (* <- lang_ru;; *);;
+=>nrel_main_idtf:
+[access modifier public visualization](* <- lang_en;; *);;
+<=nrel_sc_text_translation:...
+(*
+->rrel_example: "file://IMG/public.png"(*=>nrel_format:format_png;;*);;
+*);;
+
+*);;
+
+
+
+
+

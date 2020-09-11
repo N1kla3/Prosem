@@ -1,0 +1,82 @@
+sc_node_norole_relation->nrel_function;;
+
+
+sc_node_not_relation->concept_subroutine;;
+sc_node_not_relation->concept_program;;
+sc_node_not_relation->concept_program_code;;
+sc_node_not_relation->concept_name;;
+sc_node_not_relation->concept_place;;
+sc_node_not_relation->concept_parameter;;
+
+
+sc_node_norole_relation->nrel_broadcast;;
+sc_node_norole_relation->nrel_positioning;;
+sc_node_norole_relation->nrel_using;;
+
+
+sc_node_not_relation->arity;;
+sc_node_not_relation->..arity_2;;
+
+
+
+nrel_function=> nrel_main_idtf: [функция*](*<- lang_ru;;*);;
+nrel_function=> nrel_main_idtf: [function*](*<- lang_en;;*);;
+definition ->...
+(*
+->rrel_key_sc_element: nrel_function;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Функция  - фрагмент программного кода(подпрограмма), к которому можно оюратиться из другого места программы. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (функция*)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+    concept_subroutine;
+    concept_program;
+    concept_program_code
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element:nrel_function ;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Для того чтобы использовать ранее определенную функцию, необходимо в требуемом месте программного кода указать имя функции и перечислить передаваемые в фенкцию параметры.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(функция*)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+concept_parameter;
+concept_program_code;
+concept_name;
+concept_place;
+nrel_broadcast;
+nrel_positioning;
+nrel_using
+};;
+*);;
+
+
+..arity_2=>nrel_measurement:2;;
+..arity_2->nrel_function;;
+..arity_2<-arity;;
+number->2;;
+
+nrel_function => nrel_first_domain: program;;
+nrel_function => nrel_second_domain: concept_subroutine;;
+..union<=nrel_combination:
+{
+concept_program;
+concept_subroutine
+};;
+nrel_function => nrel_definitional_domain: ..union;; 
+
+relation => nrel_inclusion: oriented_relation;; 
+relation => nrel_inclusion: binary_relation;;
+oriented_relation -> nrel_function;;
+binary_relation => nrel_inclusion: reflexive_relation;;
+binary_relation => nrel_inclusion: transitive_relation;;
+binary_relation => nrel_inclusion: antisymmetric_relation;; 
+reflexive_relation -|> nrel_function;; 
+transitive_relation -> nrel_function;;
+antisymmetric_relation -> nrel_function;;
+
+concept_program->calculator;;
+sum<=nrel_function:calculator;;
+concept_subroutine->sum;;
+

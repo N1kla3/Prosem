@@ -1,0 +1,53 @@
+
+
+sc_node_not_relation->concept_stack;;
+
+sc_node_not_relation->concept_abstract_data_type;;
+sc_node_not_relation->concept_data_type;;
+sc_node_not_relation->concept_program_list;;
+sc_node_not_relation->concept_elements;;
+sc_node_not_relation->concept_LIFO;;
+
+sc_node_not_relation->concept_unidirectional_program_list;;
+sc_node_not_relation->concept_program_pointer;;
+
+
+concept_stack=> nrel_main_idtf: [Стек](* <- lang_ru;; *);;
+concept_stack=> nrel_main_idtf: [Stack](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_stack;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Стек — абстрактный тип данных, представляющий собой список элементов, организованных по принципу LIFO (англ. last in — first out, «последним пришёл — первым вышел»).](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (стек)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_abstract_data_type;
+   concept_data_type;
+   concept_program_list;
+   concept_elements;
+   concept_LIFO
+
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_stack;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Зачастую стек реализуется в виде однонаправленного списка (каждый элемент в списке содержит помимо хранимой информации в стеке указатель на следующий элемент стека). ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(стек)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_unidirectional_program_list;
+   concept_program_list;
+   concept_program_pointer
+
+
+};;
+*);;
+
+concept_stack => nrel_add_element : concept_element;;
+
+
+
+

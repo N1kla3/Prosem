@@ -1,0 +1,39 @@
+sc_node_role_relation -> rrel_overriding;;
+
+rrel_overriding
+<- oop;
+=> nrel_main_idtf:
+		[override]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [переопределение]
+	    (* <- lang_ru;; *);
+
+<- arity : binary_relation;
+=> nrel_second_domain : concept_class;
+=> nrel_first_domain : concept_function;;
+
+definition ->...
+(*
+	-> rrel_key_sc_element : rrel_overriding;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Переопределение - это определение нового <b><sc_element sys_idtf="concept_function_body">тела функции</b> в <b><sc_element sys_idtf="concept_class">классе</b>-наследнике.](*<-lang_ru;;=> nrel_format: format_html;;*);;*);;
+	=> nrel_main_idtf: [Определение (переопределение)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_function_body;
+		concept_class
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : rrel_overriding;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[При использовании переопределенной <b><sc_element sys_idtf="concept_function">функции</b> из <b><sc_element sys_idtf="concept_object">объекта</b> родительского класса, будет <b><sc_element sys_idtf="nrel_call_function">вызвана</b> родительская версия функции.](*<-lang_ru;;=> nrel_format: format_html;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(переопределение)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_function;
+		concept_object;
+		nrel_call_function
+	};;
+*);;

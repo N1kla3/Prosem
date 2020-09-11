@@ -1,0 +1,54 @@
+
+
+sc_node_not_relation->xml;;
+
+
+
+xml=> nrel_main_idtf: [xml](* <- lang_ru;; *);;
+xml=> nrel_main_idtf: [xml](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: xml;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[XML — расширяемый <b><sc_element sys_idtf="concept_markup_language">язык разметки</b></sc_element>.](*
+<-lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Определение (xml)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	
+concept_markup_language
+  
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: xml;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Язык называется расширяемым, поскольку он не фиксирует разметку, используемую в документах: разработчик волен создать разметку в соответствии с потребностями к конкретной области, будучи ограниченным лишь синтаксическими правилами <b><sc_element sys_idtf="concept_markup_language">языка</b></sc_element>языка.](*<- lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Утверждение(xml)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+ 
+
+};;
+*);;
+
+
+xml <- rrel_key_sc_element:...
+(*
+<-illustration;;
+=>nrel_main_idtf:
+[визуализация xml ] (* <- lang_ru;; *);;
+=>nrel_main_idtf:
+[xml visualization](* <- lang_en;; *);;
+<=nrel_sc_text_translation:...
+(*
+->rrel_example: "file://IMG/xml.png"(*=>nrel_format:xml_png;;*);;
+*);;
+
+*);;
+
+
+

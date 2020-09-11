@@ -27,7 +27,7 @@ concept_java_annotation=> nrel_main_idtf: [java-annotation](* <- lang_en;; *);;
 definition ->...
 (*
 ->rrel_key_sc_element: concept_java_annotation;;
-<= nrel_sc_text_translation: ...(*->rrel_example:[Java-аннотация — в языке Java специальная форма синтаксических метаданных, которая может быть добавлена в исходный код.](*<-lang_ru;;*);;*);;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Java-аннотация — в языке Java специальная форма синтаксических метаданных, которая может быть добавлена в <b><sc_element sys_idtf="nrel_source_code">исходный код</b></sc_element>.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
 => nrel_main_idtf: [Определение (аннотация)](*<- lang_ru;;*);;
 => nrel_using_constants: 
 {
@@ -45,9 +45,11 @@ definition ->...
 statement ->...
 (*
 ->rrel_key_sc_element: concept_java_annotation;;
-<= nrel_sc_text_translation: ...(*->rrel_example:[Java-аннотация используются для анализа кода, компиляции или выполнения. Аннотируемы пакеты, классы, методы, переменные и параметры.
-
-Выглядит как @ИмяАннотации, предваряющее определение переменной, параметра, метода, класса, пакета. ](*<-lang_ru;;*);;*);;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Java-аннотация используются для анализа кода, <b><sc_element sys_idtf="nrel_compilation">компиляции</b></sc_element> или выполнения.
+ Аннотируемы <b><sc_element sys_idtf="concept_package">пакеты</b></sc_element>, <b><sc_element sys_idtf="concept_class">классы</b></sc_element>,
+<b><sc_element sys_idtf="nrel_method">методы</b></sc_element>, <b><sc_element sys_idtf="concept_variable">переменные</b></sc_element> и <b><sc_element sys_idtf="nrel_parameter">параметры</b></sc_element>.
+Выглядит как @ИмяАннотации, предваряющее определение <b><sc_element sys_idtf="concept_package">пакета</b></sc_element>, <b><sc_element sys_idtf="concept_class">класса</b></sc_element>,
+<b><sc_element sys_idtf="nrel_method">метода</b></sc_element>, <b><sc_element sys_idtf="concept_variable">переменной</b></sc_element> и <b><sc_element sys_idtf="nrel_parameter">параметра</b></sc_element>. ](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
 => nrel_main_idtf: [Утверждение(аннотация)](*<- lang_ru;;*);;
 => nrel_using_constants: 
 {
