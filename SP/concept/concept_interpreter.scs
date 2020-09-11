@@ -1,0 +1,38 @@
+sc_node_not_relation -> concept_interpreter;;
+sc_node_not_relation -> concept_code;;
+sc_node_norole_relation -> nrel_interpretation;;
+
+concept_interpreter
+	=> nrel_main_idtf:
+		[interpreter]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [интерпретатор]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_interpreter;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Интерпретатор  — <b><sc_element sys_idtf="program">программа</b></sc_element> , выполняющая <b><sc_element sys_idtf="nrel_interpretation">интерпретацию</sc_element></b>.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Определение (интерпретатор)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_interpretation;
+		program
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_interpreter;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Интерпретатор анализирует и тут же выполняет <b><sc_element sys_idtf="program">программу</b></sc_element> покомандно , по мере поступления её исходного кода на вход интерпретатора.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(интерпретатор)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		program;
+		concept_code
+	};;
+*);;
+
+
+

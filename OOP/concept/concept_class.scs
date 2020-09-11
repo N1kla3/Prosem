@@ -1,0 +1,53 @@
+
+sc_node_not_relation -> concept_class;;
+sc_node_not_relation -> concept_object;;
+sc_node_not_relation -> concept_template;;
+sc_node_not_relation -> concept_key_notion;;
+
+
+
+
+
+concept_class
+	=> nrel_main_idtf:
+		[class]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [класс]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_class;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Класс — в объектно-ориентированном программировании, представляет собой шаблон для создания объектов.](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Определение (класс)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_template;
+		concept_object
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_class;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Класс является ключевым понятием в ООП.](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Утверждение(класс)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_key_notion
+	};;
+*);;
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+
+sc_node_not_relation -> concept_subprogramme;;
+sc_node_not_relation -> concept_computer_programm;;
+
+sc_node_norole_relation -> nrel_vary;;
+sc_node_norole_relation -> nrel_identification;;
+
+
+concept_subprogramme
+	=> nrel_main_idtf:
+		[subprogramme]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [подпрограмма]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_subprogramme;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Подпрограмма — поименованная или иным образом идентифицированная часть компьютерной программы.](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Определение (подпрограмма)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_identification;
+		concept_computer_programm
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_subprogramme;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Подпрограмма может быть многократно вызвана из разных частей <b><sc_element sys_idtf="program">программы</b></sc_element>.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(подпрограмма)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_cause;
+		program
+	};;
+*);;
+
+concept_subprogramme <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/sub.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+
+
+

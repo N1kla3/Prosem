@@ -1,0 +1,51 @@
+
+sc_node_not_relation -> concept_object;;
+sc_node_not_relation -> concept_building_block;;
+sc_node_not_relation -> concept_data;;
+sc_node_not_relation -> concept_software_module;;
+
+
+
+
+
+
+concept_object
+	=> nrel_main_idtf:
+		[object]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [объект]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_object;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Объект - это основной компоновочный блок объектно-ориентированных <b><sc_element sys_idtf="program">программ</b></sc_element>.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Определение (объект)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_building_block;
+		program
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_object;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Каждый объект программного модуля состоит из данных  и функциональных возможностей.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(объект)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+
+		concept_software_module;
+		concept_data		
+
+	};;
+*);;
+
+
+
+
+
+
+

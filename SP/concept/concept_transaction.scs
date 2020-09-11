@@ -1,0 +1,46 @@
+
+sc_node_not_relation -> concept_transaction;;
+sc_node_not_relation -> concept_unit_of_work;;
+sc_node_not_relation -> concept_program_instructions;;
+
+sc_node_norole_relation -> nrel_data_change;;
+
+concept_transaction
+	=> nrel_main_idtf:
+		[transaction]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [транзакция]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_transaction;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Транзакция - это минимальная единица работы по изменению данных.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (транзакция)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_unit_of_work;
+		nrel_data_change
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_transaction;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Транзакция включает в себя одну или несколько программных инструкций, которые могут выполниться только все вместе.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(транзакция)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_inclusion;
+		concept_program_instructions
+
+	};;
+*);;
+
+
+
+
+
+
+

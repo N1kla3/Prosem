@@ -1,0 +1,40 @@
+sc_node_not_relation -> concept_translator;;
+sc_node_not_relation -> concept_technical_means;;
+sc_node_not_relation -> concept_dictionary_of_identifiers;;
+sc_node_not_relation -> concept_mistake;;
+sc_node_norole_relation -> nrel_calculation;;
+
+concept_translator
+	=> nrel_main_idtf:
+		[translator]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [транслятор]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_translator;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Трансля́тор — <b><sc_element sys_idtf="program">программа</b></sc_element> или техническое средство, выполняющее трансляцию программы..](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Определение (база данных)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		program;
+		concept_technical_means
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_translator;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Транслятор обычно выполняет также диагностику ошибок, формирует словари идентификаторов.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(база данных)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_mistake;
+		concept_dictionary_of_identifiers
+	};;
+*);;
+
+
+

@@ -1,0 +1,62 @@
+sc_node_not_relation -> concept_code_block;;
+sc_node_not_relation -> concept_operator;;
+
+sc_node_norole_relation -> nrel_single_unit;;
+sc_node_norole_relation -> nrel_piece_of_code;;
+sc_node_norole_relation -> nrel_group;;
+sc_node_norole_relation -> nrel_consist;;
+
+
+
+
+
+concept_code_block
+	=> nrel_main_idtf:
+		[code block]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [блок кода]
+	    (* <- lang_ru;; *);;
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_code_block;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Блок кода — часть кода, которая сгруппирована и воспринимается как единое целое.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (блок кода)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_piece_of_code;
+		nrel_group;
+		nrel_single_unit
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_code_block;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Блоки кода могут состоят из одного или нескольких операторов.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(блок кода)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_operator;
+		nrel_consist
+	};;
+*);;
+
+
+concept_code_block <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/block.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+
+
+

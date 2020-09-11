@@ -1,0 +1,60 @@
+
+sc_node_not_relation -> concept_variable;;
+sc_node_not_relation -> concept_memory_area;;
+sc_node_norole_relation -> nrel_use;;
+sc_node_norole_relation -> nrel_address;;
+sc_node_norole_relation -> nrel_change;;
+sc_node_norole_relation -> nrel_vary;;
+
+
+concept_variable
+	=> nrel_main_idtf:
+		[variable]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [переменная]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_variable;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Переменная — поименованная, либо адресуемая иным способом область памяти.](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Определение (переменная)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_memory_area;
+		nrel_address
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_variable;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Переменная изменяется, варьируется,а не остаётся постоянной.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(переменная)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_change;
+		nrel_vary
+	};;
+*);;
+
+concept_variable <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/variable.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+
+
+

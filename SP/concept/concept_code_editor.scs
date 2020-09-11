@@ -1,0 +1,57 @@
+sc_node_not_relation -> concept_code_editor;;
+sc_node_not_relation -> concept_text_editor;;
+sc_node_not_relation -> concept_compiler;;
+sc_node_not_relation -> concept_debugger;;
+sc_node_not_relation -> concept_interpreter;;
+sc_node_norole_relation -> nrel_editing;;
+
+concept_code_editor
+	=> nrel_main_idtf:
+		[code editor]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [редактор кода]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_code_editor;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Реда́ктор ко́да — текстовый редактор для создания и редактирования исходного кода <b><sc_element sys_idtf="program">программ</b></sc_element>.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Определение (редактор кода)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_text_editor;
+		nrel_editing;
+		program
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_code_editor;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Редакторы предоставляют удобный способ для запуска <b><sc_element sys_idtf="concept_compiler">компилятора</b></sc_element>, интерпретатора, отладчика или других программ, необходимых в процессе разработки программного обеспечения.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(редактор кода)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_compiler;
+		concept_interpreter;
+		concept_debugger
+	};;
+*);;
+
+
+concept_code_editor <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/code_editor.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+
+

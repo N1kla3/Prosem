@@ -1,0 +1,44 @@
+
+sc_node_not_relation -> concept_debugger;;
+sc_node_not_relation -> concept_computer_program;;
+sc_node_not_relation -> concept_software;;
+
+sc_node_norole_relation -> nrel_debug;;
+
+concept_debugger
+	=> nrel_main_idtf:
+		[debugger]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [отладчик]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_debugger;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Отла́дчик — компьютерная <b><sc_element sys_idtf="program">программа</b></sc_element> для автоматизации процесса отладки.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Определение (отладчик)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_computer_program;
+		nrel_debug
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_debugger;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Существуют специальные <b><sc_element sys_idtf="concept_class">классы</b></sc_element> отладчиков по виду отлаживаемого программного обеспечения.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(отладчик)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_class;
+		concept_software
+	};;
+*);;
+
+
+
+
+
+

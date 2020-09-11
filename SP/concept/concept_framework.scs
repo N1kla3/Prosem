@@ -1,0 +1,58 @@
+
+sc_node_not_relation -> concept_framework;;
+sc_node_not_relation -> concept_software_system;;
+sc_node_not_relation -> concept_software_platform;;
+
+sc_node_norole_relation -> nrel_integration;;
+sc_node_norole_relation -> nrel_development;;
+
+
+
+
+
+
+concept_framework
+	=> nrel_main_idtf:
+		[framework]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [фре́ймворк ]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_framework;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Фре́ймворк — программная платформа, определяющая структуру программной системы, облегчающее разработку и объединение разных компонентов большого программного проекта.](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Определение (фре́ймворк)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_software_platform;
+		concept_software_system;
+		nrel_development;
+		nrel_integration
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_framework;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Фреймворк отличается от понятия библиотеки тем, что библиотека может быть использована в программном продукте просто как набор <b><sc_element sys_idtf="concept_subprogramme">подпрограмм</b></sc_element> близкой функциональности.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(фре́ймворк)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_library;
+		nrel_use;
+		concept_software_product;
+		program
+	};;
+*);;
+
+
+
+
+
+
+

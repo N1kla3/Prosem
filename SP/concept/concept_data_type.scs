@@ -1,0 +1,64 @@
+
+sc_node_not_relation -> concept_data_type;;
+sc_node_not_relation -> concept_class_member;;
+sc_node_not_relation -> concept_data_class;;
+
+sc_node_norole_relation -> nrel_use;;
+sc_node_norole_relation -> nrel_operation;;
+
+concept_data_type
+	=> nrel_main_idtf:
+		[data type]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [тип данных]
+	    (* <- lang_ru;; *);;
+
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_data_type;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Тип данных — класс данных, характеризуемый членами класса и операциями, которые могут быть к ним применены.](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Определение (тип данных)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_data_class;
+		concept_class_member;
+		nrel_operation
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_data_type;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Типы данных могут быть как <b><sc_element sys_idtf="concept_reference_type">ссылочными</b></sc_element> так и <b><sc_element sys_idtf="concept_primitive_data_type">примитивными</b></sc_element>.](*
+<-lang_ru;;
+=>nrel_format:format_html;;
+*);;
+*);;
+	=> nrel_main_idtf: [Утверждение(тип данных)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_primitive_data_type;
+		concept_reference_type
+	};;
+*);;
+
+concept_data_type <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/data_type.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+

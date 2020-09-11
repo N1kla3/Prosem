@@ -1,0 +1,51 @@
+
+sc_node_not_relation -> concept_transaction_attribute;;
+sc_node_not_relation -> concept_corporate_components;;
+sc_node_not_relation -> concept_value;;
+
+
+
+concept_transaction_attribute
+	=> nrel_main_idtf:
+		[transaction attribute]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [атрибут транзакции]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_transaction_attribute;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Атрибут транзакции - это значение, определяемое в дескрипторе внедряемой корпоративной компоненты.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Определение (атрибут транзакции)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_value;
+		concept_corporate_components
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_transaction_attribute;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Атрибут транзакции может принимать следующие значения: Required, RequiresNew, Supports, NotSupported, Mandatory.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(атрибут транзакции)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		
+		nrel_requiresNew;
+		 nrel_supports;
+		  nrel_notSupported;
+		  nrel_mandatory;
+concept_value;
+nrel_required
+
+	};;
+*);;
+
+
+
+
+
+
+

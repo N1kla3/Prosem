@@ -1,0 +1,92 @@
+sc_node_not_relation -> concept_virtual_machine;;
+sc_node_not_relation -> concept_application;;
+sc_node_not_relation -> concept_environment_variable;;
+sc_node_not_relation -> concept_jar_file;;
+sc_node_not_relation -> concept_directory;;
+sc_node_not_relation -> number;;
+sc_node_not_relation -> concept_class;;
+sc_node_not_relation -> concept_way;;
+
+sc_node_norole_relation -> nrel_class_path;;
+
+nrel_class_path
+	=> nrel_main_idtf:
+		[class path*]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [путь к классу*]
+	    (* <- lang_ru;; *);;
+
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : nrel_class_path;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Путь к классу - это переменная окружения, указывающая виртуальной машине Java и другим Java приложениям местонахождение библиотеки классов.](*
+<-lang_ru;;
+*);;
+*);;
+
+	=> nrel_main_idtf: [Определение (путь к классу)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_virtual_machine;
+		concept_environment_variable;
+		java;
+		concept_application
+
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : nrel_class_path;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Каждый путь к классу может указывать как на директорию, так и на так называемый jar-файл.](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Утверждение(путь к классу)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_directory;
+		concept_jar_file
+
+	};;
+*);;
+
+arity -> ..kryg;;
+..kryg -> nrel_class_path;;
+..kryg => nrel_measurement: 2;;
+number -> 2;;
+
+nrel_class_path
+=>nrel_first_domain:concept_class;
+=>nrel_second_domain:concept_way;
+=>nrel_definitional_domain: ...(*
+<=nrel_combination:
+{
+concept_class;
+concept_way
+};;
+*);;
+
+concept_way -> ..f;;
+..f => nrel_class_path: ..s;;
+concept_class -> ..s;;
+
+
+relation => nrel_inclusion: oriented_relation;; 
+relation => nrel_inclusion: binary_relation;;
+oriented_relation -> nrel_class_path;;
+binary_relation => nrel_inclusion: reflexive_relation;;
+binary_relation => nrel_inclusion: antitransitive_relation;;
+binary_relation => nrel_inclusion: antisymmetric_relation;; 
+reflexive_relation -|> nrel_class_path;; 
+antitransitive_relation -> nrel_class_path;;
+antisymmetric_relation -> nrel_class_path;;
+
+
+
+
+
+

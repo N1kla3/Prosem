@@ -1,0 +1,38 @@
+sc_node_not_relation -> concept_language_convector;;
+sc_node_not_relation -> concept_programming_language;;
+sc_node_not_relation -> concept_translator;;
+sc_node_not_relation -> concept_mistake;;
+
+concept_language_convector
+	=> nrel_main_idtf:
+		[language convector]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [конвектор языка]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_language_convector;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Конвектор языка – транслятор с некоторого языка на другой язык такого же уровня.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (конвектор языка)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_translator;
+		concept_programming_language
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_language_convector;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Конвектор языка обычно выполняет также диагностику ошибок.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(конвектор языка)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_mistake
+	};;
+*);;
+
+
+

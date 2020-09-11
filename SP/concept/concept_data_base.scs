@@ -1,0 +1,51 @@
+sc_node_not_relation -> concept_data_base;;
+sc_node_not_relation -> concept_computing_system;;
+sc_node_not_relation -> concept_material;;
+
+sc_node_norole_relation -> nrel_processing;;
+sc_node_norole_relation -> nrel_calculation;;
+
+concept_data_base
+	=> nrel_main_idtf:
+		[data base]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [база данных]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_data_base;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Ба́за да́нных — представленная в объективной форме совокупность самостоятельных материалов .](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (база данных)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_material
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_data_base;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[База да́нных хранится и обрабатывается в вычислительной системе.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(база данных)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_computing_system;
+		nrel_processing;
+		nrel_calculation
+	};;
+*);;
+
+concept_data_base <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/data_base.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+

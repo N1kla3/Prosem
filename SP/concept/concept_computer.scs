@@ -1,0 +1,65 @@
+
+sc_node_not_relation -> concept_computer;;
+sc_node_not_relation -> concept_system;;
+sc_node_not_relation -> concept_device;;
+sc_node_not_relation -> concept_operation;;
+sc_node_not_relation -> concept_calculation;;
+
+sc_node_norole_relation -> nrel_use;;
+
+
+concept_computer
+	=> nrel_main_idtf:
+		[computer]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [компьютер]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_computer;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Компью́тер — устройство или система, способная выполнять заданную, чётко определённую, изменяемую последовательность операций.](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Определение (компьютер)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_device;
+		concept_system;
+		concept_operation
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_computer;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Первые компьютеры использовались главным образом для расчетов.](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Утверждение(компьютер)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_use;
+		concept_calculation
+	};;
+*);;
+
+concept_computer <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/computer.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+
+
+
+
+

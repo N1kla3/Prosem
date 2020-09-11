@@ -1,0 +1,60 @@
+sc_node_not_relation -> concept_comment;;
+sc_node_not_relation -> concept_source_code;;
+sc_node_not_relation -> concept_programming_language;;
+
+sc_node_norole_relation -> nrel_explanation;;
+sc_node_norole_relation -> nrel_syntax;;
+sc_node_norole_relation -> nrel_determine;;
+
+
+
+
+
+
+concept_comment
+	=> nrel_main_idtf:
+		[comment]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [комментарий]
+	    (* <- lang_ru;; *);;
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_comment;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Коммента́рии — пояснения к исходному тексту <b><sc_element sys_idtf="program">программы</b></sc_element>.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Определение (комментарий)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		program;
+		nrel_explanation;
+		concept_source_code
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_comment;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Синтаксис комментариев определяется языком программирования.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(комментарий)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_programming_language;
+		nrel_determine;
+		nrel_syntax
+	};;
+*);;
+
+
+concept_comment <-rrel_key_sc_element:...
+(*
+	<-illustration;;
+	=>nrel_main_idtf:
+		[пример](*<-lang_ru;;*);
+		[example](*<-lang_en;;*);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://IMG/coment.jpg"(*=>nrel_format:format_jpg;;*);;
+	*);;
+*);;
+

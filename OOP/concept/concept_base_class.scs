@@ -1,0 +1,51 @@
+sc_node_not_relation -> concept_base_class;;
+sc_node_not_relation -> concept_tree_of_subclasses;;
+sc_node_not_relation -> concept_super_class;;
+sc_node_not_relation -> concept_class;;
+sc_node_not_relation -> concept_stmemory_structure;;
+
+//sc_node_norole_relation -> ;;
+
+
+
+
+
+
+concept_base_class
+	=> nrel_main_idtf:
+		[base class]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [базовый класс]
+	    (* <- lang_ru;; *);;
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_base_class;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Базовый класс — это класс, не имеющий суперкласса, и поэтому находится в основании дерева подклассов.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (базовый класс)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_class;
+		concept_super_class;
+		concept_tree_of_subclasses
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_base_class;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Порядок указания базовых классов может повлиять на структуру памяти класса.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(базовый класс)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_stmemory_structure;
+		concept_class
+	};;
+*);;
+
+
+
+
+
+

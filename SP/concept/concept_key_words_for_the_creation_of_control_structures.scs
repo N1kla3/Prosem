@@ -1,0 +1,47 @@
+
+sc_node_not_relation -> concept_key_words_for_the_creation_of_control_structures;;
+sc_node_not_relation -> concept_programming_language;;
+
+sc_node_norole_relation -> nrel_realization;;
+
+concept_key_words_for_the_creation_of_control_structures
+	=> nrel_main_idtf:
+		[key words for the creation of control structures]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [ключевые слова для создания управляющих конструкций]
+	    (* <- lang_ru;; *);;
+
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_key_words_for_the_creation_of_control_structures;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Ключевые слова для создания управляющих конструкций - это <b><sc_element sys_idtf="concept_key_word">ключевые слова</b></sc_element>, с помощью которых реализуются управляющие конструкции.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+
+	=> nrel_main_idtf: [Определение (ключевые слова для создания управляющих конструкций)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_key_word;
+		nrel_realization
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_key_words_for_the_creation_of_control_structures;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Ключевые слова для создания управляющих конструкций <b><sc_element sys_idtf="nrel_existence">существуют</b></sc_element> во всех языках программирования.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+
+	=> nrel_main_idtf: [Утверждение(ключевые слова для создания управляющих конструкций)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_existence;
+		concept_programming_language
+	};;
+*);;
+
+
+
+
+
+

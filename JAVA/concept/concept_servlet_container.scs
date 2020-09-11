@@ -1,0 +1,52 @@
+
+sc_node_not_relation -> concept_servlet_container;;
+sc_node_not_relation -> concept_answer;;
+sc_node_not_relation -> concept_container;;
+sc_node_not_relation -> concept_network_service;;
+sc_node_not_relation -> concept_request;;
+sc_node_not_relation -> concept_HTTP_Protocol;;
+
+
+
+
+
+
+concept_servlet_container
+	=> nrel_main_idtf:
+		[servlet container]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [контейнер сервлета]
+	    (* <- lang_ru;; *);;      
+definition ->...
+(*
+	-> rrel_key_sc_element : concept_servlet_container;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Контейнер сервлета - это <b><sc_element sys_idtf="concept_container">контейнер</b></sc_element>, обеспечивающий сетевые службы, при помощи которых посылаются запросы и ответы.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Определение (контейнер сервлета)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_container;
+		concept_network_service;
+		concept_request;
+		concept_answer
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : concept_servlet_container;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Все контейнеры сервлетов должны поддерживать HTTP-протокол.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(контейнер сервлета)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_HTTP_Protocol
+	};;
+*);;
+
+
+
+
+
+
+
