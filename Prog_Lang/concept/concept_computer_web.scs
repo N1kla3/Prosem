@@ -1,0 +1,38 @@
+
+
+sc_node_not_relation->concept_computer_web;;
+
+sc_node_norole_relation -> nrel_connection;;
+
+
+concept_computer_web=> nrel_main_idtf: [компьютерная сеть](* <- lang_ru;; *);;
+concept_computer_web=> nrel_main_idtf: [computer web](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_computer_web;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Компьютерная сеть — объединение <b><sc_element sys_idtf="concept_computer">компьютеров</b></sc_element>, обеспечивающее совместное использование сетевых ресурсов.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (компьютерная сеть)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   program;
+   concept_computer
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_computer_web;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[ Для передачи информации могут быть использованы различные среды.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(компьютерная сеть)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+  
+};;
+*);;
+
+
+
+
+
+

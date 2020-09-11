@@ -1,0 +1,73 @@
+sc_node_not_relation->java;;
+sc_node_not_relation->concept_programming_language;;
+sc_node_not_relation->concept_application;;
+sc_node_not_relation->oop;;
+sc_node_not_relation->concept_strongly_typed_object_oriented_language;;
+sc_node_not_relation->concept_jvm;;
+
+sc_node_norole_relation -> nrel_broadcast;;
+sc_node_norole_relation -> nrel_written_in_language;;
+
+
+
+sc_node_role_relation -> rrel_byte_code;;
+
+
+
+
+java=> nrel_main_idtf: [java](* <- lang_ru;; *);;
+java=> nrel_main_idtf: [java](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: java;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Java — строго типизированный объектно-ориентированный язык программирования,
+ разработанный компанией Sun Microsystems (в последующем приобретённой компанией Oracle).](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (аннотация)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+    concept_programming_language;
+	oop;
+	concept_strongly_typed_object_oriented_language
+
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: java;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Приложения Java обычно транслируются в специальный байт-код,
+ поэтому они могут работать на любой компьютерной архитектуре, для которой существует реализация виртуальной Java-машины. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(аннотация)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+  concept_application;
+  rrel_byte_code;
+  nrel_broadcast;
+  concept_jvm
+
+
+};;
+*);;
+
+program => nrel_written_in_language : java;;
+
+java <- rrel_key_sc_element:...
+(*
+<-illustration;;
+=>nrel_main_idtf:
+[ иконка java] (* <- lang_ru;; *);;
+=>nrel_main_idtf:
+[java icon](* <- lang_en;; *);;
+<=nrel_sc_text_translation:...
+(*
+->rrel_example: "file://IMG/icon.png"(*=>nrel_format:format_png;;*);;
+*);;
+
+*);;
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+
+
+
+
+sc_node_not_relation->concept_access_modifier_package_visible;;
+
+
+
+
+concept_access_modifier_package_visible=> nrel_main_idtf: [модификатор доступа package visible](* <- lang_ru;; *);;
+concept_access_modifier_package_visible=> nrel_main_idtf: [access modifier package visible](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_access_modifier_package_visible;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Модификатор доступа package visible доступен в пределах своего пакета <b><sc_element sys_idtf="concept_package">package</b></sc_element>. Присваивается автоматически, если не указан <b><sc_element sys_idtf="concept_access_modifier">модификатор доступа</b></sc_element>. ](*
+<-lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Определение (модификатор доступа package visible)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	concept_class;
+	concept_access_modifier;
+	concept_package
+
+
+  
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_access_modifier_package_visible;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Он не обозначается <b><sc_element sys_idtf="concept_keyword">ключевым словом</b></sc_element>, поскольку установлен в <b><sc_element sys_idtf="java">Java</b></sc_element> по умолчанию для всех <b><sc_element sys_idtf="nrel_class_field">полей</b></sc_element> и <b><sc_element sys_idtf="nrel_method">методов</b></sc_element>.](*<- lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Утверждение(модификатор доступа package visible)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   nrel_class_field;
+   nrel_method;
+   concept_keyword
+
+
+};;
+*);;
+
+concept_access_modifier_package_visible <- rrel_key_sc_element:...
+(*
+<-illustration;;
+=>nrel_main_idtf:
+[визуализация модификатора доступа package visible ] (* <- lang_ru;; *);;
+=>nrel_main_idtf:
+[access modifier package visible visualization](* <- lang_en;; *);;
+<=nrel_sc_text_translation:...
+(*
+->rrel_example: "file://IMG/package.png"(*=>nrel_format:format_png;;*);;
+*);;
+
+*);;
+
+
+
+
+

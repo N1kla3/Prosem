@@ -1,6 +1,69 @@
-sc_node_not_relation ->concept_jar_file;;
 
 
-//identificatori
-concept_jar_file=> nrel_main_idtf: [jar файл](*<- lang_ru;;*);;
-concept_jar_file=> nrel_main_idtf: [jar file ](*<- lang_en;;*);;
+sc_node_not_relation->concept_jar_file;;
+
+sc_node_not_relation->java;;
+sc_node_not_relation->concept_zip_archive;;
+sc_node_not_relation->program;;
+sc_node_not_relation->concept_programming_language;;
+sc_node_not_relation->file;;
+sc_node_not_relation->concept_catalog;;
+
+
+
+concept_jar_file=> nrel_main_idtf: [jar файл](* <- lang_ru;; *);;
+concept_jar_file=> nrel_main_idtf: [jar file](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_jar_file;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[JAR-файл — это Java-архив (сокращение от англ. Java ARchive). Представляет собой ZIP-архив, в котором содержится часть <b><sc_element sys_idtf="program">программы</b></sc_element> на <b><sc_element sys_idtf="concept_programming_language">языке</b></sc_element> <b><sc_element sys_idtf="java">Java</b></sc_element>.](*
+<-lang_ru;;
+=>nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Определение (jar файл)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	java;
+	concept_zip_archive;
+	program;
+	concept_programming_language;
+	file
+
+  
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_jar_file;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Чтобы JAR-файл был исполняемым, он должен содержать <b><sc_element sys_idtf="file">файл</b></sc_element> MANIFEST.MF в <b><sc_element sys_idtf="concept_catalog">каталоге</b></sc_element> META-INF, в котором должен быть указан главный <b><sc_element sys_idtf="concept_class">класс</b></sc_element> <b><sc_element sys_idtf="program">программы</b></sc_element> (такой <b><sc_element sys_idtf="concept_class">класс</b></sc_element> должен содержать <b><sc_element sys_idtf="nrel_method">метод</b></sc_element> main и задаётся <b><sc_element sys_idtf="nrel_parameter">параметр</b></sc_element> Main-Class). ](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Утверждение(jar файл)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_catalog;
+   file;
+   concept_class;
+   program;
+   nrel_method;
+   nrel_parameter
+
+};;
+*);;
+
+
+concept_jar_file <- rrel_key_sc_element:...
+(*
+<-illustration;;
+=>nrel_main_idtf:
+[визуализация jar файла ] (* <- lang_ru;; *);;
+=>nrel_main_idtf:
+[jar file visualization](* <- lang_en;; *);;
+<=nrel_sc_text_translation:...
+(*
+->rrel_example: "file://IMG/jar_file.png"(*=>nrel_format:format_png;;*);;
+*);;
+
+*);;
+
+
+

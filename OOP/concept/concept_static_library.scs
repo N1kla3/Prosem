@@ -1,0 +1,37 @@
+
+
+sc_node_not_relation->concept_statick_library;;
+
+
+
+
+concept_statick_library=> nrel_main_idtf: [статическая библиотека](* <- lang_ru;; *);;
+concept_statick_library=> nrel_main_idtf: [statick library](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_statick_library;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Статическая библиотека — <b><sc_element sys_idtf="file">файл</b></sc_element> с исходным кодом или объектный файл, предназначенный для вставки в программу на этапе компоновки.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (статическая библиотека)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   program;
+   concept_computer
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_statick_library;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Библиотеки, распространяемые в виде исходного кода, преобразуются компилятором в объектные файлы.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(статическая библиотека)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+  
+};;
+*);;
+
+
+
+
+

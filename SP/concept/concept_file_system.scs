@@ -1,0 +1,48 @@
+
+sc_node_not_relation->concept_file_system;;
+
+sc_node_not_relation->concept_catalog;;
+
+sc_node_not_relation->file;;
+sc_node_not_relation->concept_folder;;
+
+
+
+
+
+concept_file_system=> nrel_main_idtf: [файловая система](* <- lang_ru;; *);;
+concept_file_system=> nrel_main_idtf: [file system](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_file_system;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Фа́йловая систе́ма (англ. file system) — порядок, определяющий способ организации, хранения и именования данных на носителях информации в компьютерах, а также в другом электронном оборудовании: цифровых фотоаппаратах, мобильных телефонах и т. п.](*
+<-lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Определение (файловая система)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	concept_folder;
+	file
+
+   
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_file_system;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[ Файловая система определяет формат содержимого и способ физического хранения информации, которую принято группировать в виде <b><sc_element sys_idtf="file">файлов</b></sc_element>. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(файловая система)](*<- lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_using_constants: 
+{
+   concept_file_system;
+   file
+
+};;
+*);;
+
+concept_file_system => nrel_inclusion: concept_catalog
+
+

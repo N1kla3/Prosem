@@ -1,0 +1,37 @@
+
+
+sc_node_not_relation->concept_application_software;;
+
+sc_node_norole_relation -> nrel_connection;;
+
+
+concept_application_software=> nrel_main_idtf: [прикладное программное обеспечение](* <- lang_ru;; *);;
+concept_application_software=> nrel_main_idtf: [application software](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_application_software;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Прикладное программное обеспеченье — <b><sc_element sys_idtf="program">программа</b></sc_element>, предназначенная для выполнения определённых задач и рассчитанная на непосредственное взаимодействие с <b><sc_element sys_idtf="concept_user">пользователем</b></sc_element>](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (прикладное программное обеспечение)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   program;
+   concept_user
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_application_software;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[В большинстве <b><sc_element sys_idtf="concept_operating_system">операционных систем</b></sc_element> прикладные <b><sc_element sys_idtf="program">программы</b></sc_element> не могут обращаться к ресурсам компьютера напрямую, а взаимодействуют с оборудованием и другими <b><sc_element sys_idtf="program">программами</b></sc_element> посредством <b><sc_element sys_idtf="concept_operating_system">операционной системы</b></sc_element>.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(прикладное программное обеспечение)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+concept_operating_system;
+  program
+};;
+*);;
+
+
+
+

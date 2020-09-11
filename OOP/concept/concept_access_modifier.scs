@@ -1,0 +1,43 @@
+
+
+sc_node_not_relation->concept_access_modifier;;
+
+
+
+
+concept_access_modifier=> nrel_main_idtf: [модификатор доступа](* <- lang_ru;; *);;
+concept_access_modifier=> nrel_main_idtf: [access modifier](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_access_modifier;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Модификаторы доступа — это чаще всего <b><sc_element sys_idtf="concept_keyword">ключевые слова</b></sc_element>, которые регулируют уровень доступа к разным частям твоего <b><sc_element sys_idtf="concept_code">кода</b></sc_element>. ](*
+<-lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Определение (модификатор доступа)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	concept_keyword;
+	concept_code
+
+  
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_access_modifier;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Иногда модификатор доступа ставится по умолчанию и не обозначается <b><sc_element sys_idtf="concept_keyword">ключевым словом</b></sc_element>](*<- lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Утверждение(модификатор доступа)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_keyword
+
+};;
+*);;
+
+
+
+
+

@@ -1,0 +1,79 @@
+
+
+sc_node_not_relation->nrel_increment;;
+
+
+
+
+nrel_increment=> nrel_main_idtf: [инкремент](* <- lang_ru;; *);;
+nrel_increment=> nrel_main_idtf: [increment](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: nrel_increment;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Инкремент — это операция во многих <b><sc_element sys_idtf="concept_programming_language">языках программирования</b></sc_element>, которая выполняет увеличение <b><sc_element sys_idtf="concept_variable">переменной</b></sc_element>. Чаще всего под инкрементом подразумевается увеличение  <b><sc_element sys_idtf="concept_variable">переменной</b></sc_element> на 1 единицу. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (инкремент)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_programming_language;
+   concept_variable
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: nrel_increment;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[В Java инкремент и декремент — это в первую очередь <b><sc_element sys_idtf="concept_unary_statement">унарные операторы</b></sc_element>, которые применяются к какой-либо числовой <b><sc_element sys_idtf="concept_variable">переменной</b></sc_element>.  ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(инкремент)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_variable;
+   concept_unary_statement
+};;
+*);;
+
+sc_node_not_relation->arity;;
+sc_node_not_relation->..arity_2;;
+
+..arity_2=>nrel_measurement:2;;
+..arity_2->nrel_increment;;
+..arity_2<-arity;;
+number->2;;
+
+nrel_increment => nrel_first_domain: number;;
+nrel_increment => nrel_second_domain: concept_variable;;
+..union<=nrel_combination:
+{
+concept_variable;
+number
+};;
+nrel_increment => nrel_definitional_domain: ..union;; 
+
+relation => nrel_inclusion: oriented_relation;; 
+relation => nrel_inclusion: binary_relation;;
+oriented_relation -> nrel_increment;;
+binary_relation => nrel_inclusion: reflexive_relation;;
+binary_relation => nrel_inclusion: antitransitive_relation;;
+binary_relation => nrel_inclusion: antisymmetric_relation;; 
+reflexive_relation -|> nrel_increment;; 
+antitransitive_relation -> nrel_increment;;
+antisymmetric_relation -> nrel_increment;;
+
+
+nrel_increment <- rrel_key_sc_element:...
+(*
+<-illustration;;
+=>nrel_main_idtf:
+[визуализация инкремента ] (* <- lang_ru;; *);;
+=>nrel_main_idtf:
+[increment visualization](* <- lang_en;; *);;
+<=nrel_sc_text_translation:...
+(*
+->rrel_example: "file://IMG/increment.png"(*=>nrel_format:format_png;;*);;
+*);;
+
+*);;
+
+
+
+

@@ -1,0 +1,50 @@
+
+
+sc_node_not_relation->concept_abstract_data_type;;
+
+sc_node_not_relation->concept_data_type;;
+sc_node_not_relation->concept_semantics;;
+sc_node_not_relation->concept_user;;
+sc_node_not_relation->concept_list;;
+
+
+sc_node_norole_relation -> nrel_mathematical_model;;
+
+
+concept_abstract_data_type=> nrel_main_idtf: [абстрактный тип данных](* <- lang_ru;; *);;
+concept_abstract_data_type=> nrel_main_idtf: [abstract Data Type](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_abstract_data_type;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Абстра́ктный тип да́нных (АТД) — это математическая модель для типов данных, где тип данных определяется поведением (семантикой) с точки зрения пользователя данных, а именно в терминах возможных значений, возможных операций над данными этого типа и поведения этих операций.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (абстракнтый тип данных)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_data_type;
+   concept_semantics;
+   nrel_mathematical_model;
+   concept_user
+
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_abstract_data_type;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Абстрактный тип данных может быть определён как множество объектов, определяемое списком компонентов (операций, применимых к этим объектам, и их свойств). ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(абстрактный тип данных)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   set;
+   consept_list
+
+
+};;
+*);;
+
+
+concept_abstract_data_type -> concept_stack;;
+
+
+

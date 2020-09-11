@@ -1,0 +1,57 @@
+
+
+sc_node_not_relation->concept_multidimensional_array;;
+
+sc_node_not_relation->concept_digital_space;;
+sc_node_norole_relation -> nrel_class_field;;
+
+
+concept_multidimensional_array=> nrel_main_idtf: [многомерный массив](* <- lang_ru;; *);;
+concept_multidimensional_array=> nrel_main_idtf: [multidimensional array](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_multidimensional_array;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Многомерный массив — это <b><sc_element sys_idtf="concept_array">массив массивов</b></sc_element>, то есть в каждой его ячейке находится <b><sc_element sys_idtf="concept_reference">ссылка</b></sc_element> на некий <b><sc_element sys_idtf="concept_array">массив</b></sc_element>.](*
+<-lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Определение (многомерный массив)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	concept_reference;
+	concept_array
+
+  
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_multidimensional_array;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[В основном многомерные массивы используют ввиде друмерных массивов. Двумерные массивы позволяют упростить задачу по структурированию данных).](*<- lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Утверждение(многомерный массив)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_array
+
+};;
+*);;
+
+
+concept_multidimensional_array <- rrel_key_sc_element:...
+(*
+<-illustration;;
+=>nrel_main_idtf:
+[визуализация многомерного массива ] (* <- lang_ru;; *);;
+=>nrel_main_idtf:
+[multidimensional array visualization](* <- lang_en;; *);;
+<=nrel_sc_text_translation:...
+(*
+->rrel_example: "file://IMG/multiarray.png"(*=>nrel_format:format_png;;*);;
+*);;
+
+*);;
+
+
+

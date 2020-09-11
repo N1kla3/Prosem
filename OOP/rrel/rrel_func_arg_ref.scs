@@ -1,0 +1,41 @@
+sc_node_role_relation -> rrel_func_arg_ref;;
+sc_node_norole_relation -> nrel_return_value;;
+
+rrel_func_arg_ref
+<- c_plus_plus;
+=> nrel_main_idtf:
+		[function argument by reference]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [передача аргумента по ссылке]
+	    (* <- lang_ru;; *);
+
+<- arity : binary_relation;
+=> nrel_second_domain : concept_lvalue_cpp;
+=> nrel_first_domain : concept_function;;
+
+definition ->...
+(*
+	-> rrel_key_sc_element : rrel_func_arg_ref;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Передача параметров по ссылке - это передача в <b><sc_element sys_idtf="concept_function">функцию</b> <b><sc_element sys_idtf="concept_reference">ссылки</b> на <b><sc_element sys_idtf="concept_object">обьект</b>.](*<-lang_ru;;=> nrel_format: format_html;;*);;*);;
+	=> nrel_main_idtf: [Определение (передача аргумента по ссылке)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_function;
+		concept_reference;
+		concept_object	
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : rrel_func_arg_ref;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Передача по ссылке позволяет <b><sc_element sys_idtf="nrel_return_value">возвратить из функции</b> сразу несколько значений.](*<-lang_ru;;=> nrel_format: format_html;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(передача аргумента по ссылке)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		nrel_return_value;
+		concept_function
+	};;
+*);;
+

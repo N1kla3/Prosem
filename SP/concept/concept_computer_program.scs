@@ -1,0 +1,38 @@
+
+
+sc_node_not_relation->concept_computer_program;;
+
+
+
+
+concept_computer_program=> nrel_main_idtf: [компьютерная программа](* <- lang_ru;; *);;
+concept_computer_program=> nrel_main_idtf: [computer program](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_computer_program;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Компьютерная программа — 1) комбинация компьютерных инструкций и данных, позволяющая аппаратному обеспечению вычислительной системы выполнять вычисления или функции управления; 2) синтаксическая единица, которая соответствует правилам определённого языка программирования, состоящая из определений и операторов или инструкций, необходимых для определённой функции, задачи или решения проблемы.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (компьютерная программа)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_application_software;
+   concept_statement
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_computer_program;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Компьютерные программы как объект авторского права и других прав интеллектуальной собственности относятся к категории нематериальных активов.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(компьютерная программа)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+  
+};;
+*);;
+
+
+
+
+
+

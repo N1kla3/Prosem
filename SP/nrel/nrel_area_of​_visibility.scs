@@ -1,0 +1,68 @@
+sc_node_norole_relation->nrel_area_of_visibility;;
+
+
+
+
+nrel_area_of_visibility=> nrel_main_idtf: [область видимости*](* <- lang_ru;; *);;
+nrel_area_of_visibility=> nrel_main_idtf: [area of visiblity*](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: nrel_area_of_visibility;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Область видимости <b><sc_element sys_idtf="concept_variable">переменной</b></sc_element>, <b><sc_element sys_idtf="nrel_method">метода</b></sc_element> или <b><sc_element sys_idtf="concept_class">класса</b></sc_element> – это их свойство быть доступными из тех или иных частей <b><sc_element sys_idtf="concept_code">код</b></sc_element>, т. е. различных областей программы.](*
+<-lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Определение (ссылка)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	concept_variable;
+   concept_class;
+   concept_code
+
+
+  
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: nrel_area_of_visibility;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Область видимости может определяться как самим местом объявления идентификатора, так и применением к нему модификатора доступа. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(ссылка)](*<- lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_using_constants: 
+{
+   concept_access_modifier
+
+};;
+*);;
+
+sc_node_not_relation->arity;;
+sc_node_not_relation->..arity_2;;
+
+..arity_2=>nrel_measurement:2;;
+..arity_2->nrel_area_of_visibility;;
+..arity_2<-arity;;
+number->2;;
+
+nrel_area_of_visibility => nrel_first_domain: concept_place;;
+nrel_area_of_visibility => nrel_second_domain: concept_block_code;;
+..union<=nrel_combination:
+{
+concept_place;
+concept_block_code
+};;
+nrel_area_of_visibility => nrel_definitional_domain: ..union;; 
+
+relation => nrel_inclusion: oriented_relation;; 
+relation => nrel_inclusion: binary_relation;;
+oriented_relation -> nrel_area_of_visibility;;
+binary_relation => nrel_inclusion: reflexive_relation;;
+binary_relation => nrel_inclusion: antitransitive_relation;;
+binary_relation => nrel_inclusion: antisymmetric_relation;; 
+reflexive_relation -|> nrel_area_of_visibility;; 
+antitransitive_relation -> nrel_area_of_visibility;;
+antisymmetric_relation -> nrel_area_of_visibility;;
+
+
+

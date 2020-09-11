@@ -1,0 +1,37 @@
+
+
+sc_node_not_relation->concept_tool_software;;
+
+sc_node_norole_relation -> nrel_connection;;
+
+
+concept_tool_software=> nrel_main_idtf: [инструментальное программное обеспечение](* <- lang_ru;; *);;
+concept_tool_software=> nrel_main_idtf: [tool software](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_tool_software;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Инструментальное программное обеспечение — <b><sc_element sys_idtf="concept_software">программное обеспечение</b></sc_element>, предназначенное для использования в ходе проектирования, разработки и сопровождения программ, в отличие от прикладного и системного программного обеспечения.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (инструментальное программное обеспечение)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_software
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_tool_software;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Виды инструментального <b><sc_element sys_idtf="concept_software">ПО</b></sc_element>: интегрированные среды разработки, SDK, компиляторы и кросс-компиляторы и т.д..](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(инструментальное программное обеспечение)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+  concept_software
+};;
+*);;
+
+program => nrel_connection : concept_tool_software;;
+
+
+
+

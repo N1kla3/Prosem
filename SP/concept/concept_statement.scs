@@ -1,0 +1,35 @@
+
+
+sc_node_not_relation->concept_statement;;
+
+
+
+
+concept_statement=> nrel_main_idtf: [оператор](* <- lang_ru;; *);;
+concept_statement=> nrel_main_idtf: [statement](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_statement;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Инструкция или оператор — наименьшая автономная часть  <b><sc_element sys_idtf="concept_programming_language">языка программирования</b></sc_element>; <b><sc_element sys_idtf="concept_comand">команда</b></sc_element> или <b><sc_element sys_idtf="concept_comand">набор команд</b></sc_element>.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (оператор)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_programming_language
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_statement;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[<b><sc_element sys_idtf="program">Программа</b></sc_element> обычно представляет собой последовательность инструкций. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(оператор)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   program
+};;
+*);;
+
+
+
+

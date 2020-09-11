@@ -6,39 +6,10 @@ subject_domain_of_structural_programming
 -> rrel_maximum_studied_object_class: structural_programming;
 
 -> rrel_not_maximum_studied_object_class:
-		concept_computer;
-		concept_comment;
-		concept_code_editor;
-		concept_code_block;
-		concept_framework;
-		concept_interpreter;
-		nrel_parameter;
-		nrel_garbage_collection;
-		nrel_initialization;
-		concept_translator;
-		nrel_debug;
-		nrel_interpretation;
-		nrel_compilation;
-		concept_user;
-		nrel_advertisement;
-		nrel_authentication;
-		concept_variable;
-		concept_bitwise_operation;
-		concept_regular_expression;
-		concept_thread;
-		concept_transaction;
-		concept_transaction_attribute;
-		concept_subprogramme;
-		concept_optional_value;
-		concept_data_base;
-		concept_computer_memory;
-		concept_object;
-		concept_data_type;
-		concept_debugger;
-		concept_key_word;
-		concept_exception;
-		concept_floating_point_numbers;
-		concept_language_convector;
-		concept_key_words_for_the_creation_of_control_structures;;
+		concept_compiler;
+		concept_array;
+		concept_library;
+		concept_stack;
+		nrel_function;;
 
 

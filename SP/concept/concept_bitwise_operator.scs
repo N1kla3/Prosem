@@ -1,0 +1,54 @@
+
+
+
+
+sc_node_not_relation->concept_bitwise_operator;;
+
+
+
+concept_bitwise_operator=> nrel_main_idtf: [поразрядный оператор](* <- lang_ru;; *);;
+concept_bitwise_operator=> nrel_main_idtf: [bitwise operator](* <- lang_en;; *);;
+definition ->...
+(*
+->rrel_key_sc_element: concept_bitwise_operator;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Поразрядные операторы служат для проверки, установки или сдвига двоичных разрядов, составляющих целое значение.](*
+<-lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Определение (поразрядный оператор)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	
+
+  
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_bitwise_operator;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[ Поразрядные операторы воздействуют на отдельные двоичные разряды (<b><sc_element sys_idtf="concept_bit">биты</b></sc_element>) своих операндов.](*<- lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Утверждение(поразрядный оператор)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+   concept_bit
+
+};;
+*);;
+
+concept_bitwise_operator <- rrel_key_sc_element:...
+(*
+<-illustration;;
+=>nrel_main_idtf:
+[визуализация поразрядный оператор ] (* <- lang_ru;; *);;
+=>nrel_main_idtf:
+[bitwise operator visualization](* <- lang_en;; *);;
+<=nrel_sc_text_translation:...
+(*
+->rrel_example: "file://IMG/bitwise.png"(*=>nrel_format:format_png;;*);;
+*);;
+
+*);;
+
+

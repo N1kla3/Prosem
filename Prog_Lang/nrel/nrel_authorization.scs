@@ -1,0 +1,85 @@
+sc_node_not_relation -> concept_action;;
+sc_node_not_relation -> concept_right;;
+sc_node_not_relation -> concept_information_resource;;
+sc_node_not_relation -> concept_information_technology;;
+sc_node_not_relation -> number;;
+
+sc_node_norole_relation -> nrel_authorization;;
+nrel_authorization
+	=> nrel_main_idtf:
+		[authorization]
+	    (* <- lang_en;; *);
+	=> nrel_main_idtf:
+	    [авториза́ция]
+	    (* <- lang_ru;; *);;
+
+        
+definition ->...
+(*
+	-> rrel_key_sc_element : nrel_authorization;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Авториза́ция — предоставление определённому лицу или группе лиц прав на выполнение определённых действий.](*
+<-lang_ru;;
+*);;
+*);;
+
+	=> nrel_main_idtf: [Определение (авториза́ция)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_right;
+		concept_action
+	};;
+*);;
+
+
+statement ->...
+(*
+	-> rrel_key_sc_element : nrel_authorization;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[ В информационных технологиях посредством авторизации устанавливаются права доступа к информационным ресурсам.](*
+<-lang_ru;;
+*);;
+*);;
+	=> nrel_main_idtf: [Утверждение(авториза́ция)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_information_technology;
+		concept_right;
+		concept_information_resource
+	};;
+*);;
+
+arity -> ..kryg;;
+..kryg -> nrel_authorization;;
+..kryg => nrel_measurement: 2;;
+number -> 2;;
+
+nrel_authorization
+=>nrel_first_domain:concept_user;
+=>nrel_second_domain:concept_program;
+=>nrel_definitional_domain: ...(*
+<=nrel_combination:
+{
+concept_user;
+concept_program
+};;
+*);;
+
+concept_program -> ..f;;
+..f => nrel_authorization: ..s;;
+concept_user -> ..s;;
+
+
+relation => nrel_inclusion: oriented_relation;;
+relation => nrel_inclusion: norole_relation;;
+oriented_relation -> nrel_authorization;;
+norole_relation -> nrel_authorization;;
+binary_relation => nrel_inclusion: transitive_relation;;
+binary_relation => nrel_inclusion: asymetric_relation;;
+binary_relation => nrel_inclusion: antisymmetric_relation;;
+antireflexive_relation -> nrel_authorization;;
+transitive_relation -|> nrel_authorization;;
+
+
+
+
+
+
