@@ -11,8 +11,7 @@ definition ->...
 (*
 ->rrel_key_sc_element: nrel_reference;;
 <= nrel_sc_text_translation: ...(*->rrel_example:[Ссылки в Java — <b><sc_element sys_idtf="concept_pointer">указатели</b></sc_element> на <b><sc_element sys_idtf="concept_object">обьект</b></sc_element>.](*
-<-lang_ru;;
-=>nrel_format:format_html;;*);;
+<-lang_ru;;*);;
 => nrel_main_idtf: [Определение (ссылка)](*<- lang_ru;;*);;
 => nrel_using_constants: 
 {
@@ -23,13 +22,12 @@ definition ->...
 
 };;
 *);;
-
-statement ->...
+ 
+statement->...
 (*
 ->rrel_key_sc_element: nrel_reference;;
 <= nrel_sc_text_translation: ...(*->rrel_example:[Внутри <b><sc_element sys_idtf="concept_class">класса</b></sc_element> в нестатическом контексте также может быть использована ссылка <b><sc_element sys_idtf="nrel_this_keyword">this</b></sc_element>. ](*<-lang_ru;;*);;*);;
-=> nrel_main_idtf: [Утверждение(ссылка)](*<- lang_ru;;
-=>nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Утверждение(ссылка)](*<- lang_ru;;*);;
 => nrel_using_constants: 
 {
    concept_class;

@@ -20,7 +20,7 @@ definition ->...
 	nrel_method;
 	concept_access_modifier;
 	concept_variable;
-	nrel_area_of​_visibility
+	nrel_area_of_visibility
 
   
 

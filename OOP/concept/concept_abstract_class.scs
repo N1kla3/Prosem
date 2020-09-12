@@ -32,7 +32,7 @@ statement ->...
 => nrel_main_idtf: [Утверждение(абстрактный класс*)](*<- lang_ru;;*);;
 => nrel_using_constants: 
 {
-nrel_program_abstract_method;;
+nrel_program_abstract_method
 };;
 *);;
 

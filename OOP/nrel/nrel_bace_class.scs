@@ -23,7 +23,7 @@ definition ->...
 => nrel_using_constants: 
 {
     concept_program_class;
-    concept_program_subclass_tree;
+    concept_program_subclass_tree
     
 };;
 *);;
