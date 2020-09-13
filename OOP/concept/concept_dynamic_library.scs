@@ -25,10 +25,7 @@ statement ->...
 ->rrel_key_sc_element: concept_dymanic_library;;
 <= nrel_sc_text_translation: ...(*->rrel_example:[При написании программы программисту достаточно указать транслятору (компилятору или интерпретатору) путь к библиотеке и имя функции.](*<-lang_ru;;*);;*);;
 => nrel_main_idtf: [Утверждение(динамическая библиотека)](*<- lang_ru;;*);;
-=> nrel_using_constants: 
-{
-  
-};;
+
 *);;
 
 

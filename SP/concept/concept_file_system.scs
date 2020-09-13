@@ -17,7 +17,7 @@ definition ->...
 ->rrel_key_sc_element: concept_file_system;;
 <= nrel_sc_text_translation: ...(*->rrel_example:[Фа́йловая систе́ма (англ. file system) — порядок, определяющий способ организации, хранения и именования данных на носителях информации в компьютерах, а также в другом электронном оборудовании: цифровых фотоаппаратах, мобильных телефонах и т. п.](*
 <-lang_ru;;
-=>nrel_format:format_html;;*);;
+=>nrel_format:format_html;;*);;*);;
 => nrel_main_idtf: [Определение (файловая система)](*<- lang_ru;;*);;
 => nrel_using_constants: 
 {
@@ -43,6 +43,6 @@ statement ->...
 };;
 *);;
 
-concept_file_system => nrel_inclusion: concept_catalog
+concept_file_system => nrel_inclusion: concept_catalog;;
 
 

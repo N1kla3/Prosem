@@ -11,7 +11,7 @@ definition ->...
 ->rrel_key_sc_element: concept_queue;;
 <= nrel_sc_text_translation: ...(*->rrel_example:[О́чередь — <b><sc_element sys_idtf="concept_abstract_data_type">абстрактный тип данных</b></sc_element> с дисциплиной доступа к элементам «первый пришёл — первый вышел».](*
 <-lang_ru;;
-=>nrel_format:format_html;;*);;
+=>nrel_format:format_html;;*);;*);;
 => nrel_main_idtf: [Определение (очередь)](*<- lang_ru;;*);;
 => nrel_using_constants: 
 {
@@ -26,13 +26,8 @@ statement ->...
 (*
 ->rrel_key_sc_element: concept_queue;;
 <= nrel_sc_text_translation: ...(*->rrel_example:[Добавление элемента (принято обозначать словом enqueue — поставить в очередь) возможно лишь в конец очереди, выборка — только из начала очереди (что принято называть словом dequeue — убрать из очереди), при этом выбранный элемент из очереди удаляется.](*<- lang_ru;;
-=>nrel_format:format_html;;*);;
+=>nrel_format:format_html;;*);;*);;
 => nrel_main_idtf: [Утверждение(очередь)](*<- lang_ru;;*);;
-=> nrel_using_constants: 
-{
- 
-
-};;
 *);;
 
 

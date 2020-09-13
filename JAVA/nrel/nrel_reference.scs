@@ -11,7 +11,7 @@ definition ->...
 (*
 ->rrel_key_sc_element: nrel_reference;;
 <= nrel_sc_text_translation: ...(*->rrel_example:[Ссылки в Java — <b><sc_element sys_idtf="concept_pointer">указатели</b></sc_element> на <b><sc_element sys_idtf="concept_object">обьект</b></sc_element>.](*
-<-lang_ru;;*);;
+<-lang_ru;;*);;*);;
 => nrel_main_idtf: [Определение (ссылка)](*<- lang_ru;;*);;
 => nrel_using_constants: 
 {

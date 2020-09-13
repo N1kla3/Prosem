@@ -25,10 +25,7 @@ statement ->...
 ->rrel_key_sc_element: concept_computer_program;;
 <= nrel_sc_text_translation: ...(*->rrel_example:[Компьютерные программы как объект авторского права и других прав интеллектуальной собственности относятся к категории нематериальных активов.](*<-lang_ru;;*);;*);;
 => nrel_main_idtf: [Утверждение(компьютерная программа)](*<- lang_ru;;*);;
-=> nrel_using_constants: 
-{
-  
-};;
+
 *);;
 
 
