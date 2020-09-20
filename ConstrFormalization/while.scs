@@ -1,0 +1,12 @@
+//while(var < max){
+//
+//}
+
+
+concept_key_word->while(*
+			=> nrel_iteration_condition:var(*=>nrel_less_then:max;;*);;
+			=> nrel_iteration_body:...(*
+				<-concept_code_block;;			
+			*);;							
+*);;
+
