@@ -1,0 +1,17 @@
+
+concept_class->..ExapmleClass(*=>nrel_constructor:..ExampleClass_constructor(*
+	=>nrel_parameter:..(*=>rrel_1:s(*
+				=>nrel_data_type:String;;
+				<-concept_variable;;
+			 *);;
+*);;
+ => nrel_code_block:..;;
+*);;
+*);;
+
+
+//public class Example{
+//public Example(String s) {
+//        super(s, list);
+//    }
+//}
