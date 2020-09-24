@@ -12,7 +12,7 @@
 concept_code_block->switch_example(*
     <-concept_switch;;
     =>nrel_condition:condition_variable(*<-concept_variable;;*);;
-    =>rrel_condition_variable:..case
+    =>rrel_condition_variable:..case_1
     (*<-concept_case;;
     =>nrel_case_body:...(*<-concept_code_block;;*);;
     *);;
