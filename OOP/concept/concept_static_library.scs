@@ -25,10 +25,6 @@ statement ->...
 ->rrel_key_sc_element: concept_statick_library;;
 <= nrel_sc_text_translation: ...(*->rrel_example:[Библиотеки, распространяемые в виде исходного кода, преобразуются компилятором в объектные файлы.](*<-lang_ru;;*);;*);;
 => nrel_main_idtf: [Утверждение(статическая библиотека)](*<- lang_ru;;*);;
-=> nrel_using_constants: 
-{
-  
-};;
 *);;
 
 

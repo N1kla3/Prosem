@@ -1,0 +1,19 @@
+concept_class->MyClass(*=>nrel_access_modifier:concept_access_modifier_public;;
+	=>nrel_method:..MyClass_MyMethod
+                    (*
+			
+				<-concept_function;;
+				=> nrel_access_modifier:concept_access_modifier_public;;
+				=>nrel_return_type:concept_void;;
+				=>nrel_function_body:...
+				(*
+					<- concept_code_block;;
+
+				*);;
+			
+                    *);;
+	*);;
+//public class MyClass{
+//	public void MyMethod() {
+//      }
+//}

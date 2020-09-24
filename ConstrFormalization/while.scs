@@ -1,0 +1,15 @@
+//while(var < max){
+//
+//}
+
+
+concept_code_block->somecode(*
+			=>nrel_iteration:..someWhile(*
+				<-concept_while;;				
+				=> nrel_iteration_condition:var(*<-concept_variable;;=>nrel_less_then:max(*<-concept_variable;;*);;*);;
+				=> nrel_iteration_body:...(*
+				<-concept_code_block;;			
+			*);;							
+*);;
+*);;
+

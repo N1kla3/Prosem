@@ -12,7 +12,7 @@ definition ->...
 ->rrel_key_sc_element: nrel_instraction;;
 <= nrel_sc_text_translation: ...(*->rrel_example:[В информатике термин инструкция обозначает одну отдельную операцию процессора, определённую системой команд.](*
 <-lang_ru;;
-=>nrel_format:format_html;;*);;
+=>nrel_format:format_html;;*);;*);;
 => nrel_main_idtf: [Определение (jar файл)](*<- lang_ru;;*);;
 => nrel_using_constants: 
 {
@@ -29,11 +29,6 @@ statement ->...
 <= nrel_sc_text_translation: ...(*->rrel_example:[«Инструкцией» может быть любое представление элемента исполнимой программы, такой как байт-код.](*<-lang_ru;;*);;*);;
 => nrel_main_idtf: [Утверждение(jar файл)](*<- lang_ru;;
 =>nrel_format:format_html;;*);;
-=> nrel_using_constants: 
-{
-  
-
-};;
 *);;
 
 sc_node_not_relation->arity;;

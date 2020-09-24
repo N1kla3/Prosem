@@ -13,7 +13,7 @@ definition ->...
 ->rrel_key_sc_element: concept_object;;
 <= nrel_sc_text_translation: ...(*->rrel_example:[Объект в программировании — некоторая сущность в цифровом пространстве, обладающая определённым состоянием и поведением, имеющая определенные свойства (<b><sc_element sys_idtf="nrel_class_field">атрибут</b></sc_element>) и операции над ними (<b><sc_element sys_idtf="nrel_method">методы</b></sc_element>).](*
 <-lang_ru;;
-=>nrel_format:format_html;;*);;
+=>nrel_format:format_html;;*);;*);;
 => nrel_main_idtf: [Определение (обьект в программировании)](*<- lang_ru;;*);;
 => nrel_using_constants: 
 {
@@ -30,7 +30,7 @@ statement ->...
 (*
 ->rrel_key_sc_element: concept_object;;
 <= nrel_sc_text_translation: ...(*->rrel_example:[Как правило, при рассмотрении объектов выделяется то, что объекты принадлежат одному или нескольким классам, которые определяют поведение (являются моделью) объекта.](*<- lang_ru;;
-=>nrel_format:format_html;;*);;
+=>nrel_format:format_html;;*);;*);;
 => nrel_main_idtf: [Утверждение(обьект в программировании)](*<- lang_ru;;*);;
 => nrel_using_constants: 
 {

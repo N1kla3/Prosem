@@ -25,10 +25,6 @@ statement ->...
 ->rrel_key_sc_element: concept_computer_web;;
 <= nrel_sc_text_translation: ...(*->rrel_example:[ Для передачи информации могут быть использованы различные среды.](*<-lang_ru;;*);;*);;
 => nrel_main_idtf: [Утверждение(компьютерная сеть)](*<- lang_ru;;*);;
-=> nrel_using_constants: 
-{
-  
-};;
 *);;
 
 
