@@ -1,0 +1,11 @@
+//object.field;
+
+concept_code_block->some_code(*
+	->SomeClass_object(*
+		<-concept_variable;;
+		<-SomeClass;;
+		=> call_field:SomeClass_object_field(*
+			<-concept_variable;;
+		*);;
+	*);;
+*);;
