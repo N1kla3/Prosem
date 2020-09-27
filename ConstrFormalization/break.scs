@@ -1,0 +1,39 @@
+
+
+//first
+// for(int i=0;i<variable;i++{
+//     break;
+// }
+
+concept_code_block->..break_example
+(*
+  <-concept_for;;
+    =>nrel_iteration_variable:variable_for_iteration
+    (*
+        <-concept_variable;;
+        =>nrel_value:...(*<-number;;*);;
+    *);;
+    =>nrel_border:max_var
+    (*
+        <-concept_variable;;
+    
+    *);;
+    =>nrel_iteration_change:variable_for_iteration
+    (*
+        =>nrel_variable_modifying_operator:...
+        (*
+            <-concept_operator;;
+            =>nrel_modifying_value:...(*<-number;;*);;
+        *);;
+    *);;
+    =>nrel_iteration_body:...(*<-concept_code_block;;*);;
+    =>nrel_interrupt:..break(*<-break;;*);;
+
+*);;
+//second
+// for(int i=0;i<variable;i++{
+//     break;
+// }
+concept_for->..for(*
+    =>nrel_interrupt:..break(*<-break;;*);;
+*);;
