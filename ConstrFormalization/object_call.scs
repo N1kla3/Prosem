@@ -3,9 +3,9 @@
 concept_code_block->some_code(*
 	->SomeClass_object(*
 		<-concept_variable;;
-		<-concept_reference;;
+		<-concept_reference_type;;
 		<=nrel_object_of:SomeClass;;
-		=> call_field:SomeClass_object_field(*
+		=> nrel_field_call:SomeClass_object_field(*
 			<-concept_variable;;
 		*);;
 	*);;
