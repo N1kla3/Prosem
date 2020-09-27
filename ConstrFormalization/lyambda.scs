@@ -1,0 +1,10 @@
+//(parameter)->{}
+
+
+concept_code_block -> body(*
+    ->rrel_1:...(*
+        <-concept_lyambda;;
+        =>nrel_parameter:parameter(*<-concept_variable;;*);;
+        =>nrel_body:...(*<-concept_code_block;;*);;
+    *);;
+*);;
