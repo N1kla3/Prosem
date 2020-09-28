@@ -1,4 +1,3 @@
-
 concept_class->..ExapmleClass(*=>nrel_constructor:..ExampleClass_conctructor_1(*
 	->ExampleClass_conctructor_1_args(*<-concept_arguments;;
 	->rrel_1:s(*
@@ -12,7 +11,7 @@ concept_class->..ExapmleClass(*=>nrel_constructor:..ExampleClass_conctructor_1(*
 
 //public class Example{
 //public Example(String s) {
-//        super(s, list);
+//   
 //    }
 //}
 
