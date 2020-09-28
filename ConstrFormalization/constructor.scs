@@ -1,9 +1,10 @@
-
+sc_node_not_relation -> concept_arguments;;
+sc_node_not_relation -> concept_variable;;
 concept_class->..ExapmleClass(*=>nrel_constructor:..ExampleClass_constructor(*
-	=>nrel_parameter:..(*=>rrel_1:s(*
-				=>nrel_data_type:String;;
-				<-concept_variable;;
-			 *);;
+	->constructor_args(*<-concept_arguments;;
+	->rrel_1:..s(*
+		<-concept_variable;;
+	*);;
 *);;
  => nrel_code_block:..;;
 *);;
