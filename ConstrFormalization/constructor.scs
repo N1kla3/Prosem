@@ -1,12 +1,11 @@
-sc_node_not_relation -> concept_arguments;;
-sc_node_not_relation -> concept_variable;;
-concept_class->..ExapmleClass(*=>nrel_constructor:..ExampleClass_constructor(*
-	->constructor_args(*<-concept_arguments;;
-	->rrel_1:..s(*
+
+concept_class->..ExapmleClass(*=>nrel_constructor:..ExampleClass_conctructor_1(*
+	->ExampleClass_conctructor_1_args(*<-concept_arguments;;
+	->rrel_1:s(*
 		<-concept_variable;;
 	*);;
 *);;
- => nrel_code_block:..;;
+ =>nrel_constructor_body:..(*<-concept_code_block;;*);;
 *);;
 *);;
 
@@ -16,3 +15,4 @@ concept_class->..ExapmleClass(*=>nrel_constructor:..ExampleClass_constructor(*
 //        super(s, list);
 //    }
 //}
+
