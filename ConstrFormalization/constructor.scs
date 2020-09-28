@@ -1,0 +1,17 @@
+concept_class->..ExapmleClass(*=>nrel_constructor:..ExampleClass_conctructor_1(*
+	->ExampleClass_conctructor_1_args(*<-concept_arguments;;
+	->rrel_1:s(*
+		<-concept_variable;;
+	*);;
+*);;
+ =>nrel_constructor_body:..(*<-concept_code_block;;*);;
+*);;
+*);;
+
+
+//public class Example{
+//public Example(String s) {
+//   
+//    }
+//}
+
