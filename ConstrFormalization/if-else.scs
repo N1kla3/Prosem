@@ -1,14 +1,23 @@
-sc_node_not_relation-> concept_if(*
-<-rrel_1;;
-<-concept_conditional_statements;;
-->..code_block(*<-concept_code_block;;*);;
-=>nrel_condition: ..condition(*<-..return_value(*
-    <-concept_return_value;;
-    <-concept_boolean;;*);;*);;
-*);;
+/*  if(condition) {
 
-sc_node_not_relation-> concept_else(*
-<-rrel_2;;
-<-concept_conditional_statements;;
-->..code_block(*<-concept_code_block;;*);;
+}else{
+
+}
+*/
+
+concept_code_block->some_code(*
+    ->..if_else_1(*
+        <-concept_if_esle;;
+        =>nrel_condition: ..condition(*<-..return_value(*
+            <-concept_return_value;;
+            <-concept_boolean;;*);;*);;
+        *);;
+    ->rrel_condition_true:..if_1(*
+        <-concept_if;;
+        =>nrel_if_body:...(*<-concept_code_block;;*);;
+        *);;
+    ->rrel_condition_else:..else_1(*
+        <-concept_else;;
+        =>nrel_else_body:...(*<-concept_code_block;;*);;
+    *);;
 *);;
