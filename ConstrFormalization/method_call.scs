@@ -1,0 +1,14 @@
+//Object.MethodCall(first, second);
+
+concept_code_block->SomeCodeBlock(*
+	->rrel_1:...(*
+		<-called_method;;
+		=>nrel_caller:Object;;
+                =>nrel_function_prototype:Object_MethodCall_1;;
+		=>nrel_argument:...(*
+                        <-concept_arguments;;
+			->rrel_1:first;;
+			->rrel_2:second;;
+		*);;	
+	*);;
+*);;
