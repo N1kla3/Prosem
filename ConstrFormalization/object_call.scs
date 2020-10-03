@@ -1,0 +1,9 @@
+//object.field;
+
+concept_code_block->some_code(*
+	->rrel_1:...(*
+		<-called_field;;
+		<=nrel_field_prototype:object_field;;
+                =>nrel_caller:object;;
+	*);;
+*);;
