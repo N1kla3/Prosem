@@ -1,6 +1,6 @@
 
 // switch(condition_variable){
-//     case condition_variable:{
+//     case a:{
 
 //     }
 //     default:{
@@ -11,12 +11,12 @@
 
 concept_code_block->switch_example(*
     <-concept_switch;;
-    =>nrel_condition:condition_variable(*<-concept_variable;;*);;
-    =>rrel_condition_variable:..case_1
-    (*<-concept_case;;
-    =>nrel_case_body:...(*<-concept_code_block;;*);;
+    =>nrel_condition_variable:condition_variable;;
+    ->rrel_1:...
+    (*
+        <-concept_case;;
+        =>nrel_condition_variable:a;;
+        =>nrel_case_body:...(*<-concept_code_block;;*);;
     *);;
     =>nrel_default_response:...(*<-concept_code_block;;*);;
-
-
 *);;

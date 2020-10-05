@@ -4,12 +4,26 @@
 
 
 concept_code_block->somecode(*
-			=>nrel_iteration:..someWhile(*
-				<-concept_while;;				
-				=> nrel_iteration_condition:var(*<-concept_variable;;=>nrel_less_then:max(*<-concept_variable;;*);;*);;
-				=> nrel_iteration_body:...(*
-				<-concept_code_block;;			
-			*);;							
-*);;
+			->rrel_1:...(*
+			    <-concept_while;;				
+			    => nrel_condition:...
+                            (*
+                                <=nrel_return_value:...
+                                (*
+                                    <-called_method;;
+                                    =>nrel_function_prototype:operator_less;;
+                                    =>nrel_argument:...
+                                    (*
+                                        <-concept_argument;;
+                                        ->rrel_1:var;;
+                                        ->rrel_2:max;;
+                                    *);;
+                                *);;
+                            *);;
+			    => nrel_iteration_body:...
+                            (*
+  			        <-concept_code_block;;			
+			    *);;							
+      *);;
 *);;
 

@@ -6,24 +6,40 @@
 
 concept_code_block->body(*
 
+    <-concept_code_block;;
+    ->rrel_1:...(*
     <-concept_for;;
-    =>nrel_iteration_variable:variable_for_iteration
+    =>nrel_iteration_variable:i
     (*
         <-concept_variable;;
         =>nrel_value:...(*<-number;;*);;
     *);;
-    =>nrel_border:max_var
+    =>nrel_condition:...
     (*
-        <-concept_variable;;
+        <=nrel_return_value:...
+        (*
+            <-called_method;;
+            =>nrel_function_prototype:operator_less;;
+            =>nrel_argument:...
+            (*
+                <-concept_argument;;
+                ->rrel_1:i;;
+                ->rrel_2:k;;
+            *);;
+
+        *);;
     
     *);;
-    =>nrel_iteration_change:variable_for_iteration
+    =>nrel_iteration_change:...
     (*
-        =>nrel_variable_modifying_operator:...
+        <-called_method;;
+        =>nrel_function_prototype:operator_decrement;;
+        =>nrel_argument:...
         (*
-            <-concept_operator;;
-            =>nrel_modifying_value:...(*<-number;;*);;
+            <-concept_argument;;
+            ->rrel_1:i;;
         *);;
     *);;
     =>nrel_iteration_body:...(*<-concept_code_block;;*);;
+*);;
 *);;
