@@ -1,0 +1,5 @@
+
+concept_code_block-> ..some_iteration_code(*
+    <-cocnept_iteration_statement;;
+    =>nrel_interrupt:..break(*<-break;;*);;
+*);;
