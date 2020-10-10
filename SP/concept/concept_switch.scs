@@ -1,0 +1,38 @@
+sc_node_norole_relation ->concept_switch;;
+
+
+concept_while=>nrel_main_idtf:[switch](*<-lang_en;;*);;
+
+definition ->...
+(*
+->rrel_key_sc_element: concept_switch;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[switch -оператор выбора, в который передаётся <b><sc_element sys_idtf="concept_variable">переменная</b></sc_element>, сравниваемая с <b><sc_element sys_idtf="nrel_condition">условиями</b></sc_element> <b><sc_element sys_idtf="concept_case">кейсов</b></sc_element> .](*
+<-lang_ru;;
+=> nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Определение (switch)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	concept_variable;
+    nrel_condition;
+    concept_case
+
+  
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_switch;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[если ни один <b><sc_element sys_idtf="concept_case">кейс</b></sc_element> не сработал, то выполняется блок <b><sc_element sys_idtf="nrel_defaut_responce">default</b></sc_element>. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(switch)](*<- lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_using_constants: 
+{
+   
+  concept_case;
+  concept_code_block;
+  nrel_default_responce
+
+};;
+*);;
