@@ -1,0 +1,13 @@
+// class First extends Second {}
+
+
+
+concept_code_block->..block(*
+    ->rrel_1:First_class
+    (*
+        <-concept_parent_class;;
+        =>nrel_extends:Second_class(*<-concept_child_class;;*);;
+        =>nrel_body:...(*<concept_code_block;;*);;
+    *);;
+
+*);;
