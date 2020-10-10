@@ -1,0 +1,37 @@
+sc_node_norole_relation ->concept_for;;
+
+concept_for=>nrel_main_idtf: [цикл for](*<-lang_ru;;*);;
+concept_for=>nrel_main_idtf:[for cycle](*<-lang_en;;*);;
+
+definition ->...
+(*
+->rrel_key_sc_element: concept_for;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[это <b><sc_element sys_idtf="concept_control_statement">управляющая конструкция</b></sc_element> программного кода, которая нарушает линейность исполнения алгоритма и позволяет выполнить указанный код множество раз .](*
+<-lang_ru;;
+=> nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Определение (цикл for)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	concept_control_statement;
+    concept_algorithm
+
+  
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_for;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[У цикла for есть  <b><sc_element sys_idtf="nrel_condition">условие</b></sc_element>, <b><sc_element sys_idtf="nrel_iteration_variable">итерационная переменная</b></sc_element>,<b><sc_element sys_idtf="nrel_iteration_change">функция изменения итерационной переменной</b></sc_element> и <b><sc_element sys_idtf="nrel_body">тело цикла</b></sc_element>. ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(цикл for)](*<- lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_using_constants: 
+{
+   nrel_iteration_change;
+   nrel_iteration_variable;
+   nrel_body;
+   nrel_condition
+
+};;
+*);;
