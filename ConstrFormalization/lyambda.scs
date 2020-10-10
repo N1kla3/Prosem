@@ -4,7 +4,10 @@
 concept_code_block -> body(*
     ->rrel_1:...(*
         <-concept_lyambda;;
-        =>nrel_parameter:parameter(*<-concept_variable;;*);;
+        =>nrel_parameter:...(*
+            <-concept_argument;;
+            ->rrel_1: parameter;;
+        *);;
         =>nrel_body:...(*<-concept_code_block;;*);;
     *);;
 *);;
