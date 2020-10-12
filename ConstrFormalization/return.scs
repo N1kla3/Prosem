@@ -2,7 +2,7 @@ concept_code_block->block
 (*
     ->rrel_1:...
     (*
-        <-return_statement;;
+        <-concept_return_statement;;
         =>nrel_returned_value:...(*<=nrel_value:var;;*);;
     *);;
 *);;
