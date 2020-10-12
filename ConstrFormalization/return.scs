@@ -1,0 +1,10 @@
+concept_code_block->block
+(*
+    ->rrel_1:...
+    (*
+        <-concept_return_statement;;
+        =>nrel_returned_value:...(*<=nrel_value:var;;*);;
+    *);;
+*);;
+
+//return var;
