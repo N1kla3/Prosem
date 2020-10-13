@@ -1,9 +1,8 @@
 // class First implements ISecond{}
 
-concept_code_block->...(*
-    ->rrel_1:First(*
-        <-concept_class;;
-        =>nrel_implements:ISecond(*<concept_interface;;*);;
-        =>nrel_body:...(*<concept_code_block;;*);;
+concept_class->First(*
+        
+        =>nrel_implements:ISecond(*<-concept_interface;;*);;
+        =>nrel_body:...(*<-concept_code_block;;*);;
     *);;
 *);;
