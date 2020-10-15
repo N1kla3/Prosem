@@ -1,0 +1,20 @@
+/*  if(condition) {
+
+}else{
+
+}
+*/
+
+
+concept_code_block->if_else_example(*
+    <-concept_if_else;;
+    =>nrel_condition:..condition(*<-concept_boolean;;*);;
+    ->rrel_1:..if
+    (*
+        <-concept_if;;
+        =>nrel_condition:..condition;;
+        =>nrel_if_body:...(*<-concept_code_block;;*);;
+        =>nrel_branching:...(*<-concept_else;;
+                              =>nrel_else_body:...(*<-concept_code_block;;*);;*);;
+    *);;
+*);;
