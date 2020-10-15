@@ -12,12 +12,9 @@ concept_code_block->if_else_example(*
     ->rrel_1:..if
     (*
         <-concept_if;;
-        =>nrel_condition:....condition;;
+        =>nrel_condition:..condition;;
         =>nrel_if_body:...(*<-concept_code_block;;*);;
-    *);;
-    ->rrel_2:..else
-    (*
-        <-concept_else;;
-        =>nrel_else_body:...(*<-concept_code_block;;*);;
+        =>nrel_branching:...(*<-concept_else;;
+                              =>nrel_else_body:...(*<-concept_code_block;;*);;*);;
     *);;
 *);;
