@@ -1,0 +1,8 @@
+concept_class ->....ExapmleClass(*
+	=>inclusion:class_field(*
+		=>nrel_arguments:..(*
+			<-concept_arguments;;
+			->rrel_1:..;;
+		*);;
+	*);;
+*);;
