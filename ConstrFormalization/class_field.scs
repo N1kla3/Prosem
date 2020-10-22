@@ -1,8 +1,11 @@
 concept_class ->..ExapmleClass(*
 	=>nrel_class_field:class_field(*
-		=>nrel_arguments:..(*
-			<-concept_arguments;;
+		<=inclusion:concept_variable;;
+		=>nrel_variable:..(*
 			->rrel_1:...;;
 		*);;
 	*);;
 *);;
+
+
+
