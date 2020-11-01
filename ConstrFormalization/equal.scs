@@ -1,0 +1,17 @@
+// a == b;
+
+concept_code_block->body
+(*
+		->rrel_1:...
+		(*
+				<-called_method;;
+				=>nrel_function_prototype:operator_equal;;
+				=>nrel_argument:...
+				(*
+						<-concept_argument;;
+						->rrel_1:a;;
+						->rrel_2:b;;
+				*);;
+		*);;
+*);;
+
