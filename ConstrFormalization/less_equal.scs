@@ -1,11 +1,11 @@
-// a == b;
+// a <= b;
 
 concept_code_block->body
 (*
 		->rrel_1:...
 		(*
 				<-called_function;;
-				=>nrel_function_prototype:operator_equal;;
+				=>nrel_function_prototype:operator_less_equal;;
 				=>nrel_argument:...
 				(*
 						->rrel_1:a;;
