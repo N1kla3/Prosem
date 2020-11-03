@@ -8,6 +8,7 @@ concept_code_block->body
 				=>nrel_function_prototype:operator_equal;;
 				=>nrel_argument:...
 				(*
+						<-concept_variable;;
 						->rrel_1:a;;
 						->rrel_2:b;;
 				*);;
