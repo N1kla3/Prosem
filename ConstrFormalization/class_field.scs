@@ -1,8 +1,12 @@
 concept_class ->..ExapmleClass(*
 	=>nrel_class_field:class_field(*
 		<-concept_variable;;
+		<-data_type;;
+		=>nrel_main_idtf:private;;
 	*);;
 *);;
 
 
-
+// class ExapmleClass{
+//private int variable;
+//}
