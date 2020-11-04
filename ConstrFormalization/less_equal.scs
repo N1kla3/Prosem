@@ -1,0 +1,17 @@
+// a <= b;
+
+concept_code_block->body
+(*
+		->rrel_1:...
+		(*
+				<-called_function;;
+				=>nrel_function_prototype:operator_less_equal;;
+				=>nrel_argument:...
+				(*
+						<-concept_variable;;
+						->rrel_1:a;;
+						->rrel_2:b;;
+				*);;
+		*);;
+*);;
+
