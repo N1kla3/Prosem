@@ -2,7 +2,8 @@ concept_class ->..ExapmleClass(*
 	=>nrel_class_field:class_field(*
 		<-concept_variable;;
 		<-concept_integer;;
-		=>nrel_main_idtf:private;;
+		<-private(*
+				<-concept_key_word_access_modifier;;*);;
 	*);;
 *);;
 
