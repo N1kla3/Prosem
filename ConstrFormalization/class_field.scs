@@ -1,0 +1,12 @@
+concept_class ->..ExapmleClass(*
+	=>nrel_class_field:class_field(*
+		<-concept_variable;;
+		<-concept_integer;;
+		=> nrel_access_modifier:concept_access_modifier_private;;
+	*);;
+*);;
+
+
+// class ExapmleClass{
+//private int variable;
+//}
