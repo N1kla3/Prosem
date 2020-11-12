@@ -1,0 +1,17 @@
+// ++a
+
+
+concept_code_block->body
+(*
+		->rrel_1:...
+		(*
+				<-called_function;;
+				=>nrel_function_prototype:operator_prefix_increment;;
+				=>nrel_argument:...
+				(*
+						<-concept_variable;;
+						->rrel_1:a;;
+						
+				*);;
+		*);;
+*);;

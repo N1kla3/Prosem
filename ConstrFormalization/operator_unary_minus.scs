@@ -1,0 +1,18 @@
+// -a
+
+
+concept_code_block->body
+(*
+		->rrel_1:...
+		(*
+				<-called_function;;
+				=>nrel_function_prototype:operator_unary_minus;;
+				=>nrel_argument:...
+				(*
+						<-concept_variable;;
+						->rrel_1:a;;
+						
+						
+				*);;
+		*);;
+*);;
