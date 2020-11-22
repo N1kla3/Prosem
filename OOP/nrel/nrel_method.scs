@@ -68,8 +68,9 @@ concept_code_block
 *);;
 
 concept_class -> ..f;;
-..f => nrel_method: ..s;;
 concept_code_block -> ..s;;
+..f => nrel_method: ..s;;
+
 
 
 relation => nrel_inclusion: oriented_relation;; 
