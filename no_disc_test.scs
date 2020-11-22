@@ -1,0 +1,55 @@
+concept_class-> testClass
+(*
+	=>nrel_access_modifier:concept_access_modifier_public;;
+	=>nrel_method:testClass_methodOne
+	(*
+		<-concept_function;;
+		=> nrel_access_modifier:concept_access_modifier_public;;
+		=> nrel_return_type:concept_int;;
+		=> nrel_function_body:...
+		(*
+			<-concept_code_block;;
+		*);;
+	*);;
+
+	=> nrel_method:testClass_methodTwo
+	(*
+		<-concept_function;;
+		=> nrel_access_modifier:concept_access_modifier_public;;
+		=> nrel_return_type:concept_int;;
+		=> nrel_function_body:...
+		(*
+			<-concept_code_block;;
+		*);;
+	*);;
+*);;
+
+concept_function-> test_function_1
+(*
+	=> nrel_return_type:concept_string;;
+	=> nrel_function_body:...
+	(*
+		<-concept_code_block;;
+	*);;
+*);;
+
+concept_code_block->noDiscardTest
+(*
+	->rrel_1:...
+	(*
+		<-concept_called_method;;
+		=> nrel_caller:noDiscardObject;;
+		=> nrel_function_prototype:testClass_methodOne;;
+	*);;
+	->rrel_2:...
+	(*
+		<-concept_called_method;;
+		=> nrel_caller:noDiscardObject;;
+		=> nrel_function_prototype:testClass_methodTwo;;
+	*);;
+	->rrel_3:...
+	(*
+		<-concept_called_function;;
+		=> nrel_function_prototype:test_function_1;;
+	*);;
+*);;
