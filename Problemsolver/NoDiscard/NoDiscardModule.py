@@ -24,6 +24,8 @@ class NoDiscardModule(ScModule):
 
     def OnShutdown(self):
         print('Shutdown NoDicard Module')
+        start = self.ctx.HelperResolveSystemIdtf("Discard_question", ScType.NodeConstClass)
+        self.ctx.DeleteElement(start)
 
 
 service = NoDiscardModule()

@@ -1,0 +1,7 @@
+sc_node_not_relation->concept_called_method;;
+sc_node_not_relation->concept_called_function;;
+sc_node_norole_relation->nrel_caller;;
+sc_node_norole_relation->nrel_return_type;;
+sc_node_norole_relation->nrel_function_prototype;;
+sc_node_not_relation->concept_int;;
+sc_node_not_relation->concept_void;;
