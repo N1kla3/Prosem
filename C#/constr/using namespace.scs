@@ -1,0 +1,20 @@
+// using namespace1.namespace2.class1;
+..Global => nrel_using: namespace1.namespace2.class1;;
+namespace1.namespace2.class1 => nrel_identifier: [namespace1.namespace2.class1];;
+namespace1.namespace2.class1 <- concept_namespace;<-concept_compound_name;;
+namespace1.namespace2.class1 -> namespace1
+             (*
+                =>nrel_identifier: [namespace1];;
+                <-concept_namespace;;
+             *);
+             -> namespace2  
+             (*
+                =>nrel_identifier: [namespace2];;
+                <-concept_namespace;;
+             *);
+             -> class1
+             (*
+                =>nrel_identifier: [class1];;
+                <-concept_class;;
+             *);;
+

@@ -1,0 +1,7 @@
+
+
+concept_condition <- sc_node_not_relation;;
+
+//Идентификаторы
+concept_condition => nrel_main_idtf: [условие](* <- lang_ru;; *);;
+concept_condition => nrel_main_idtf: [condition](* <- lang_en;; *);;

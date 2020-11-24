@@ -1,0 +1,35 @@
+//unchecked
+//проверка на переполнение
+
+unchecked <- sc_node_not_relation;;
+
+//Идентификаторы
+unchecked => nrel_main_idtf: [проверка на переполнение unchecked](* <- lang_ru;; *);;
+unchecked => nrel_main_idtf: [unchecked](* <- lang_en;; *);;
+
+// Определение
+definition -> ...
+(*
+->rrel_key_sc_element: unchecked;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Unchecked позволяет предотвратить проверку переполнения при выполнении арифметических операций и преобразований с данными целого типа.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (unchecked)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ concept_int
+};;
+*);;
+
+//Визуализация
+illustration -> ...
+(*
+	->rrel_key_sc_element: unchecked;;
+	=>nrel_main_idtf:
+	[визуализация unchecked ] (* <- lang_ru;; *);;
+	=>nrel_main_idtf:
+	[unchecked visualization](* <- lang_en;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://img/unchecked.png"(*=>nrel_format:format_png;;*);;
+	*);;
+
+*);;

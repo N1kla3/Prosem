@@ -1,0 +1,10 @@
+//struct
+//структура
+
+concept_struct <- sc_node_not_relation;;
+
+//Идентификаторы
+concept_struct => nrel_main_idtf: [структура](* <- lang_ru;; *);;
+concept_struct => nrel_main_idtf: [struct](* <- lang_en;; *);;
+
+

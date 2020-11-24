@@ -1,0 +1,11 @@
+
+
+bool <- sc_node_not_relation;;
+bool <- concept_primitive;;
+
+
+//Идентификаторы
+bool => nrel_main_idtf: [булеан](* <- lang_ru;; *);;
+bool => nrel_main_idtf: [bool](* <- lang_en;; *);;
+
+

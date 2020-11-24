@@ -1,0 +1,10 @@
+
+
+concept_partial_class <- sc_node_not_relation;;
+concept_partial_class <- concept_class;;
+
+//Идентификаторы
+concept_partial_class => nrel_main_idtf: [частично реализованный класс](* <- lang_ru;; *);;
+concept_partial_class => nrel_main_idtf: [partial class](* <- lang_en;; *);;
+
+

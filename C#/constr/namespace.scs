@@ -1,0 +1,4 @@
+//namespace Namespace
+concept_namespace -> ..Namespace;;
+..Namespace => nrel_identifier: [Namespace];;
+..Namespace => nrel_list_of_names: ..list_of_names_of_Namespace;;

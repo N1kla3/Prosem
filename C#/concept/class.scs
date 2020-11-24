@@ -1,0 +1,10 @@
+//class
+//класс
+
+concept_class <- sc_node_not_relation;;
+
+//Идентификаторы
+concept_class => nrel_main_idtf: [класс](* <- lang_ru;; *);;
+concept_class => nrel_main_idtf: [class](* <- lang_en;; *);;
+
+

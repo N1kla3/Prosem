@@ -1,0 +1,31 @@
+
+
+//Идентификаторы
+nrel_math_operaiton => nrel_main_idtf: [ math_operation* ](* <- lang_en;; *);;
+nrel_math_operaiton => nrel_main_idtf: [ математическая_операция* ](* <- lang_ru;; *);;
+
+
+//Свойства
+
+oriented_relation -> nrel_math_operaiton;;
+norole_relation   -> nrel_math_operaiton;;
+
+antitransitive_relation -> nrel_math_operaiton;;
+antireflexive_relation  -> nrel_math_operaiton;; 
+antisymmetric_relation  -> nrel_math_operaiton;;
+
+//Домены
+nrel_math_operaiton => nrel_first_domain: ..b;;
+nrel_math_operaiton => nrel_second_domain: concept_number_literal;;
+nrel_math_operaiton => nrel_definitional_domain:
+{
+    ..b;
+    concept_number_literal
+};;
+
+//Арность
+sc_node_not_relation -> ..a;;
+arity -> ..a;;
+..a -> nrel_math_operaiton;;
+concept_2 <- number;;
+concept_2 <= measurement: ..a;;

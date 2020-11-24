@@ -1,0 +1,48 @@
+//list of names
+//список методов
+nrel_list_of_names <- sc_node_norole_relation;;
+//Идентификаторы
+nrel_list_of_names => nrel_main_idtf: [ список имён* ](* <- lang_ru;; *);;
+nrel_list_of_names => nrel_main_idtf: [ list of names* ](* <- lang_en;; *);;
+
+//Свойства
+relation => nrel_inclusion: oriented_relation;; 
+relation => nrel_inclusion: norole_relation;;
+relation => nrel_inclusion: binary_relation;;
+oriented_relation -> nrel_list_of_names;;
+norole_relation-> nrel_list_of_names;;
+binary_relation => nrel_inclusion: antireflexive_relation;;
+binary_relation => nrel_inclusion: antisymmetric_relation;; 
+binary_relation => nrel_inclusion: antitransitive_relation;; 
+antitransitive_relation -> nrel_list_of_names;;
+antireflexive_relation  -> nrel_list_of_names;; 
+antisymmetric_relation  -> nrel_list_of_names;;
+
+// Определение
+definition -> ...
+(*
+->rrel_key_sc_element: nrel_list_of_names;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Список имён - бинарное отношение, связывающее <b><sc_element sys_idtf="concept_namespace">пространство имён</sc_element></b> и множество его имён.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Определение (Список имён*)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ set;
+ concept_namespace
+};;
+*);;
+
+
+//Домены
+nrel_list_of_names => nrel_first_domain: concept_namespace;;
+nrel_list_of_names => nrel_second_domain: set;;
+nrel_list_of_names => nrel_definitional_domain:
+{
+    concept_class;
+    set
+};;
+//Арность
+sc_node_not_relation -> ..y;;
+arity -> ..y;;
+..y -> nrel_list_of_names;;
+concept_2 <- number;;
+concept_2 <= measurement: ..y;;

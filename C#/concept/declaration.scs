@@ -1,0 +1,9 @@
+//declaration
+//объявление переменной
+
+declaration <- sc_node_not_relation;;
+
+//Идентификаторы
+declaration => nrel_main_idtf: [объявление переменной](* <- lang_ru;; *);;
+declaration => nrel_main_idtf: [declaration](* <- lang_en;; *);;
+

@@ -1,0 +1,59 @@
+//Namespace
+//Пространство имён
+
+concept_namespace <- sc_node_not_relation;;
+model <- sc_node_not_relation;;
+abstract_repository <- sc_node_not_relation;;
+environment <- sc_node_not_relation;;
+
+nrel_logical_grouping <- sc_node_norole_relation;;
+
+//Идентификаторы
+concept_namespace => nrel_main_idtf: [пространство имён](* <- lang_ru;; *);;
+concept_namespace => nrel_main_idtf: [namespace](* <- lang_en;; *);;
+
+// Определение
+definition -> ...
+(*
+->rrel_key_sc_element: concept_namespace;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Пространство имён — некоторое множество, под которым подразумевается модель, абстрактное хранилище или окружение, созданное для логической группировки уникальных идентификаторов (то есть имён).](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (Пространство имён)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ set;
+ nrel_identifier;
+ model;
+ abstract_repository;
+ environment;
+ nrel_logical_grouping
+};;
+*);;
+
+
+// Утверждение
+statement ->...
+(*
+->rrel_key_sc_element: concept_namespace;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Идентификатор, определённый в пространстве имён, ассоциируется с этим пространством.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение (Пространство имён)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{ 
+ nrel_conformity; 
+ nrel_identifier
+};;
+*);;
+
+//Визуализация
+illustration -> ...
+(*
+	->rrel_key_sc_element: concept_namespace;;
+	=>nrel_main_idtf:
+	[визуализация пространства имён ] (* <- lang_ru;; *);;
+	=>nrel_main_idtf:
+	[namespace visualization](* <- lang_en;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://img/namespace.png"(*=>nrel_format:format_png;;*);;
+	*);;
+
+*);;

@@ -1,0 +1,57 @@
+//constructor
+//конструктор
+rrel_constructor <- sc_node_role_relation;;
+//Идентификаторы
+rrel_constructor => nrel_main_idtf: [ конструктор' ](* <- lang_ru;; *);;
+rrel_constructor => nrel_main_idtf: [ constructor' ](* <- lang_en;; *);;
+
+//Свойства
+relation => nrel_inclusion: oriented_relation;; 
+relation => nrel_inclusion: role_relation;;
+relation => nrel_inclusion: binary_relation;;
+oriented_relation -> rrel_constructor;;
+role_relation-> rrel_constructor;;
+binary_relation => nrel_inclusion: antireflexive_relation;;
+binary_relation => nrel_inclusion: asymmetric_relation;; 
+binary_relation => nrel_inclusion: antitransitive_relation;; 
+antitransitive_relation -> rrel_constructor;;
+antireflexive_relation  -> rrel_constructor;; 
+antisymmetric_relation  -> rrel_constructor;;
+
+//Домены
+rrel_constructor => nrel_first_domain: concept_class;;
+rrel_constructor => nrel_second_domain: concept_function;;
+rrel_constructor => nrel_definitional_domain:
+{
+    concept_class;
+    concept_function
+};;
+//Арность
+sc_node_not_relation -> ..y;;
+arity -> ..y;;
+..y -> rrel_constructor;;
+concept_2 <- number;;
+concept_2 <= measurement: ..y;;
+
+definition ->...
+(*
+	-> rrel_key_sc_element : rrel_constructor;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[конструктор класса (от англ. constructor) — специальный <b><sc_element sys_idtf="concept_function_body">блок инструкций</b>, вызываемый при <b><sc_element sys_idtf="nrel_instantiation">создании объекта</b>.](*<-lang_ru;;=> nrel_format: format_html;;*);;*);;
+	=> nrel_main_idtf: [Определение (конструктор')](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{	
+		concept_function_body;
+		nrel_instantiation
+	};;
+*);;
+
+statement ->...
+(*
+	-> rrel_key_sc_element : rrel_constructor;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Конструктор упрощает инициализацию <b><sc_element sys_idtf="concept_object">объекта</b>.](*<-lang_ru;;=> nrel_format: format_html;;*);;*);;
+	=> nrel_main_idtf: [Утверждение(конструктор')](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+		concept_object
+	};;
+*);;

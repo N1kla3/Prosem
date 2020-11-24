@@ -1,0 +1,9 @@
+
+
+int <- sc_node_not_relation;;
+int <- concept_primitive;;
+//Идентификаторы
+int => nrel_main_idtf: [целочисленный тип](* <- lang_ru;; *);;
+int => nrel_main_idtf: [int](* <- lang_en;; *);;
+
+

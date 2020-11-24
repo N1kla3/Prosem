@@ -1,0 +1,10 @@
+//function
+//функция
+
+concept_function <- sc_node_not_relation;;
+
+//Идентификаторы
+concept_function => nrel_main_idtf: [функция](* <- lang_ru;; *);;
+concept_function => nrel_main_idtf: [function](* <- lang_en;; *);;
+
+

@@ -1,0 +1,30 @@
+//Идентификаторы
+nrel_yield => nrel_main_idtf: [ yield* ](* <- lang_en;; *);;
+nrel_yield => nrel_main_idtf: [ возврат из генератора* ](* <- lang_ru;; *);;
+
+
+//Свойства
+
+oriented_relation -> nrel_yield;;
+norole_relation   -> nrel_yield;;
+antitransitive_relation -> nrel_yield;;
+antireflexive_relation  -> nrel_yield;; 
+antisymmetric_relation  -> nrel_yield;;
+
+//Домены
+nrel_yield => nrel_first_domain: concept_function;;
+nrel_yield => nrel_second_domain: concept_object;;
+nrel_yield => nrel_second_domain: concept_primitive;;
+
+nrel_yield => nrel_definitional_domain:
+{
+    concept_function;
+    concept_object
+};;
+
+//Арность
+sc_node_not_relation -> ..a;;
+arity -> ..a;;
+..a -> nrel_yield;;
+concept_2 <- number;;
+concept_2 <= measurement: ..a;;

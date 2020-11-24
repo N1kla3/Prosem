@@ -1,0 +1,49 @@
+//alias_access
+
+alias_access <- sc_node_not_relation;;
+concept_operator =>nrel_inclusion: alias_access;;
+
+//Идентификаторы
+alias_access => nrel_main_idtf: [ operator :: ](* <- lang_ru;; *);;
+alias_access => nrel_idtf: [ operator :: ](* <- lang_en;; *);;
+alias_access => nrel_main_idtf: [alias access](* <- lang_en;; *);;
+
+// Определение
+definition -> ...
+(*
+	->rrel_key_sc_element: alias_access;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Операторы класса alias_access (::) описывают действие доступа к элементам <b><sc_element sys_idtf ="concept_namespace">пространства имён</sc_element></b>, являющихся значениями первого и второго операндов.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+	=> nrel_main_idtf: [Определение (Доступ к полям через псевдоним)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+	 concept_namespace
+	};;
+*);;
+
+// Утверждение
+statement ->...
+(*
+->rrel_key_sc_element: alias_access;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Квалификатор :: гарантирует, что его левый идентификатор всегда ссылается на <b><sc_element sys_idtf ="alias">псевдоним</sc_element></b> пространства имен, даже если существует тип или <b><sc_element sys_idtf ="concept_namespace">пространство имён</sc_element></b> с таким же именем.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Утверждение (Доступ к полям через псевдоним)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ 	concept_namespace;
+	alias
+};;
+*);;
+
+//Визуализация
+illustration -> ...
+(*
+	->rrel_key_sc_element: alias_access;;
+	=>nrel_main_idtf:
+	[визуализация доступ к полям через псевдоним ] (* <- lang_ru;; *);;
+	=>nrel_main_idtf:
+	[alias access visualization](* <- lang_en;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://img/alias_access.png"(*=>nrel_format:format_png;;*);;
+	*);;
+
+*);;

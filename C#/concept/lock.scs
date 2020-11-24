@@ -1,0 +1,50 @@
+//lock
+//блокирование объекта
+
+lock <- sc_node_not_relation;;
+concept_operator =>nrel_inclusion: lock;;
+
+//Идентификаторы
+lock => nrel_main_idtf: [ блокирование объекта ](* <- lang_ru;; *);;
+lock => nrel_main_idtf: [lock](* <- lang_en;; *);;
+// Определение
+definition -> ...
+(*
+->rrel_key_sc_element: lock;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Оператор lock получает взаимоисключающую блокировку заданного объекта перед выполнением определенных операторов, а затем снимает блокировку.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (блокирование объекта)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ nrel_lock;
+ concept_object
+};;
+*);;
+
+
+// Утверждение
+statement ->...
+(*
+->rrel_key_sc_element: lock;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[ Во время блокировки поток, удерживающий блокировку, может снова поставить и снять блокировку.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение (блокирование объекта)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{ 
+ concept_thread
+};;
+*);;
+
+//Визуализация
+illustration -> ...
+(*
+	->rrel_key_sc_element: lock;;
+	=>nrel_main_idtf:
+	[визуализация блокирование объекта ] (* <- lang_ru;; *);;
+	=>nrel_main_idtf:
+	[lock visualization](* <- lang_en;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://img/lock.png"(*=>nrel_format:format_png;;*);;
+	*);;
+
+*);;
+

@@ -1,0 +1,50 @@
+//event
+//событие
+event <- sc_node_not_relation;;
+
+//Идентификаторы
+event => nrel_main_idtf: [событие](* <- lang_ru;; *);;
+event => nrel_main_idtf: [event](* <- lang_en;; *);;
+
+// Определение
+definition -> ..event_definition
+(*
+->rrel_key_sc_element: event;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[События - это особый тип многоадресного делегата, который может быть вызван только из класса или структуры, где они объявлены.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (Событие)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ concept_delegate;
+ concept_class;
+ concept_struct
+};;
+*);;
+
+
+// Утверждение
+statement -> ..event_statement
+(*
+->rrel_key_sc_element: event;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[События объявляются в классе с помощью ключевого слова event.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение (Событие)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{ 
+ concept_class; 
+ concept_keyword
+};;
+*);;
+
+//Визуализация
+illustration -> ...
+(*
+	->rrel_key_sc_element: event;;
+	=>nrel_main_idtf:
+	[визуализация события] (* <- lang_ru;; *);;
+	=>nrel_main_idtf:
+	[event visualization](* <- lang_en;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://img/event.png"(*=>nrel_format:format_png;;*);;
+	*);;
+
+*);;

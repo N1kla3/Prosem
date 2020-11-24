@@ -1,0 +1,7 @@
+// using M = namespace1.class1
+..M => nrel_identifier: [M];;
+..M <- alias;;
+..M => nrel_using: namespace1.class1;;
+namespace1.class1 => nrel_identifier: [namespace1.class1];;
+namespace1.class1 <- concept_namespace; <-concept_compound_name;;
+namespace1.class1 -> namespace1; -> class1;;

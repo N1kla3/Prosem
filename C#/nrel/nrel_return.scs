@@ -1,0 +1,28 @@
+
+//Идентификаторы
+nrel_return => nrel_main_idtf: [ return* ](* <- lang_en;; *);;
+
+//Свойства
+oriented_relation -> nrel_return;;
+norole_relation   -> nrel_return;;
+antitransitive_relation -> nrel_return;;
+antireflexive_relation  -> nrel_return;; 
+antisymmetric_relation  -> nrel_return;;
+
+//Домены
+nrel_return => nrel_first_domain: concept_function;;
+nrel_return => nrel_second_domain: concept_class;;
+nrel_return => nrel_second_domain: concept_primitive;;
+
+nrel_return => nrel_definitional_domain:
+{
+    concept_primitive;
+    concept_class
+};;
+
+//Арность
+sc_node_not_relation -> ..a;;
+arity -> ..a;;
+..a -> nrel_return;;
+concept_2 <- number;;
+concept_2 <= measurement: ..a;;

@@ -1,0 +1,10 @@
+
+
+concept_math_expression <- sc_node_not_relation;;
+concept_math_expression <- concept_expression;;
+
+//Идентификаторы
+concept_math_expression => nrel_main_idtf: [математическое выражение](* <- lang_ru;; *);;
+concept_math_expression => nrel_main_idtf: [math expression](* <- lang_en;; *);;
+
+

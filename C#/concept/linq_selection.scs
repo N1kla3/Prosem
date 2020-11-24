@@ -1,0 +1,52 @@
+//linq_selection
+//LINQ выражение
+
+linq_selection <- sc_node_not_relation;;
+
+//Идентификаторы
+linq_selection => nrel_main_idtf: [LINQ выражение](* <- lang_ru;; *);;
+linq_selection => nrel_main_idtf: [linq selection](* <- lang_en;; *);;
+
+// Определение
+definition -> ...
+(*
+->rrel_key_sc_element: linq_selection;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Интегрированное выражение запроса, использующего декларативный синтаксис запроса, с помощью которого можно выполнять фильтрацию, упорядочение и группирование данных из источника данных, обходясь минимальным объемом программного кода.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (LINQ выражение)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ grouping;
+ordering;
+filtration;
+request;
+syntax
+};;
+*);;
+
+
+// Утверждение
+statement ->...
+(*
+->rrel_key_sc_element: linq_selection;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Выражение запроса можно использовать для получения и преобразования данных из любого источника данных, поддерживающего LINQ.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение (LINQ выражение)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{ 
+ request
+};;
+*);;
+
+//Визуализация
+illustration -> ...
+(*
+	->rrel_key_sc_element: linq_selection;;
+	=>nrel_main_idtf:
+	[визуализация LINQ выражения ] (* <- lang_ru;; *);;
+	=>nrel_main_idtf:
+	[linq selection visualization](* <- lang_en;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://img/linq.png"(*=>nrel_format:format_png;;*);;
+	*);;
+
+*);;

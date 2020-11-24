@@ -1,0 +1,48 @@
+//default 
+rrel_default <- sc_node_role_relation;;
+//Идентификаторы
+rrel_default => nrel_main_idtf: [ default' ](* <- lang_en;; *);;
+rrel_default => nrel_main_idtf: [ default' ](* <- lang_ru;; *);;
+
+//Свойства
+relation => nrel_inclusion: oriented_relation;; 
+relation => nrel_inclusion: role_relation;;
+relation => nrel_inclusion: binary_relation;;
+oriented_relation -> rrel_default;;
+role_relation-> rrel_default;;
+binary_relation => nrel_inclusion: antireflexive_relation;;
+binary_relation => nrel_inclusion: antisymmetric_relation;; 
+binary_relation => nrel_inclusion: antitransitive_relation;; 
+antitransitive_relation -> rrel_default;;
+antireflexive_relation  -> rrel_default;; 
+antisymmetric_relation  -> rrel_default;;
+
+//Определение
+definition ->...
+(*
+->rrel_key_sc_element: rrel_default;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Отношение default' - бинарное отношение, связывающее оператор <b><sc_element sys_idtf="switch">switch</sc_element></b> и метку default в теле оператора <b><sc_element sys_idtf="switch">switch</sc_element></b>. ](*
+<-lang_ru;;
+=> nrel_format:format_html;;*);;
+=> nrel_main_idtf: [Определение (default')](*<- lang_ru;;*);;*);;
+=> nrel_using_constants: 
+{
+	switch;
+    label
+};;
+*);;
+
+//Домены
+rrel_default => nrel_first_domain: switch;;
+rrel_default => nrel_second_domain: label;;
+rrel_default => nrel_definitional_domain:
+{
+    switch;
+    label
+};;
+//Арность
+sc_node_not_relation -> ..y;;
+arity -> ..y;;
+..y -> rrel_default;;
+concept_2 <- number;;
+concept_2 <= measurement: ..y;;

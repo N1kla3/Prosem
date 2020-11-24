@@ -1,0 +1,778 @@
+CSharpCodeShorten = [*
+//extern alias Test;
+..Global => nrel_extern: Test;;
+Test =>nrel_identifier: [Test]; <-concept_extern_alias;;
+// using System;
+..Global => nrel_using: System;;
+System =>nrel_identifier: [System]; <-concept_namespace;;
+// using System.Collections.Generic;
+..Global => nrel_using: System.Collections.Generic;;
+System.Collections.Generic => nrel_identifier: [System.Collections.Generic];;
+System.Collections.Generic <- concept_namespace;<-concept_compound_name;;
+System.Collections.Generic-> System;
+             -> Collections  
+             (*
+                =>nrel_identifier: [Collections];;
+                <-concept_namespace;;
+             *);
+             -> Generic
+             (*
+                =>nrel_identifier: [Generic];;
+                <-concept_class;;
+             *);;
+// using System.Linq;
+..Global => nrel_using: System.Linq;;
+System.Linq => nrel_identifier: [System.Linq];;
+System.Linq <- concept_namespace;<-concept_compound_name;;
+System.Linq-> System;
+             -> Linq  
+             (*
+                =>nrel_identifier: [Linq];;
+                <-concept_namespace;;
+            *);;
+// using System.Linq.Expressions;
+..Global => nrel_using: System.Linq.Expressions;;
+System.Linq.Expressions => nrel_identifier: [System.Linq.Expressions];;
+System.Linq.Expressions <- concept_namespace;<-concept_compound_name;;
+System.Linq.Expressions-> System;
+             -> Linq;
+             -> Expressions
+             (*
+                =>nrel_identifier: [Expressions];;
+                <-concept_class;;
+             *);;
+// using System.Reflection;
+..Global => nrel_using: System.Reflection;;
+System.Reflection => nrel_identifier: [System.Reflection];;
+System.Reflection <- concept_namespace;<-concept_compound_name;;
+System.Reflection-> System;
+             -> Reflection  
+             (*
+                =>nrel_identifier: [Reflection];;
+                <-concept_namespace;;
+            *);;
+// using System.Reflection.Emit;
+..Global => nrel_using: System.Reflection.Emit;;
+System.Reflection.Emit => nrel_identifier: [System.Reflection.Emit];;
+System.Reflection.Emit <- concept_namespace;<-concept_compound_name;;
+System.Reflection.Emit-> System;
+             -> Reflection;
+             -> Emit
+             (*
+                =>nrel_identifier: [Emit];;
+                <-concept_class;;
+             *);;
+// using System.Reflection.Metadata.Ecma335;
+..Global => nrel_using: System.Reflection.Metadata.Ecma335;;
+System.Reflection.Metadata.Ecma335 => nrel_identifier: [System.Reflection.Metadata.Ecma335];;
+System.Reflection.Metadata.Ecma335 <- concept_namespace;<-concept_compound_name;;
+System.Reflection.Metadata.Ecma335 -> System;
+             -> Reflection;
+             -> Metadata  
+             (*
+                =>nrel_identifier: [Metadata];;
+                <-concept_namespace;;
+             *);
+             -> Ecma335
+             (*
+                =>nrel_identifier: [Ecma335];;
+                <-concept_class;;
+             *);;
+// using System.Runtime.CompilerServices;
+..Global => nrel_using: System.Runtime.CompilerServices;;
+System.Runtime.CompilerServices => nrel_identifier: [System.Runtime.CompilerServices];;
+System.Runtime.CompilerServices <- concept_namespace;<-concept_compound_name;;
+System.Runtime.CompilerServices-> System;
+             -> Runtime  
+             (*
+                =>nrel_identifier: [Runtime];;
+                <-concept_namespace;;
+             *);
+             -> CompilerServices
+             (*
+                =>nrel_identifier: [CompilerServices];;
+                <-concept_class;;
+             *);;
+// using System.Runtime.ExceptionServices;
+..Global => nrel_using: System.Runtime.ExceptionServices;;
+System.Runtime.ExceptionServices => nrel_identifier: [System.Runtime.ExceptionServices];;
+System.Runtime.ExceptionServices <- concept_namespace;<-concept_compound_name;;
+System.Runtime.ExceptionServices-> System;
+             -> Runtime;
+             -> ExceptionServices
+             (*
+                =>nrel_identifier: [ExceptionServices];;
+                <-concept_class;;
+             *);;
+// using System.Threading;
+..Global => nrel_using: System.Threading;;
+System.Threading => nrel_identifier: [System.Threading];;
+System.Threading <- concept_namespace;<-concept_compound_name;;
+System.Threading-> System;
+             -> Threading  
+             (*
+                =>nrel_identifier: [Threading];;
+                <-concept_namespace;;
+            *);;
+// using Microsoft.VisualBasic;
+..Global => nrel_using: Microsoft.VisualBasic;;
+Microsoft.VisualBasic => nrel_identifier: [Microsoft.VisualBasic];;
+Microsoft.VisualBasic <- concept_namespace;<-concept_compound_name;;
+Microsoft.VisualBasic-> Microsoft
+            (*
+                =>nrel_identifier: [Microsoft];;
+                <-concept_namespace;;
+            *);
+             -> VisualBasic  
+             (*
+                =>nrel_identifier: [VisualBasic];;
+                <-concept_namespace;;
+            *);;
+//one line comment //однострочный комментарий, комментарий
+concept_comment -> [one line comment](*<-lang_en;;<-single_line_comment;;*);;
+/*
+*  Many line comment //многострочный комментарий
+*/
+concept_comment -> [
+    Many line comment
+    ](*<-lang_en;;<-multi_line_comment;;*);;
+
+//namespace ConsoleApp1
+concept_namespace -> ..ConsoleApp1;;
+..ConsoleApp1 => nrel_identifier: [ConsoleApp1];;
+..ConsoleApp1 => nrel_list_of_variables: ..list_of_variables_of_ConsoleApp1;;
+
+// using M = System.Math
+..list_of_variables_of_ConsoleApp1 -> ..M;;
+..M => nrel_identifier: [M];;
+..M <- alias;;
+..M => nrel_using: System.Math;;
+System.Math => nrel_identifier: [System.Math];;
+System.Math <- concept_namespace;<-concept_compound_name;;
+System.Math-> System;
+             -> Math  
+             (*
+                =>nrel_identifier: [Math];;
+                <-concept_class;;
+            *);;
+
+//class Program
+..list_of_variables_of_ConsoleApp1 -> ..Program;;
+concept_class -> ..Program;;
+..Program => nrel_identifier: [Program];;
+..Program => nrel_list_of_variables: ..list_of_variables_of_Program;;
+..Program => nrel_method_list: ..method_list_of_Program;;
+..Program => nrel_list_of_operators: ..list_of_operators_of_Program;;
+
+//public Program(){}
+..method_list_of_Program -> rrel_public: rrel_constructor: con_program;;
+con_program <- concept_function; <- concept_method;;
+con_program => nrel_identifier: [Program()];;
+
+//public ~Program(){}
+..method_list_of_Program -> rrel_public: rrel_destructor: des_program;;
+des_program <- concept_function;<- concept_method;;
+des_program => nrel_identifier: [~Program()];;
+
+// private volatile int f2;
+..list_of_variables_of_Program -> rrel_private: rrel_volatile: ..f2;;
+..f2 =>nrel_identifier: [f2];;
+concept_int -> ..f2;;
+
+//int[,,] cube = {{{111, 112}, {121, 122}}, {{211, 212}, {221, 222}}};
+..list_of_operators_of_Program -> ..cube_declaration;;
+..list_of_variables_of_Program -> ..cube;;
+..cube => nrel_identifier: [cube];;
+..cube <-concept_int; <-concept_array;<-concept_multidimensional_array;;
+assignment -> ..cube_declaration(*->rrel_1: ..cube;; ->rrel_2: ..1_1;;*);;
+..cube -> rrel_1: ..1_1;;
+..1_1   -> rrel_1: ..1_2;
+        -> rrel_2: ..2_2;
+        -> rrel_2: ..3_2;
+        -> rrel_2: ..4_2;;
+concept_array -> ..1_1 ; -> ..1_2; -> ..2_2;->..3_2;-> ..4_2;;
+..1_1 <- concept_multidimensional_array;;
+..1_2 -> rrel_1: [111](*<-concept_const;;<-concept_int;;*);;
+..1_2 -> rrel_2: [112](*<-concept_const;;<-concept_int;;*);;
+..2_2 -> rrel_1: [121](*<-concept_const;;<-concept_int;;*);;
+..2_2 -> rrel_2: [122](*<-concept_const;;<-concept_int;;*);;
+..3_2 -> rrel_1: [211](*<-concept_const;;<-concept_int;;*);;
+..3_2 -> rrel_2: [212](*<-concept_const;;<-concept_int;;*);;
+..4_2 -> rrel_1: [221](*<-concept_const;;<-concept_int;;*);;
+..4_2 -> rrel_2: [222](*<-concept_const;;<-concept_int;;*);;
+
+//public readonly String Text { get; set; }
+..list_of_variables_of_Program -> rrel_public: rrel_readonly: ..Text;;
+..Text => nrel_identifier: [Text];;
+String -> ..Text;;
+String <- concept_class;;
+
+/*
+enum ErrorCode : ushort
+    {
+        None = 0,
+        Unknown = 1
+    }
+*/
+..list_of_variables_of_Program -> ..ErrorCode;;
+..ErrorCode => nrel_identifier: [ErrorCode];;
+..ErrorCode => nrel_base_type: ushort; <- concept_enum;;
+..ErrorCode => nrel_list_of_items: ..list_of_items_of_ErrorCode;;
+..list_of_items_of_ErrorCode -> ..None(*=>nrel_identifier: [None];;<-enum_item;;=>nrel_conformity:[0](*<-concept_const;;<-concept_int;;*);;*);;
+..list_of_items_of_ErrorCode -> ..Unknown(*=>nrel_identifier: [Unknown];;<-enum_item;;=>nrel_conformity:[1](*<-concept_const;;<-concept_int;;*);;*);;
+
+/*
+internal interface IDrawingObject
+    {
+        event EventHandler OnDraw;
+    }
+*/
+..list_of_variables_of_Program -> rrel_internal: ..IDrawingObject;;
+..IDrawingObject => nrel_identifier: [IDrawingObject];;
+..IDrawingObject <- interface;;
+..IDrawingObject => nrel_list_of_variables: ..list_of_variables_of_IDrawingObject;;
+..list_of_variables_of_IDrawingObject -> ..OnDraw;;
+..OnDraw => nrel_identifier: [OnDraw];;
+..OnDraw <- event;;
+..OnDraw => nrel_event_type: ..EventHandler;;
+..EventHandler => nrel_identifier: [EventHandler];;
+
+/*
+class Events : IDrawingObject
+    {
+        event EventHandler PreDrawEvent;
+        event EventHandler IDrawingObject.OnDraw
+        {
+            add => PreDrawEvent += value;
+            remove => PreDrawEvent -= value;
+        }
+    }
+*/
+..list_of_variables_of_Program -> ..Events;;
+..Events => nrel_identifier: [Events];;
+..Events <- concept_class;;
+..Events <= nrel_inheritor: ..IDrawingObject;;
+..IDrawingObject <- concept_base_class;;
+..Events => nrel_list_of_variables: ..list_of_variables_of_Events;;
+..list_of_variables_of_Events -> ..PreDrawEvent; -> ..IDrawingObject.OnDraw;;
+..PreDrawEvent => nrel_identifier: [PreDrawEvent];;
+..PreDrawEvent <- event;;
+..PreDrawEvent => nrel_event_type: ..EventHandler;;
+..IDrawingObject.OnDraw => nrel_method_list: ..method_list_of_IDrawingObject.OnDraw;;
+..method_list_of_IDrawingObject.OnDraw => nrel_handler: ..IDrawingObject.OnDraw_add(*<-concept_function;;*);;
+..method_list_of_IDrawingObject.OnDraw => nrel_handler: ..IDrawingObject.OnDraw_remove(*<-concept_function;;*);;
+//add handler
+..IDrawingObject.OnDraw_add => nrel_list_of_operators: ..list_of_operators_of_IDrawingObject.OnDraw_add;;
+..list_of_operators_of_IDrawingObject.OnDraw_add -> ..add_assignment_PreDrawEvent;;
+add_assignment -> ..add_assignment_PreDrawEvent(*
+    ->rrel_1: ..PreDrawEvent;;
+    ->rrel_2: ..value(*=>nrel_identifier:[value];;*);;
+    *);;
+//remove handler
+..IDrawingObject.OnDraw_remove => nrel_list_of_operators: ..list_of_operators_of_IDrawingObject.OnDraw_remove;;
+..list_of_operators_of_IDrawingObject.OnDraw_remove -> ..sub_assignment_PreDrawEvent;;
+sub_assignment -> ..sub_assignment_PreDrawEvent(*
+    ->rrel_1: ..PreDrawEvent;;
+    ->rrel_2: ..value;;
+    *);;
+
+
+//private ErrorCode brfed = (ErrorCode) 1;
+..list_of_variables_of_Program -> rrel_private: ..brfed;;
+..list_of_operators_of_Program -> ..brfed_declaration;;
+assignment -> ..brfed_declaration(*
+    ->rrel_1: ..brfed;;
+    ->rrel_2: [1](*=>nrel_type: ..ErrorCode;;*);;
+*);;
+..brfed => nrel_identifier: [brfed];;
+..brfed => nrel_type: ..ErrorCode;;
+
+//public struct MyStruct{}
+..list_of_variables_of_Program -> rrel_public: ..MyStruct;;
+..MyStruct =>nrel_identifier: [MyStruct];;
+..MyStruct <- concept_struct;;
+
+//static void Print() => global::System.Console.WriteLine("Using global alias");
+..method_list_of_Program -> rrel_static: ..Print;;
+..Print <-concept_function; =>nrel_return_type: concept_void;
+        =>nrel_list_of_operators: ..list_of_operators_of_Print;;
+System.Console => nrel_identifier: [System.Console];;
+System.Console <-concept_compound_name;;
+System.Console -> System; Console;;
+alias_access -> ..global_alias_operator(*
+                ->rrel_1: global_alias(*=>nrel_main_idtf: [global];;*);;
+                ->rrel_2: System.Console;;
+                *);;
+..list_of_operators_of_Print -> ..global_alias_operator;;
+..WriteLine => nrel_parameter_list: ..parameter_list_of_Print_WriteLine;;
+..parameter_list_of_Print_WriteLine -> rrel_1: [Using global_alias](*<- concept_const;;*);;
+Console => nrel_method_call: ..WriteLine;;
+
+//static void Main(string[] args)
+..method_list_of_Program -> rrel_static: ..Main;;
+..Main <- concept_function;;
+..Main <- concept_method;;
+..Main => nrel_return_type: concept_void;;
+..Main => nrel_identifier: [Main];;
+..Main => nrel_parameter_list: ..parameter_list_of_Main;;
+..parameter_list_of_Main => rrel_1: ..args(*<- concept_string;; <-concept_array;; =>nrel_identifier: [args];;*);;
+..Main => nrel_list_of_operators: ..list_of_operators_of_Main;;
+
+//var n = 12;
+..list_of_operators_of_Main -> ..n_declaration;;
+assignment -> ..n_declaration(*
+    ->rrel_1: ..n(*=>nrel_identifier: [n];;*);;
+    ->rrel_2: [12](*<-concept_const;;<-concept_int;;*);;
+*);;
+
+//var @dynamic = 4;
+..list_of_operators_of_Main -> ..ddynamic_declaration;;
+assignment -> ..ddynamic_declaration(*
+    ->rrel_1: ..ddynamic(*=>nrel_identifier: [ddynamic];;*);;
+    ->rrel_2: [4](*<-concept_const;;<-concept_int;;*);;
+*);;
+
+/*
+switch (n)
+    {
+        case 1:
+            cost += 25;
+            break;
+        case 2:
+            cost += 25;
+            goto case 1;
+        default:
+            break;
+    }
+*/
+..list_of_operators_of_Main -> ..switch_n;;
+switch -> ..switch_n(*
+    ->rrel_1: ..parameter_list_of_switch_n;;
+    ->rrel_2: ..list_of_conditions_of_switch_n;;
+*);;
+..parameter_list_of_switch_n -> rrel_1: ..n;;
+..list_of_conditions_of_switch_n -> rrel_1: ..case_1(*<-label;;*);;
+..list_of_conditions_of_switch_n -> rrel_2: ..case_2(*<-label;;*);;
+..list_of_conditions_of_switch_n -> rrel_default: ..default_of_switch_n(*<-label;;*);;
+//case 1
+..case_1 => nrel_list_of_operators: ..list_of_operators_of_case_1;;
+if -> ..case_1(*->rrel_1: rrel_const: rrel_condition: [1](*<-concept_const;;<-concept_int;;*);;
+                    =>nrel_then: ..list_of_operators_of_case_1;;
+                    =>nrel_else: ..case_2;;*);;
+..list_of_operators_of_case_1 -> rrel_1: ..plus_assignment(* <-add_assignment;;
+                                                           ->rrel_1: ..cost(*=>nrel_identifier: [cost];;*);;
+                                                           ->rrel_2: [25](*<-concept_const;;<-concept_int;;*);;*);;
+..list_of_operators_of_case_1 -> rrel_2: break;;
+//case 2
+..case_2 => nrel_list_of_operators: ..list_of_operators_of_case_2;;
+if -> ..case_2(*->rrel_1: rrel_const: rrel_condition: [2](*<-concept_const;;<-concept_int;;*);;
+                    =>nrel_then: ..list_of_operators_of_case_2;;
+                    =>nrel_else: ..default_of_switch_n;;*);;
+..list_of_operators_of_case_2 -> rrel_1: ..plus_assignment(* <-add_assignment;;
+                                                           ->rrel_1: ..cost;;
+                                                           ->rrel_2: [25](*<-concept_const;;<-concept_int;;*);;*);
+                              => nrel_goto: ..case_1;;
+//default
+..default_of_switch_n -> ..list_of_operators_of_default_of_switch_n;;
+..list_of_operators_of_default_of_switch_n -> rrel_1: break;;
+
+//var test = new int[] {1, 2, 3};
+..list_of_operators_of_Main -> ..test_declaration;;
+assignment -> ..test_declaration(*->rrel_1: ..test(*=>nrel_identifier:[test];;*);;
+                                    -> rrel_2: ..test_array;;*);;
+..test_array <- concept_int;;
+concept_array -> ..test_array(* ->rrel_1: [1](*<-concept_const;;<-concept_int;;*);;
+                                ->rrel_2: [2](*<-concept_const;;<-concept_int;;*);;
+                                ->rrel_3: [3](*<-concept_const;;<-concept_int;;*);;*);;
+
+/*
+var query = from c in test 
+    select c 
+    into d;
+*/
+..list_of_operators_of_Main -> ..query_declaration;;
+assignment -> ..query_declaration(*->rrel_1: ..query(*=>nrel_identifier: [query];;*);;
+                                    -> rrel_2: ..query_linq_expression;;*);;
+linq_selection -> ..query_linq_expression(*
+                        ->rrel_loop: ..iter(*<-fromIn;;->rrel_1: ..c;; -> rrel_2: ..test;;*);;
+                        ->rrel_select: ..c;;
+                        ->rrel_into: ..d;;
+                        *);; 
+
+/*
+    checked
+        {
+            unchecked
+            {
+                lock (new Semaphore(1, 2)) ;
+                var r = unchecked(M.Max(1, 2));
+            }
+        }
+*/
+
+..list_of_operators_of_Main -> ..Main_checked;;
+..Main_checked <- checked;;
+..Main_checked => nrel_list_of_operators: ..list_of_operators_of_Main_checked;;
+..list_of_operators_of_Main_checked -> ..Main_unchecked;;
+..Main_unchecked <- unchecked;;
+..Main_unchecked => nrel_list_of_operators: ..list_of_operators_of_Main_unchecked;;
+//lock
+..list_of_operators_of_Main_unchecked -> ..Main_unchecked_lock;;
+lock -> ..Main_unchecked_lock;;
+new -> ..new_Semaphore(*
+    ->rrel_in: rrel_class: ..Semaphore(*=>nrel_identifier:[Semaphore];;*);;
+    ->rrel_in: rrel_constructor: ..con_Semaphore(*=>nrel_parameter_list: ..parameter_list_of_Semaphore(*->rrel_1:[1](*<-concept_const;;<-concept_int;;*);;->rrel_2:[2](*<-concept_const;;<-concept_int;;*);;*);;*);;
+    ->rrel_out: rrel_object: ..Semaphore_1_2;;
+    *);;
+..Main_unchecked_lock => nrel_lock_object: ..Semaphore_1_2;;
+//var r = unchecked(M.Max(1,2))
+..list_of_operators_of_Main_unchecked -> ..r_declaration;;
+assignment -> ..r_declaration(*-> rrel_1: ..r(*=>nrel_identifier: [r];;*);;
+                                -> rrel_2: ..unchecked_M.Max_1_2;;*);;
+unchecked -> ..unchecked_M.Max_1_2;;
+concept_function -> ..M.Max(*
+    =>nrel_parameter_list: ..parameter_list_of_M.Max(*->rrel_1:[1](*<-concept_const;;<-concept_int;;*);;->rrel_2:[2](*<-concept_const;;<-concept_int;;*);;*);;
+    =>nrel_output: ..M.Max_1_2;;*);;
+..unchecked_M.Max_1_2 => nrel_uncheck: ..M.Max_1_2;;
+
+
+// internal abstract class Some
+//    {
+//        protected virtual int A => 1;
+//       public abstract int ehl();
+//    }
+nrel_return      <- sc_node_norole_relation;;
+nrel_return_type <- sc_node_norole_relation;;
+nrel_abstract    <- sc_node_norole_relation;;
+nrel_public      <- sc_node_norole_relation;;
+..Some <- concept_class;
+       <- concept_abstract_class;
+       <- concept_internal_class;
+       <- ..list_of_variables_of_Program;;
+concept_primitive -> int;;
+..Some => nrel_method_list : ..method_list_of_Some;;
+..A <- concept_function;
+    <- concept_virtual_function;;
+concept_number_literal -> [1];;
+..method_list_of_Some => nrel_protected: ..A;;
+..method_list_of_Some => nrel_virtual: ..A;;
+..A                   => nrel_identifier: [A];;
+..A                   => nrel_return: [1];;
+..A                   => nrel_return_type: int;;
+..method_list_of_Some => nrel_public: ..ehl;;
+..method_list_of_Some => nrel_abstarct: ..ehl;;
+..ehl                 => nrel_identifier: [ehl];;
+..ehl                 => nrel_return_type: int;;
+//private static async void Wait()
+..waitFunction <- concept_function;;
+..waitFunction <- concept_method;;
+..waitFunction <- concept_static_method;;
+..waitFunction <- concept_async_method;;
+..waitFunction => nrel_identifier: [Wait];;
+nrel_await <- sc_node_norole_relation;;
+nrel_yield <- sc_node_norole_relation;;
+..method_list_of_Program => nrel_private: ..waitFunction ;;
+ //await new YieldAwaitable();
+ //yield true;
+ concept_logical_literal -> [true];;
+..yieldAwaitable_object <- concept_object;;
+..waitFunction => nrel_await : ..yieldAwaitable_object;; 
+..waitFunction => nrel_yield : [true];;
+// [Obsolete("Name", false)]
+Obsolete          <- concept_attribute ;;
+concept_attribute <- concept_class;;
+concept_string_literal <- concept_literal;
+                       -> [Name];;
+concept_logical_literal <- concept_literal;
+                        -> [false];;
+..params <- sc_node_not_binary_tuple;;
+..params -> [Name];
+         -> [false];;
+..method_with_params => nrel_params: ..params;;
+..method_with_params => nrel_method: [Obsolete];;
+..code => nrel_method_call : ..method_with_params;;
+// public MyClass() {}
+..list_of_variables_of_Program => nrel_public: ..MyClass;;
+..MyClass <- concept_class;;
+..MyClass => nrel_identifier : [MyClass];;
+//private delegate void hel(); 
+concept_delegate <- concept_function;;
+void             <- concept_primitive;;
+..hel <- concept_function;;
+..hel => nrel_return_type: void;;
+..hel => nrel_identifier: [hel];;
+..method_list_of_Program => nrel_private : ..hel;;
+// Dictionary<String, bool> dict = new Dictionary<String, bool>();
+Dictionary <- concept_class;;
+String     <- concept_class;;
+bool       <- concept_primitive;;
+nrel_generalization     <- sc_node_norole_relation;;
+nrel_identifier         <- sc_node_norole_relation;;
+nrel_instance           <- sc_node_norole_relation;;
+nrel_equals             <- sc_node_norole_relation;;
+..dict_exact_generalization <- sc_node_not_binary_tuple;;
+..dict_exact_generalization -> String;
+                            -> bool;;
+list_of_variables_of_Program -> ..dict ;;
+Dictionary => nrel_instance: ..dict;; 
+..dict     => nrel_identifier : [dict];;
+..dict     => nrel_generalization: ..dict_exact_generalization;;
+..parametrized_object_of_Dictionary_class <- concept_object;;
+..parametrized_object_of_Dictionary_class => 
+nrel_generalization: ..dict_exact_generalization;;
+..dict => nrel_equals: ..parametrized_object_of_Dictionary_class;;
+// do {
+//     ...code...
+// } while (true)
+concept_while_loop <- concept_loop;;
+nrel_break <- sc_node_norole_relation;;
+concept_logical_literal -> [false];;
+..code <- concept_code_block;;
+..current_loop <- concept_while_loop;;
+..current_loop => nrel_if_statement: [false];;
+..current_loop => nrel_then_statement: ..code;;
+// c = false;
+concept_logical_literal -> [false];;
+..c => nrel_equals: [false];;
+// this.a = a;
+..object <- concept_object;;
+..another_object <- concept_object;;
+..another_object=> nrel_identifier: [a];;
+nrel_field <- sc_node_norole_relation;;
+..a        <- concept_object;;
+..a => nrel_identifier: [a];;
+..object => nrel_field: ..a;;
+..a => nrel_equals : ..another_object;;
+// foreach (var VARIABLE in new Collection()){}
+concept_foreach_loop <- concept_loop;;
+concept_compiler_detected_type <- concept_class;;
+nrel_foreach <- sc_node_norole_relation;;
+..code <- concept_code_block;;
+concept_compiler_detected_type => nrel_instance: ..variable;;
+..variable => nrel_identifier : [VARIABLE];;
+..current_loop <- concept_foreach_loop;;
+Collection <- concept_class;;
+Collection => nrel_instance: ..collection;;
+..current_loop => nrel_foreach: ..collection;;
+..current_loop => nrel_then_statement: ..code;;
+// private void d(dynamic a, out bool c, ref byte ca, int one = 1, in char te)
+concept_dynamic_type <- concept_object;;
+..method_list_of_Program => nrel_private: ..d;;
+..d <- concept_function;
+    => nrel_return_type: void;
+    => nrel_identifier: [d];
+    => nrel_return: ..c;;
+..a <- concept_dynamic_type;;
+..a => nrel_identifier: [a];;
+..c <- bool;;
+..c => nrel_identifier: [c];;
+byte <- concept_primitive;;
+concept_byte_pointer <- concept_pointer;;
+..ca <- concept_byte_pointer;;
+..ca => nrel_identifier : [ca];;
+concept_number_literal -> [1];;
+..one <- int;;
+..one => nrel_identifier : [one];;
+..one => nrel_equals: [1];;
+char <- concept_primitive;;
+concept_char_pointer <- concept_pointer;;
+..te <- concept_constant;;
+..te <- concept_char_pointer;;
+..te => nrel_identifier : [te];;
+..params <- sc_node_not_binary_tuple;;
+..params -> ..a;
+         -> ..c;
+         -> ..ca;
+         -> ..one;
+         -> ..te;;
+..method_with_params => nrel_params: ..params;;
+..method_with_params => nrel_method: ..d;;
+// if (true) ...code...
+// else ...code...
+..code_if   <- concept_code_block;;
+..code_else <- concept_code_block;;
+nrel_if_statement   <- sc_node_norole_relation;;
+nrel_else_statement <- sc_node_norole_relation;;
+nrel_then_statement <- sc_node_norole_relation;;
+..condition <-concept_condition;;
+concept_logical_literal -> [true];;
+..condition => nrel_if_statement: [true];;
+..condition => nrel_then_statement: ..code_if;;
+..condition => nrel_else_statement: ..code_else;;
+// private interface x {}
+..list_of_variables_of_Program => nrel_private: ..x;;
+..x <- concept_interface;;
+..x => nrel_identifier : [x];;
+//unsafe
+//{
+// int* a = &i; 
+// String b = a->ToString(); 
+//}
+concept_unsafe_code_block <- concept_code_block;;
+concept_int_pointer       <- concept_pointer;;
+..unsafe_code             <- concept_unsafe_code_block;;
+String                    <- concept_class;;
+nrel_pointer              <- sc_node_norole_relation;;
+nrel_method_call          <- sc_node_norole_relation;;
+..unsafe_code = [*
+    // int* a = &i; 
+    ..a => nrel_identifier: [a];;
+    concept_int_pointer => nrel_instance: ..a;;
+    ..result => nrel_pointer: ..var;;
+    ..a => nrel_equals: ..result;;
+
+    // String b = a->ToString();
+    ..b => nrel_identifier: [b];;
+    String => nrel_instance : ..b;;
+    ..str => nrel_method_call: [ToString];;
+    ..b => nrel_equals: ..str;;
+*];;
+// for (int i = 0; i < 100; i++) {}
+concept_for_loop <- concept_loop;;
+nrel_initial_state  <- sc_node_norole_relation;;
+nrel_if_statement   <- sc_node_norole_relation;;
+nrel_then_statement <- sc_node_norole_relation;;
+..i               => nrel_identifier : [i];;
+..i               => nrel_equals : [0];;
+int => nrel_primitive : ..i;;
+..current_loop <- concept_for_loop;;
+..logical_expression <- concept_logical_expression;;
+concept_number_literal -> [100];;
+..logical_expression => nrel_math_operaiton: [100];;
+..logical_expression => nrel_math_operaiton: ..i;;
+..code <- concept_code_block;; 
+..increment=> nrel_equals:  ..i;;
+..increment => nrel_math_operaiton: [i];;
+..then_part <- sc_node_not_binary_tuple;;
+..then_part -> ..code;;
+..then_part -> ..increment;;
+..current_loop => nrel_initial_state: ..i;;
+..current_loop => nrel_if_statement : ..logical_expression;;
+..current_loop => nrel_then_statement: ..then_part;;
+//private int cf = ~3 * 6 + 12 - 3 + (!true ? 1 : 5);
+concept_primitive  -> int;
+                   -> bool;;
+..list_of_variables_of_Program => nrel_private: ..cf;;
+..cf => nrel_identifier: [cf];;
+int => nrel_primitive: ..cf;;
+//(!true ? 1 : 5)
+concept_logical_literal -> [true];;
+concept_number_literal -> [1];
+                       -> [5];;
+..nested_logical_statement => nrel_if_statement: [true];;
+..nested_logical_statement => nrel_then_statement: [1];;
+..nested_logical_statement => nrel_else_statement: [5];;
+concept_logical_expression -> ..nested_logical_statement;;
+//~3
+concept_number_literal -> [3];;
+..nested_bytes_statement => nrel_bytes_operation: [3];;
+concept_bytes_expression -> ..nested_bytes_statement;;
+//.. * 6 + 12 - 3
+concept_number_literal -> [6];
+                       -> [12];;
+..nested_math_statement => nrel_math_operaiton: [6];;
+..nested_math_statement => nrel_math_operaiton: [2];;
+..nested_math_statement => nrel_math_operaiton: [3];;
+concept_math_expression -> ..nested_math_statement;;
+..operations <- sc_node_not_binary_tuple;;
+..operations -> ..nested_math_statement;
+             -> ..nested_logical_statement;
+             -> ..nested_bytes_statement;;
+..operation_result <= nrel_apply_operation: ..operations;;
+..cf => nrel_equals: ..operation_result;;
+//Console.WriteLine("LLL");
+nrel_method <- sc_node_norole_relation;;
+Console <- concept_class;;
+Console => nrel_method_list: ..console_method_list;;
+..console_method_list <- sc_node_not_relation;;
+..console_method_list -> ..WriteLine;;
+concept_function -> ..WriteLine;;
+concept_method -> ..WriteLine;;
+concept_static_method -> ..WriteLine;;
+..WriteLine => nrel_identifier: [WriteLine];;
+concept_string_literal <- concept_literal;
+                       -> [LLL];;
+..LLL <- String;;
+..LLL => nrel_equals: [LLL];;
+..params <- sc_node_not_binary_tuple;;
+..params -> ..LLL;;
+..method_with_params => nrel_params: ..params;;
+..method_with_params => nrel_method: ..WriteLine;;
+Console => nrel_method_call: ..method_with_params;;
+//int? length = new int().GetHashCode();
+[null] <- concept_literal;;
+..int_object <- concept_object;;
+..int_object => nrel_method_call: [GetHashCode];;
+int <- concept_primitive;;
+..list_of_variables_of_Program -> ..length;;
+int      => nrel_primitive: ..length;;
+..length => nrel_identifier: [length];;
+..length => nrel_equals: ..int_object;;
+..logical_expression <- concept_logical_expression;;
+..equality <- concept_logical_expression;;
+..equality => nrel_equals: [Null];;
+..equality => nrel_equals: ..int_object;;
+..logical_expression => nrel_if_statement: ..equality;;
+..logical_expression => nrel_then_statement: ..statement;;
+..statement => nrel_equals: [Null];;
+..statement => nrel_equals: ..length;; 
+// private sealed partial class MyClass : Program {}
+..list_of_variables_of_Program => nrel_private: ..MyClass;;
+nrel_inherits <- sc_node_norole_relation;;
+concept_sealed_class <- concept_class;;
+concept_partial_class <- concept_class;;
+..MyClass <- concept_sealed_class;
+          <- concept_partial_class;;
+Program <- concept_class;;
+..MyClass => nrel_inherits: Program;;
+// public override string ToString() 
+// {
+//    return $@"{"FD" + "1"}";
+// }
+// public override string ToString() 
+..method_list_of_Program => nrel_public : ..ToString;;
+..ToString => nrel_identifier: [ToString];;
+..ToString <- concept_function;
+           <- concept_virtual_function;
+           => nrel_return_type: String;;
+// return $"{"FD" + "1"}";
+concept_string_literal -> [FD];
+                       -> [1];;
+..nested_string_statement => nrel_math_operaiton: [FD];;
+..nested_string_statement => nrel_math_operaiton: [1];;
+concept_string_expression -> ..nested_string_statement;;
+..ToString => nrel_return : ..nested_string_statement;;
+// throw new Exception();
+Exception    <- concept_class;;
+Exception    => nrel_instance: ..exception_object;;
+nrel_throw   <- sc_node_norole_relation;;
+..code_block <- concept_code_block;;
+..code_block => nrel_throw: ..exception_object;;
+// private int a;
+..a <- int;;
+..list_of_vaariable_of_Program => nrel_private : ..a;;
+..a => nrel_identifier : [a];;
+// public bool b;  
+..b <- bool;;
+..list_of_vaariable_of_Program => nrel_public : ..b;;
+..b => nrel_identifier : [b];;
+// protected char c; 
+char <- concept_primitive;;
+..c <- char;;
+..list_of_vaariable_of_Program => nrel_protected : ..c;;
+..c => nrel_identifier : [c];;
+// private readonly char d;
+..d <- char;;
+..list_of_vaariable_of_Program => nrel_protected : ..d;;
+..list_of_vaariable_of_Program => nrel_readonly : ..d;;
+..d => nrel_identifier : [d];;
+//while (false)
+//{
+//   ...code...
+//} 
+concept_logical_literal -> [false];;
+..code <- concept_code_block;;
+..current_loop <- concept_while_loop;;
+..current_loop => nrel_if_statement: [false];;
+..current_loop => nrel_then_statement: ..code;;
+*];;

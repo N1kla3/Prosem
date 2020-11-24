@@ -1,0 +1,9 @@
+
+
+concept_expression <- sc_node_not_relation;;
+
+//Идентификаторы
+concept_expression => nrel_main_idtf: [выражение](* <- lang_ru;; *);;
+concept_expression => nrel_main_idtf: [expression](* <- lang_en;; *);;
+
+

@@ -1,0 +1,21 @@
+//compound_name
+//составное имя
+
+concept_compound_name <- sc_node_not_relation;;
+
+//Идентификаторы
+concept_compound_name => nrel_main_idtf: [составное имя](* <- lang_ru;; *);;
+concept_compound_name => nrel_main_idtf: [compound name](* <- lang_en;; *);;
+
+// Определение
+definition -> ...
+(*
+->rrel_key_sc_element: concept_compound_name;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Составное имя - имя состоящие из <b><sc_element sys_idtf ="concept_namespace">пространства имён</sc_element></b> и <b><sc_element sys_idtf ="concept_class">класса</sc_element></b> или нескольких пространств имён.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Определение (составное имя)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ concept_class;
+ concept_namespace
+};;
+*);;

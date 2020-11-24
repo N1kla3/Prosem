@@ -1,0 +1,50 @@
+//sub_assignment
+
+sub_assignment <- sc_node_not_relation;;
+concept_operator => nrel_inclusion: sub_assignment;;
+
+//Идентификаторы
+sub_assignment => nrel_idtf: [ operator -= ](* <- lang_en;; *);;
+sub_assignment => nrel_main_idtf: [sub assignment](* <- lang_en;; *);;
+sub_assignment => nrel_main_idtf: [вычитание с присвоением](* <- lang_ru;; *);;
+
+// Определение
+definition -> ...
+(*
+	->rrel_key_sc_element: sub_assignment;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Операторы класса sub_assignment (-=) описывают действие вычитания между собой содержимых двух переменных, являющихся значениями первого и второго операндов, и запись результата в первый операнд.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (вычитание с присвоением)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+	 concept_operator;
+	 subtraction;
+	 assignment
+	};;
+*);;
+
+// Утверждение
+statement ->...
+(*
+->rrel_key_sc_element: sub_assignment;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Выражение, использующее оператор -=, такое как x -= y эквивалентно x = x - y.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение (вычитание с присвоением)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ 	concept_expression
+};;
+*);;
+
+//Визуализация
+illustration -> ...
+(*
+	->rrel_key_sc_element: sub_assignment;;
+	=>nrel_main_idtf:
+	[визуализация оператора -= ] (* <- lang_ru;; *);;
+	=>nrel_main_idtf:
+	[sub assignment visualization](* <- lang_en;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://img/sub_assignment.png"(*=>nrel_format:format_png;;*);;
+	*);;
+
+*);;
