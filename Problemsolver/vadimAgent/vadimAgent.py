@@ -23,6 +23,7 @@ class vadimAgent(ScAgent):
                 print('while')
                 iterate_mod_find_name_method = self.module.ctx.Iterator5(iterate_find_name_method.Get(2), ScType.EdgeDCommonConst, ScType.NodeConst, ScType.EdgeAccessConstPosPerm, method_modificator)
         except:
+            print('error')
         return ScResult.Ok
 
             
