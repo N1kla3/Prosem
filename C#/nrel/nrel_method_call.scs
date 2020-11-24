@@ -1,0 +1,34 @@
+//method call
+//вызов метода
+
+//Идентификаторы
+nrel_method_call => nrel_main_idtf: [ вызов метода* ](* <- lang_ru;; *);;
+nrel_method_call => nrel_main_idtf: [ method call* ](* <- lang_en;; *);;
+
+//Свойства
+relation => nrel_inclusion: oriented_relation;; 
+relation => nrel_inclusion: norole_relation;;
+relation => nrel_inclusion: binary_relation;;
+oriented_relation -> nrel_method_call;;
+norole_relation-> nrel_method_call;;
+binary_relation => nrel_inclusion: antireflexive_relation;;
+binary_relation => nrel_inclusion: asymmetric_relation;; 
+binary_relation => nrel_inclusion: antitransitive_relation;; 
+antitransitive_relation -> nrel_method_call;;
+antireflexive_relation  -> nrel_method_call;; 
+asymmetric_relation  -> nrel_method_call;;
+
+//Домены
+nrel_method_call => nrel_first_domain: concept_class;;
+nrel_method_call => nrel_second_domain: concept_function;;
+nrel_method_call => nrel_definitional_domain:
+{
+    concept_class;
+    concept_function
+};;
+//Арность
+sc_node_not_relation -> ..y;;
+arity -> ..y;;
+..y -> nrel_method_call;;
+concept_2 <- number;;
+concept_2 <= measurement: ..y;;

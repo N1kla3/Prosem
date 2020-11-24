@@ -1,0 +1,10 @@
+
+
+concept_foreach_loop <- sc_node_not_relation;;
+concept_foreach_loop <- concept_loop;;
+
+//Идентификаторы
+concept_foreach_loop => nrel_main_idtf: [цикл foreach](* <- lang_ru;; *);;
+concept_foreach_loop => nrel_main_idtf: [foreach loop](* <- lang_en;; *);;
+
+

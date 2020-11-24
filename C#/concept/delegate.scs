@@ -1,0 +1,35 @@
+
+
+concept_delegate <- sc_node_not_relation;;
+concept_delegate <- concept_function;;
+
+//Идентификаторы
+concept_delegate => nrel_main_idtf: [делегат](* <- lang_ru;; *);;
+concept_delegate => nrel_main_idtf: [delegate](* <- lang_en;; *);;
+
+
+// Определение
+definition -> ..concept_delegate_definition
+(*
+->rrel_key_sc_element: concept_delegate;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Делегаты представляют такие объекты, которые указывают на методы. То есть делегаты - это указатели на методы и с помощью делегатов мы можем вызвать данные методы.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (делегат)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ concept_pointer;
+ concept_function
+};;
+*);;
+
+
+// Утверждение
+statement -> ..concept_delegate_statement
+(*
+->rrel_key_sc_element: concept_delegate;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Для объявления делегата используется ключевое слово delegate, после которого идет возвращаемый тип, название и параметры.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение (делегат)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{ 
+ concept_class
+};;
+*);;

@@ -1,0 +1,29 @@
+
+
+//Идентификаторы
+nrel_await => nrel_main_idtf: [ await* ](* <- lang_en;; *);;
+
+//Свойства
+
+oriented_relation -> nrel_await;;
+norole_relation   -> nrel_await;;
+
+antitransitive_relation -> nrel_await;;
+antireflexive_relation  -> nrel_await;; 
+antisymmetric_relation  -> nrel_await;;
+
+//Домены
+nrel_await => nrel_first_domain: concept_function;;
+nrel_await => nrel_second_domain: concept_object;;
+nrel_await => nrel_definitional_domain:
+{
+    concept_function;
+    concept_object
+};;
+
+//Арность
+sc_node_not_relation -> ..a;;
+arity -> ..a;;
+..a -> nrel_await;;
+concept_2 <- number;;
+concept_2 <= measurement: ..a;;

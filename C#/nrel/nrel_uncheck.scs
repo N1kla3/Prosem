@@ -1,0 +1,48 @@
+//uncheck
+//проверка на переполнение 
+nrel_uncheck <- sc_node_norole_relation;;
+//Идентификаторы
+nrel_uncheck => nrel_main_idtf: [ uncheck* ](* <- lang_en;; *);;
+nrel_uncheck => nrel_main_idtf: [ uncheck* ](* <- lang_ru;; *);;
+
+//Свойства
+relation => nrel_inclusion: oriented_relation;; 
+relation => nrel_inclusion: norole_relation;;
+relation => nrel_inclusion: binary_relation;;
+oriented_relation -> nrel_uncheck;;
+norole_relation-> nrel_uncheck;;
+binary_relation => nrel_inclusion: antireflexive_relation;;
+binary_relation => nrel_inclusion: antisymmetric_relation;; 
+binary_relation => nrel_inclusion: antitransitive_relation;; 
+antitransitive_relation -> nrel_uncheck;;
+antireflexive_relation  -> nrel_uncheck;; 
+antisymmetric_relation  -> nrel_uncheck;;
+
+// Определение
+definition -> ...
+(*
+->rrel_key_sc_element: nrel_uncheck;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[uncheck* - бинарное отношение, связывающее оператор <b><sc_element sys_idtf="concept_unchecked">unchecked</sc_element></b> и проверяемый объект.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Определение (uncheck*)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ unchecked;
+    concept_object
+};;
+*);;
+
+
+//Домены
+nrel_uncheck => nrel_first_domain: unchecked;;
+nrel_uncheck => nrel_second_domain: concept_object;;
+nrel_uncheck => nrel_definitional_domain:
+{
+    unchecked;
+    concept_object
+};;
+//Арность
+sc_node_not_relation -> ..y;;
+arity -> ..y;;
+..y -> nrel_uncheck;;
+concept_2 <- number;;
+concept_2 <= measurement: ..y;;

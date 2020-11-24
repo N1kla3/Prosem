@@ -1,0 +1,12 @@
+//assignment
+//присвоение
+
+assignment <- sc_node_not_relation;;
+
+//Идентификаторы
+assignment => nrel_main_idtf: [присвоение](* <- lang_ru;; *);;
+assignment => nrel_main_idtf: [assignment](* <- lang_en;; *);;
+assignment => nrel_idtf: [ operator = ](* <- lang_en;; *);;
+
+
+

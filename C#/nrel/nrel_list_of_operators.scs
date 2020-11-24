@@ -1,0 +1,48 @@
+//list of operators
+//список операторов
+nrel_list_of_operators <- sc_node_norole_relation;;
+//Идентификаторы
+nrel_list_of_operators => nrel_main_idtf: [ список операторов* ](* <- lang_ru;; *);;
+nrel_list_of_operators => nrel_main_idtf: [ list of operators* ](* <- lang_en;; *);;
+
+//Свойства
+relation => nrel_inclusion: oriented_relation;; 
+relation => nrel_inclusion: norole_relation;;
+relation => nrel_inclusion: binary_relation;;
+oriented_relation -> nrel_list_of_operators;;
+norole_relation-> nrel_list_of_operators;;
+binary_relation => nrel_inclusion: antireflexive_relation;;
+binary_relation => nrel_inclusion: antisymmetric_relation;; 
+binary_relation => nrel_inclusion: antitransitive_relation;; 
+antitransitive_relation -> nrel_list_of_operators;;
+antireflexive_relation  -> nrel_list_of_operators;; 
+antisymmetric_relation  -> nrel_list_of_operators;;
+
+// Определение
+definition -> ...
+(*
+->rrel_key_sc_element: nrel_list_of_operators;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Список операторов - бинарное отношение, связывающее функцию и множество её операторов.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (Список операторов*)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ set;
+ concept_function
+};;
+*);;
+
+
+//Домены
+nrel_list_of_operators => nrel_first_domain: concept_function;;
+nrel_list_of_operators => nrel_second_domain: set;;
+nrel_list_of_operators => nrel_definitional_domain:
+{
+    concept_function;
+    set
+};;
+//Арность
+sc_node_not_relation -> ..y;;
+arity -> ..y;;
+..y -> nrel_list_of_operators;;
+concept_2 <- number;;
+concept_2 <= measurement: ..y;;

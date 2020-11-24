@@ -1,0 +1,47 @@
+//list of items
+//список предметов
+nrel_list_of_items <- sc_node_norole_relation;;
+//Идентификаторы
+nrel_list_of_items => nrel_main_idtf: [ список элементов* ](* <- lang_ru;; *);;
+nrel_list_of_items => nrel_main_idtf: [ list of items* ](* <- lang_en;; *);;
+
+//Свойства
+relation => nrel_inclusion: oriented_relation;; 
+relation => nrel_inclusion: norole_relation;;
+relation => nrel_inclusion: binary_relation;;
+oriented_relation -> nrel_list_of_items;;
+norole_relation-> nrel_list_of_items;;
+binary_relation => nrel_inclusion: antireflexive_relation;;
+binary_relation => nrel_inclusion: antisymmetric_relation;; 
+binary_relation => nrel_inclusion: antitransitive_relation;; 
+antitransitive_relation -> nrel_list_of_items;;
+antireflexive_relation  -> nrel_list_of_items;; 
+antisymmetric_relation  -> nrel_list_of_items;;
+
+// Определение
+definition -> ...
+(*
+->rrel_key_sc_element: nrel_list_of_items;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Список элементов - бинарное отношение, связывающее <b><sc_element sys_idtf="concept_enum">тип перечисления</sc_element></b> и множество его элементов.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Определение (Список элементов*)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ set;
+ concept_enum
+};;
+*);;
+
+//Домены
+nrel_list_of_items => nrel_first_domain: concept_enum;;
+nrel_list_of_items => nrel_second_domain: set;;
+nrel_list_of_items => nrel_definitional_domain:
+{
+    concept_enum;
+    set
+};;
+//Арность
+sc_node_not_relation -> ..y;;
+arity -> ..y;;
+..y -> nrel_list_of_items;;
+concept_2 <- number;;
+concept_2 <= measurement: ..y;;

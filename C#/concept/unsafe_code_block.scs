@@ -1,0 +1,10 @@
+
+
+concept_unsafe_code_block <- sc_node_not_relation;;
+concept_unsafe_code_block <- concept_code_block;;
+
+//Идентификаторы
+concept_unsafe_code_block => nrel_main_idtf: [блок небезопасного кода](* <- lang_ru;; *);;
+concept_unsafe_code_block => nrel_main_idtf: [block of unsafe code](* <- lang_en;; *);;
+
+

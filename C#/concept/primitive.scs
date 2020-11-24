@@ -1,0 +1,9 @@
+
+
+concept_primitive <- sc_node_not_relation;;
+
+//Идентификаторы
+concept_primitive => nrel_main_idtf: [примитив](* <- lang_ru;; *);;
+concept_primitive => nrel_main_idtf: [primitive](* <- lang_en;; *);;
+
+

@@ -1,0 +1,10 @@
+
+
+concept_dynamic_type <- sc_node_not_relation;;
+concept_dynamic_type  <- concept_object;;
+
+//Идентификаторы
+concept_dynamic_type => nrel_main_idtf: [динамический тип](* <- lang_ru;; *);;
+concept_dynamic_type => nrel_main_idtf: [dynamic type](* <- lang_en;; *);;
+
+

@@ -1,0 +1,49 @@
+//enum
+//перечисление
+
+enum_item <- sc_node_not_relation;;
+
+//Идентификаторы
+enum_item => nrel_main_idtf: [элемент перечисления](* <- lang_ru;; *);;
+enum_item => nrel_main_idtf: [enum item](* <- lang_en;; *);;
+
+// Определение
+definition -> ...
+(*
+->rrel_key_sc_element: enum_item;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Элемент <b><sc_element sys_idtf ="concept_enum">типа перечисления</sc_element></b>.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Определение (элемент перечисления)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ concept_enum
+};;
+*);;
+
+
+// Утверждение
+statement ->...
+(*
+->rrel_key_sc_element: enum_item;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Для элемента перечисления можно поставить константу в <b><sc_element sys_idtf ="nrel_conformity">соответствие</sc_element></b>.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Утверждение (элемент перечисления)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{ 
+ concept_const;
+nrel_conformity
+};;
+*);;
+
+//Визуализация
+illustration -> ...
+(*
+	->rrel_key_sc_element: enum_item;;
+	=>nrel_main_idtf:
+	[визуализация элемента перечисления ] (* <- lang_ru;; *);;
+	=>nrel_main_idtf:
+	[enum item visualization](* <- lang_en;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://img/enum_item.png"(*=>nrel_format:format_png;;*);;
+	*);;
+
+*);;

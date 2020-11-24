@@ -1,0 +1,59 @@
+subject_domain_of_c_sharp_language
+	=> nrel_main_idtf:[Предметная область язык C#](* <- lang_ru;; *);
+	=> nrel_main_idtf:[Subject domain of C# language](* <- lang_en;; *);
+<- subject_domain;
+
+-> rrel_maximum_studied_object_class: c_sharp;
+
+-> rrel_not_maximum_studied_object_class:
+add_assignment;
+sub_assignment;
+alias_access;
+switch;
+linq_selection;
+checked;
+unchecked;
+lock;
+new;
+concept_namespace;
+concept_compound_name;
+alias;
+concept_base_class;
+event;
+nrel_identifier;
+nrel_list_of_variables;
+nrel_list_of_operators;
+nrel_list_of_items;
+nrel_conformity;
+nrel_method_list;
+nrel_parameter_list;
+nrel_using;
+nrel_extern;
+nrel_goto;
+nrel_base_type;
+nrel_event_type;
+nrel_return_type;
+nrel_handler;
+nrel_method_call;
+nrel_lock_object;
+nrel_uncheck;
+nrel_output;
+rrel_public;
+rrel_private;
+rrel_internal;
+rrel_static;
+rrel_class;
+rrel_object;
+rrel_constructor;
+rrel_destructor;
+rrel_volatile;
+rrel_readonly;
+rrel_default;
+rrel_const;
+rrel_condition;
+rrel_loop;
+rrel_select;
+rrel_into;
+
+
+CSharpCodeShorten;;

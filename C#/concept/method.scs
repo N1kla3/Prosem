@@ -1,0 +1,9 @@
+
+
+concept_method <- sc_node_not_relation;;
+
+//Идентификаторы
+concept_object => nrel_main_idtf: [метод](* <- lang_ru;; *);;
+concept_object => nrel_main_idtf: [method](* <- lang_en;; *);;
+
+

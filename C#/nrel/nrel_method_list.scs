@@ -1,0 +1,48 @@
+//method list
+//список методов
+nrel_method_list <- sc_node_norole_relation;;
+//Идентификаторы
+nrel_method_list => nrel_main_idtf: [ список методов* ](* <- lang_ru;; *);;
+nrel_method_list => nrel_main_idtf: [ method list* ](* <- lang_en;; *);;
+
+//Свойства
+relation => nrel_inclusion: oriented_relation;; 
+relation => nrel_inclusion: norole_relation;;
+relation => nrel_inclusion: binary_relation;;
+oriented_relation -> nrel_method_list;;
+norole_relation-> nrel_method_list;;
+binary_relation => nrel_inclusion: antireflexive_relation;;
+binary_relation => nrel_inclusion: antisymmetric_relation;; 
+binary_relation => nrel_inclusion: antitransitive_relation;; 
+antitransitive_relation -> nrel_method_list;;
+antireflexive_relation  -> nrel_method_list;; 
+antisymmetric_relation  -> nrel_method_list;;
+
+// Определение
+definition -> ...
+(*
+->rrel_key_sc_element: nrel_method_list;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Список методов - бинарное отношение, связывающее <b><sc_element sys_idtf="concept_class">класс</sc_element></b> и множество его методов.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Определение (Список методов*)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ set;
+ concept_class
+};;
+*);;
+
+
+//Домены
+nrel_method_list => nrel_first_domain: concept_class;;
+nrel_method_list => nrel_second_domain: set;;
+nrel_method_list => nrel_definitional_domain:
+{
+    concept_class;
+    set
+};;
+//Арность
+sc_node_not_relation -> ..y;;
+arity -> ..y;;
+..y -> nrel_method_list;;
+concept_2 <- number;;
+concept_2 <= measurement: ..y;;

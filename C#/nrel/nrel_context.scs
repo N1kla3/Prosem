@@ -1,0 +1,31 @@
+
+
+//Идентификаторы
+nrel_context => nrel_main_idtf: [ context* ](* <- lang_en;; *);;
+nrel_context => nrel_main_idtf: [ контекст* ](* <- lang_ru;; *);;
+
+
+//Свойства
+
+oriented_relation -> nrel_context;;
+norole_relation   -> nrel_context;;
+
+antitransitive_relation -> nrel_context;;
+antireflexive_relation  -> nrel_context;; 
+antisymmetric_relation  -> nrel_context;;
+
+//Домены
+nrel_context => nrel_first_domain: ..b;;
+nrel_context => nrel_second_domain: concept_code_block;;
+nrel_context => nrel_definitional_domain:
+{
+    ..b;
+    concept_code_block
+};;
+
+//Арность
+sc_node_not_relation -> ..a;;
+arity -> ..a;;
+..a -> nrel_context;;
+concept_2 <- number;;
+concept_2 <= measurement: ..a;;

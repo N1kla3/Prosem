@@ -1,0 +1,10 @@
+
+
+concept_virtual_function <- sc_node_not_relation;;
+concept_virtual_function <- concept_function;;
+
+//Идентификаторы
+concept_virtual_function => nrel_main_idtf: [виртуальная функция](* <- lang_ru;; *);;
+concept_virtual_function => nrel_main_idtf: [virtual function](* <- lang_en;; *);;
+
+

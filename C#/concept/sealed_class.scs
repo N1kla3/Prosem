@@ -1,0 +1,25 @@
+
+
+concept_sealed_class <- sc_node_not_relation;;
+concept_sealed_class <- concept_class;;
+
+//Идентификаторы
+concept_sealed_class => nrel_main_idtf: [класс запрещающий наследование](* <- lang_ru;; *);;
+concept_sealed_class => nrel_main_idtf: [sealed class](* <- lang_en;; *);;
+
+// Определение
+definition -> ..sealed_class_definition
+(*
+->rrel_key_sc_element: concept_sealed_class;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Класс запрещающий наследование - класс, наследование от которого запрещено](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (класс запрещающий наследование)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ concept_class;
+ concept_struct;
+ nrel_inherit
+};;
+*);;
+
+
+

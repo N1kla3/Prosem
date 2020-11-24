@@ -1,0 +1,21 @@
+//base class
+//базовый класс
+
+concept_base_class <- sc_node_not_relation;;
+
+//Идентификаторы
+concept_base_class => nrel_main_idtf: [базовый класс](* <- lang_ru;; *);;
+concept_base_class => nrel_main_idtf: [base class](* <- lang_en;; *);;
+
+// Определение
+definition -> ...
+(*
+->rrel_key_sc_element: concept_base_class;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Базовый класс - это <b><sc_element sys_idtf ="concept_class">класс</sc_element></b>, от которого <b><sc_element sys_idtf ="nrel_inheritor">наследуются</sc_element></b>.](*<-lang_ru;;=>nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Определение (базовый класс)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ nrel_inheritor;
+ concept_class
+};;
+*);;

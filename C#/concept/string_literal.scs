@@ -1,0 +1,35 @@
+
+
+concept_string_literal <- sc_node_not_relation;;
+concept_string_literal <- concept_literal;;
+
+//Идентификаторы
+concept_string_literal => nrel_main_idtf: [строковой литерал](* <- lang_ru;; *);;
+concept_string_literal => nrel_main_idtf: [string literal](* <- lang_en;; *);;
+
+
+// Определение
+definition -> ..concept_string_literal_definition
+(*
+->rrel_key_sc_element: concept_string_literal;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Строковые литералы используются для представления последовательности символов, которые вместе образуют строку, завершающуюся нуль-символом.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Определение (строковой литерал)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ concept_string;
+ concept_char
+};;
+*);;
+
+
+// Утверждение
+statement -> ..concept_string_literal_statement
+(*
+->rrel_key_sc_element: concept_string_literal;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Важно использование двойных кавычек, а не одинарных.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение (Событие)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{ 
+ concept_string
+};;
+*);;

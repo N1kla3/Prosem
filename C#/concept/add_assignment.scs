@@ -1,0 +1,50 @@
+//add_assignment
+
+add_assignment <- sc_node_not_relation;;
+concept_operator =>nrel_inclusion: add_assignment;;
+
+//Идентификаторы
+add_assignment => nrel_idtf: [ operator += ](* <- lang_en;; *);;
+add_assignment => nrel_main_idtf: [сложение с присвоением](* <- lang_ru;; *);;
+add_assignment => nrel_main_idtf: [add assignment](* <- lang_en;; *);;
+
+// Определение
+definition -> ...
+(*
+	->rrel_key_sc_element: add_assignment;;
+	<= nrel_sc_text_translation: ...(*->rrel_example:[Операторы класса add_assignment (+=) описывают действие сложения между собой содержимых двух переменных, являющихся значениями первого и второго операндов, и запись результата в первый операнд.](*<-lang_ru;;*);;*);;
+	=> nrel_main_idtf: [Определение (Сложение с присвоением)](*<- lang_ru;;*);;
+	=> nrel_using_constants:
+	{
+	 concept_operator;
+	 addition;
+	 assignment
+	};;
+*);;
+
+// Утверждение
+statement ->...
+(*
+->rrel_key_sc_element: add_assignment;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Выражение, использующее оператор +=, такое как x += y эквивалентно x = x + y.](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение (Сложение с присвоением)](*<- lang_ru;;*);;
+=> nrel_using_constants:
+{
+ 	concept_expression
+};;
+*);;
+
+//Визуализация
+illustration -> ...
+(*
+	->rrel_key_sc_element: add_assignment;;
+	=>nrel_main_idtf:
+	[визуализация оператора += ] (* <- lang_ru;; *);;
+	=>nrel_main_idtf:
+	[add assignment visualization](* <- lang_en;; *);;
+	<=nrel_sc_text_translation:...
+	(*
+		->rrel_example: "file://img/add_assignment.png"(*=>nrel_format:format_png;;*);;
+	*);;
+
+*);;

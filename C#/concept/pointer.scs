@@ -1,0 +1,9 @@
+
+
+concept_pointer <- sc_node_not_relation;;
+
+//Идентификаторы
+concept_class => nrel_main_idtf: [указатель](* <- lang_ru;; *);;
+concept_class => nrel_main_idtf: [pointer](* <- lang_en;; *);;
+
+

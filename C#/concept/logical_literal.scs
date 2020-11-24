@@ -1,0 +1,10 @@
+
+
+concept_logical_literal <- sc_node_not_relation;;
+concept_logical_literal <- concept_literal;;
+
+//Идентификаторы
+concept_literal => nrel_main_idtf: [логический литерал](* <- lang_ru;; *);;
+concept_literal => nrel_main_idtf: [logical literal](* <- lang_en;; *);;
+
+
