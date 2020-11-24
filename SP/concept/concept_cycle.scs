@@ -1,0 +1,33 @@
+sc_node_norole_relation ->concept_cycle;;
+
+concept_cycle=>nrel_main_idtf: [цикл](*<-lang_ru;;*);;
+concept_cycle=>nrel_main_idtf:[cycle](*<-lang_en;;*);;
+
+definition ->...
+(*
+->rrel_key_sc_element: concept_cycle;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[это <b><sc_element sys_idtf="concept_control_statement">управляющая конструкция</b></sc_element> программного кода, которая нарушает линейность исполнения алгоритма и позволяет выполнить указанный код множество раз .](*
+<-lang_ru;;
+=> nrel_format:format_html;;*);;*);;
+=> nrel_main_idtf: [Определение (цикл)](*<- lang_ru;;*);;
+=> nrel_using_constants: 
+{
+	concept_control_statement;
+    concept_algorithm
+
+  
+
+};;
+*);;
+
+statement ->...
+(*
+->rrel_key_sc_element: concept_cycle;;
+<= nrel_sc_text_translation: ...(*->rrel_example:[Cycle ](*<-lang_ru;;*);;*);;
+=> nrel_main_idtf: [Утверждение(цикл)](*<- lang_ru;;
+=>nrel_format:format_html;;*);;
+=> nrel_using_constants: 
+{
+ concept_code_block
+};;
+*);;
