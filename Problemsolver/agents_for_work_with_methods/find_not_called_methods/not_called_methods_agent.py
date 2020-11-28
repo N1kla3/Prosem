@@ -1,7 +1,7 @@
 from common import ScModule, ScAgent, ScEventParams
 from sc import *
 
-class vadimAgent(ScAgent):
+class not_called_methods_agent(ScAgent):
 
 
     def RunImpl(self, evt: ScEventParams) -> ScResult: 
