@@ -1,0 +1,70 @@
+scp_program -> proc_count_function_params(*
+    ->rrel_params: .proc_count_function_params_params(*
+        ->rrel_1: rrel_in: _function;;
+        ->rrel_2: rrel_out: _count1;;
+    *);;
+    ->rrel_operators: .proc_count_function_params_operator_set(*
+        ->rrel_init: .proc_count_function_params_init(*
+            <-varAssign;;
+            ->rrel_1:rrel_assign: rrel_scp_var: _count1;;
+            ->rrel_2: rrel_fixed: rrel_scp_const: [0];;
+            =>nrel_goto: .proc_count_function_params_operator1;;
+        *);;
+        //Ищем множество параметров функции
+        -> .proc_count_function_params_operator1(*
+            <-searchElStr5;;
+            ->rrel_1: rrel_fixed: rrel_scp_var: _function;;
+            ->rrel_2: rrel_assign: rrel_scp_var: _arc1;;
+            ->rrel_3: rrel_assign: rrel_scp_var: _paramset;;
+            ->rrel_4: rrel_assign: rrel_scp_var: _arc2;;
+            ->rrel_5: rrel_fixed: rrel_scp_const: nrel_parameter_list;;
+            =>nrel_then: .proc_count_function_params_operator2;;
+            =>nrel_else: .proc_count_function_params_operator_return;;
+        *);;
+
+        ->.proc_count_function_params_operator2(*
+            <-searchSetStr3;;
+            ->rrel_1: rrel_fixed: rrel_scp_var: _paramset;;
+            ->rrel_2: rrel_assign: rrel_scp_var: _arc;;
+            ->rrel_3: rrel_assign: rrel_scp_var: _p;;
+            ->rrel_set_3: rrel_assign: rrel_scp_var: _ps;;
+            =>nrel_then: .proc_count_function_params_operator3;;
+            =>nrel_else: .proc_count_function_params_operator_return;;
+        *);;
+
+        ->.proc_count_function_params_operator3(*
+            <-searchElStr3;;
+            ->rrel_1: rrel_fixed: rrel_scp_var: _ps;;
+            ->rrel_2: rrel_assign: rrel_scp_var: _arc;;
+            ->rrel_3: rrel_assign: rrel_scp_var: _p;;
+            =>nrel_then: .proc_count_function_params_operator4;;
+            =>nrel_else: .proc_count_function_params_operator_return;;
+        *);;
+
+        -> .proc_count_function_params_operator4 (*
+			<- varAssign;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _count1temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _count1;;
+			=> nrel_goto: .proc_count_function_params_operator5;;
+		*);;
+
+		-> .proc_count_function_params_operator5 (*
+			<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _count1;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _count1temp;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [1];;
+			=> nrel_goto: .proc_count_function_params_operator6;;
+		*);;
+
+        ->.proc_count_function_params_operator6(*
+            <-eraseEl;;
+            ->rrel_1:rrel_fixed:rrel_erase:rrel_scp_var: _arc;;
+            =>nrel_goto: .proc_count_function_params_operator3;;
+        *);;
+
+
+        -> .proc_count_function_params_operator_return(*
+            <-return;;
+        *);;
+    *);;
+*);;

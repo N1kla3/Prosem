@@ -1,0 +1,36 @@
+ui_menu_file_for_check_function_argument <- ui_user_command_class_atom; 
+ui_user_command_class_view_kb;;
+
+ui_menu_file_for_check_function_argument
+=> nrel_main_idtf: 
+	[Найти некорректные вызовы функции в программе?] 
+	(* <- lang_ru;; *);
+=> nrel_idtf: 
+	[Запрос всех неверных вызовов указанной функции в указанной программе] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_check_function_argument
+=> nrel_main_idtf: 
+	[Are function calls in the program correct??] 
+	(* <- lang_en;; *);
+=> nrel_idtf: 
+	[Request for all invalid calls to the specified function in the specified program] 
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_check_function_argument => ui_nrel_command_template:
+	[*
+		action_of_check_function_argument _-> ._action_of_check_function_argument_instance
+			(*
+			_-> rrel_1:: ui_arg_1;;	
+			_-> rrel_2:: ui_arg_2;;			
+			*);;
+		._action_of_check_function_argument_instance _<- question;;
+	*];;
+
+ui_menu_file_for_check_function_argument => ui_nrel_command_lang_template: 
+	[Найти некорректные вызовы функции $ui_arg_1 в программе $ui_arg_2?] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_check_function_argument => ui_nrel_command_lang_template: 
+	[Request for all invalid calls to the $ui_arg_1 function in the $ui_arg_2 program?] 
+	(* <- lang_en;; *);;

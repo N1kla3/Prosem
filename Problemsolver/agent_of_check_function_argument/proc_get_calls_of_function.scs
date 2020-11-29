@@ -1,0 +1,67 @@
+scp_program -> proc_get_calls_of_function(*
+    
+    ->rrel_params: .proc_get_calls_of_function_params(*
+        ->rrel_1: rrel_in: _function;;
+        ->rrel_2: rrel_in: _program;;
+        ->rrel_3: rrel_out: _call_set;;
+    *);;
+
+    ->rrel_operators: .proc_get_calls_of_function_operators_set(*
+        ->rrel_init:.proc_get_calls_of_function_init(*
+			<-varAssign;;
+			->rrel_1:rrel_assign:rrel_scp_var: _call_set;;
+			->rrel_2:rrel_fixed:rrel_scp_const:[0];;
+			=>nrel_goto:.proc_get_calls_of_function_search_calls;;
+		*);;
+		
+		->.proc_get_calls_of_function_search_calls(*
+			<-searchSetStr5;;
+			->rrel_1:rrel_assign:rrel_scp_var: _f;;
+			->rrel_2:rrel_assign: rrel_scp_var: _arc1;;
+			->rrel_3:rrel_fixed: rrel_scp_var: _function;;
+			->rrel_4: rrel_assign: rrel_scp_var: _arc2;;
+			->rrel_5: rrel_fixed:rrel_scp_const: nrel_function_prototype;;
+			->rrel_set_1: rrel_assign: rrel_scp_var: _allcalls;;
+			=>nrel_then: .proc_get_calls_of_function_get_curr_call;;
+			=>nrel_else: .proc_get_calls_of_function_operator_return;;
+		*);;
+
+		-> .proc_get_calls_of_function_get_curr_call(*
+			<- searchElStr3;;
+			-> rrel_1:rrel_fixed: rrel_scp_var: _allcalls;;
+			-> rrel_2:rrel_assign:rrel_scp_var: _deleted_arc;;
+			-> rrel_3:rrel_assign: rrel_scp_var: _curr_call;;
+			=> nrel_then: .proc_get_calls_of_function_delete_arc;;
+			=> nrel_else: .proc_get_calls_of_function_operator_return;;
+		*);;
+		
+		//then
+		->.proc_get_calls_of_function_delete_arc(*
+			<-eraseEl;;
+			->rrel_1:rrel_fixed:rrel_erase:rrel_scp_var: _deleted_arc;;
+			=>nrel_goto: .proc_get_calls_of_function_check_program;;
+		*);;
+		
+		->.proc_get_calls_of_function_check_program(*
+			<-searchElStr3;;
+			->rrel_1:rrel_fixed:rrel_scp_var: _program;;
+			->rrel_2:rrel_assign:rrel_scp_var: _arc;;
+			->rrel_3:rrel_fixed: rrel_scp_var: _curr_call;;
+			=>nrel_then: .proc_get_calls_of_function_gen;;
+			=>nrel_else: .proc_get_calls_of_function_get_curr_call;;
+		*);;
+
+		->.proc_get_calls_of_function_gen(*
+			<-genElStr3;;
+			->rrel_1: rrel_fixed: rrel_scp_var: _call_set;;
+			->rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+			->rrel_3: rrel_fixed: rrel_scp_var: _curr_call;;
+			=>nrel_goto: .proc_get_calls_of_function_get_curr_call;;
+		*);;
+
+        ->.proc_get_calls_of_function_operator_return(*
+            <-return;;
+        *);;
+
+    *);;
+*);;
