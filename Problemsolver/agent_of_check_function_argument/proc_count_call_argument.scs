@@ -1,0 +1,70 @@
+scp_program -> proc_count_call_argument(*
+    ->rrel_params: .proc_count_call_argument_params(*
+        ->rrel_1: rrel_in: _call;;
+        ->rrel_2: rrel_out: _count2;;
+    *);;
+    ->rrel_operators: .proc_count_call_argument_operator_set(*
+        ->rrel_init: .proc_count_call_argument_init(*
+            <-varAssign;;
+            ->rrel_1:rrel_assign: rrel_scp_var: _count2;;
+            ->rrel_2: rrel_fixed: rrel_scp_const: [0];;
+            =>nrel_goto: .proc_count_call_argument_operator1;;
+        *);;
+        //Ищем множество параметров функции
+        -> .proc_count_call_argument_operator1(*
+            <-searchElStr5;;
+            ->rrel_1: rrel_fixed: rrel_scp_var: _call;;
+            ->rrel_2: rrel_assign: rrel_scp_var: _arc1;;
+            ->rrel_3: rrel_assign: rrel_scp_var: _paramset;;
+            ->rrel_4: rrel_assign: rrel_scp_var: _arc2;;
+            ->rrel_5: rrel_fixed: rrel_scp_const: nrel_argument;;
+            =>nrel_then: .proc_count_call_argument_operator2;;
+            =>nrel_else: .proc_count_call_argument_operator_return;;
+        *);;
+
+        ->.proc_count_call_argument_operator2(*
+            <-searchSetStr3;;
+            ->rrel_1: rrel_fixed: rrel_scp_var: _paramset;;
+            ->rrel_2: rrel_assign: rrel_scp_var: _arc;;
+            ->rrel_3: rrel_assign: rrel_scp_var: _p;;
+            ->rrel_set_3: rrel_assign: rrel_scp_var: _ps;;
+            =>nrel_then: .proc_count_call_argument_operator3;;
+            =>nrel_else: .proc_count_call_argument_operator_return;;
+        *);;
+
+        ->.proc_count_call_argument_operator3(*
+            <-searchElStr3;;
+            ->rrel_1: rrel_fixed: rrel_scp_var: _ps;;
+            ->rrel_2: rrel_assign: rrel_scp_var: _arc;;
+            ->rrel_3: rrel_assign: rrel_scp_var: _p;;
+            =>nrel_then: .proc_count_call_argument_operator4;;
+            =>nrel_else: .proc_count_call_argument_operator_return;;
+        *);;
+
+        -> .proc_count_call_argument_operator4 (*
+			<- varAssign;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _count2temp;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _count2;;
+			=> nrel_goto: .proc_count_call_argument_operator5;;
+		*);;
+
+		-> .proc_count_call_argument_operator5 (*
+			<- contAdd;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _count2;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _count2temp;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [1];;
+			=> nrel_goto: .proc_count_call_argument_operator6;;
+		*);;
+
+        ->.proc_count_call_argument_operator6(*
+            <-eraseEl;;
+            ->rrel_1:rrel_fixed:rrel_erase:rrel_scp_var: _arc;;
+            =>nrel_goto: .proc_count_call_argument_operator3;;
+        *);;
+
+
+        -> .proc_count_call_argument_operator_return(*
+            <-return;;
+        *);;
+    *);;
+*);;

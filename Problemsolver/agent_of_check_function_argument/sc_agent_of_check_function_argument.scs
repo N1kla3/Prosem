@@ -24,7 +24,13 @@ sc_agent_of_check_function_argument
 	<- platform_independent_abstract_sc_agent;;
 	<= nrel_sc_agent_program: 
 		{
-			agent_of_check_function_argument	
+			agent_of_check_function_argument;
+			proc_count_function_params;
+			proc_count_call_argument;
+			proc_get_func_args_types;
+			proc_get_call_args_types;
+			proc_get_calls_of_function;
+			proc_check_two_sets_of_args
 		};;
 
 	-> sc_agent_of_check_function_argument_scp    

@@ -1,0 +1,454 @@
+agent_of_check_function_argument
+=> nrel_main_idtf:
+	[агентная scp-программа поиска некоректных вызовов функции в программе] (* <- lang_ru;; *);
+	[agent scp-program of finding for incorrect function calls in the program] (* <- lang_en;; *);
+	<- agent_scp_program;;
+
+scp_program -> agent_of_check_function_argument
+	(*
+	-> rrel_params: .agent_of_check_function_argument_params 
+		(*
+		-> rrel_1: rrel_in: _event;;
+		-> rrel_2: rrel_in: _input_arc;;
+		*);;
+
+	-> rrel_operators: .agent_of_check_function_argument_operator_set 
+		(*
+		->rrel_init: .agent_of_check_function_argument_operator1 (*
+            <- searchElStr3;;
+            -> rrel_1: rrel_assign: rrel_scp_var: _temp;;
+            -> rrel_2: rrel_fixed: rrel_scp_var: _input_arc;;
+            -> rrel_3: rrel_assign: rrel_scp_var: _quest;;
+            =>nrel_goto: .agent_of_check_function_argument_operator2;;
+        *);;
+        // В rrel_1 устанавливаем имя придуманного нами класса вопросов (см. пункт 2.1).
+        // Агент будет просыпаться, только когда обнаружит наш вопрос.
+        -> .agent_of_check_function_argument_operator2 (*
+            <- searchElStr3;;
+            ->rrel_1: rrel_fixed: rrel_scp_const: action_of_check_function_argument;;
+            -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+            -> rrel_3: rrel_fixed: rrel_scp_var: _quest;;
+            =>nrel_then: .agent_of_check_function_argument_operator3;;
+            =>nrel_else: .agent_of_check_function_argument_operator_return;;
+        *);;
+        // Найдём параметр запроса – его подал на вход сам пользователь
+        -> .agent_of_check_function_argument_operator3 (*
+            <- searchElStr5;;
+            -> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+            -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+            -> rrel_3: rrel_assign: rrel_scp_var: _param1;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+		 	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_1;;
+            =>nrel_then: .agent_of_check_function_argument_operator4;;
+            =>nrel_else: .agent_of_check_function_argument_operator_return;;
+        *);;
+		// Найдём параметр запроса – его подал на вход сам пользователь
+        -> .agent_of_check_function_argument_operator4 (*
+            <- searchElStr5;;
+            -> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+            -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+            -> rrel_3: rrel_assign: rrel_scp_var: _param2;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+		 	-> rrel_5: rrel_fixed: rrel_scp_const: rrel_2;;
+            =>nrel_then: .agent_of_check_function_argument_operator5;;
+            =>nrel_else: .agent_of_check_function_argument_operator_return;;
+        *);;
+        // Сгенерировать узел, в который мы поместим конструкцию ответа
+        -> .agent_of_check_function_argument_operator5 (*
+            <- genEl;;
+            -> rrel_1: rrel_assign: rrel_const: rrel_node: rrel_scp_var: _answer;;
+            =>nrel_goto: .agent_of_check_function_argument_generate_function_param_count;;
+        *);;
+		
+// //start agent
+		-> .agent_of_check_function_argument_generate_function_param_count (*
+			<- genEl;;
+			-> rrel_1: rrel_assign: rrel_node: rrel_scp_var: _count1;;
+			=> nrel_goto: .agent_of_check_function_argument_get_function_param_count;;
+		*);;
+
+		-> .agent_of_check_function_argument_get_function_param_count (*
+			<- call;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_count_function_params;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: ... (*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _param1;;
+				-> rrel_2: rrel_assign: rrel_scp_var: _count1;;
+			*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+			=> nrel_goto: .agent_of_check_function_argument_wait_function_param_count;;
+		*);;
+
+		-> .agent_of_check_function_argument_wait_function_param_count (*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+			=> nrel_goto: .agent_of_check_function_argument_gen_calls_set;;
+		*);;
+
+		-> .agent_of_check_function_argument_gen_calls_set(*
+			<-genEl;;
+			->rrel_1: rrel_assign: rrel_node: rrel_const: rrel_scp_var: _callsset;;
+			=>nrel_goto: .agent_of_check_function_argument_get_function_calls;;
+		*);;
+
+		-> .agent_of_check_function_argument_get_function_calls (*
+			<- call;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_get_calls_of_function;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: ... (*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _param1;;
+				-> rrel_2: rrel_fixed: rrel_scp_var: _param2;;
+				-> rrel_3: rrel_assign: rrel_scp_var: _callsset;;
+			*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr4;;
+			=> nrel_goto: .agent_of_check_function_argument_wait_function_calls;;
+		*);;
+
+		-> .agent_of_check_function_argument_wait_function_calls (*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr4;;
+			=> nrel_goto: .agent_of_check_function_argument_get_curr_call1;;
+		*);;
+
+		-> .agent_of_check_function_argument_get_curr_call1(*
+			<-searchElStr3;;
+			->rrel_1:rrel_fixed:rrel_scp_var: _callsset;;
+			->rrel_2:rrel_assign:rrel_pos_const_perm:rrel_scp_var: _deletedarc1;;
+			->rrel_3:rrel_assign: rrel_scp_var: _curr_call;;
+			=>nrel_then: .agent_of_check_function_argument_delete_arc1;;
+			=>nrel_else: .agent_of_check_function_argument_generate_function_param_types;;// go to check arguments types
+		*);;
+		//then
+		->.agent_of_check_function_argument_delete_arc1(*
+			<-eraseEl;;
+			->rrel_1:rrel_fixed:rrel_erase:rrel_scp_var: _deletedarc1;;
+			=>nrel_goto: .agent_of_check_function_argument_gen_argument_count;;
+		*);;
+
+		-> .agent_of_check_function_argument_gen_argument_count (*
+			<- genEl;;
+			-> rrel_1: rrel_assign: rrel_node: rrel_scp_var: _count2;;
+			=> nrel_goto: .agent_of_check_function_argument_get_argument_count;;
+		*);;
+
+		-> .agent_of_check_function_argument_get_argument_count (*
+			<- call;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_count_call_argument;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: ... (*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _curr_call;;
+				-> rrel_2: rrel_assign: rrel_scp_var: _count2;;
+			*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr1;;
+			=> nrel_goto: .agent_of_check_function_argument_wait_argument_count;;
+		*);;
+
+		-> .agent_of_check_function_argument_wait_argument_count (*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr1;;
+			=> nrel_goto: .agent_of_check_function_argument_is_equal;;
+		*);;
+
+		->.agent_of_check_function_argument_is_equal(*
+			<-ifEq;;
+			->rrel_1:rrel_fixed:rrel_scp_var: _count1;;
+			->rrel_2:rrel_fixed:rrel_scp_var: _count2;;
+			=>nrel_then: .agent_of_check_function_argument_get_curr_call1;;
+			=>nrel_else: .agent_of_check_function_argument_add_curr_call_to_answer;;
+		*);;
+
+		->.agent_of_check_function_argument_add_curr_call_to_answer(*
+			<-genElStr3;;
+			->rrel_1:rrel_fixed:rrel_scp_var: _answer;;
+			->rrel_2:rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+			->rrel_3: rrel_fixed: rrel_scp_var: _curr_call;;
+			=>nrel_goto: .agent_of_check_function_argument_get_curr_call1;;
+		*);;
+		
+		//else
+		-> .agent_of_check_function_argument_generate_function_param_types (*
+			<- genEl;;
+			-> rrel_1: rrel_assign: rrel_node: rrel_const: rrel_scp_var: _func_args_types;;
+			=> nrel_goto: .agent_of_check_function_argument_get_function_param_types;;
+		*);;
+
+		-> .agent_of_check_function_argument_get_function_param_types (*
+			<- call;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_get_func_args_types;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: ... (*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _param1;;
+				-> rrel_2: rrel_assign: rrel_scp_var: _func_args_types;;
+			*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr3;;
+			=> nrel_goto: .agent_of_check_function_argument_wait_function_param_types;;
+		*);;
+
+		-> .agent_of_check_function_argument_wait_function_param_types (*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr3;;
+			=> nrel_goto: .agent_of_check_function_argument_gen_calls_set1;;
+		*);;
+
+		-> .agent_of_check_function_argument_gen_calls_set1(*
+			<-genEl;;
+			->rrel_1: rrel_assign: rrel_node: rrel_const: rrel_scp_var: _callsset;;
+			=>nrel_goto: .agent_of_check_function_argument_get_function_calls1;;
+		*);;
+
+		-> .agent_of_check_function_argument_get_function_calls1 (*
+			<- call;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_get_calls_of_function;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: ... (*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _param1;;
+				-> rrel_2: rrel_fixed: rrel_scp_var: _param2;;
+				-> rrel_3: rrel_assign: rrel_scp_var: _callsset;;
+			*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr4;;
+			=> nrel_goto: .agent_of_check_function_argument_wait_function_calls1;;
+		*);;
+
+		-> .agent_of_check_function_argument_wait_function_calls1 (*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr4;;
+			=> nrel_goto: .agent_of_check_function_argument_get_curr_call;;
+		*);;
+
+		-> .agent_of_check_function_argument_get_curr_call(*
+			<-searchElStr3;;
+			->rrel_1:rrel_fixed:rrel_scp_var: _callsset;;
+			->rrel_2:rrel_assign:rrel_pos_const_perm:rrel_scp_var: _deleted_arc;;
+			->rrel_3:rrel_assign: rrel_scp_var: _curr_call;;
+			=>nrel_then: .agent_of_check_function_argument_delete_arc;;
+			=>nrel_else: .agent_of_check_function_argument_operator2BC;;//привязать к answer все что нужно и усё 
+		*);;
+
+		//then
+		->.agent_of_check_function_argument_delete_arc(*
+			<-eraseEl;;
+			->rrel_1:rrel_fixed:rrel_erase:rrel_scp_var: _deleted_arc;;
+			=>nrel_goto: .agent_of_check_function_argument_gen_argument_types;;
+		*);;
+
+		-> .agent_of_check_function_argument_gen_argument_types (*
+			<- genEl;;
+			-> rrel_1: rrel_assign: rrel_node: rrel_const: rrel_scp_var: _call_args_types;;
+			=> nrel_goto: .agent_of_check_function_argument_get_argument_types;;
+		*);;
+
+		-> .agent_of_check_function_argument_get_argument_types (*
+			<- call;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_get_call_args_types;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: ... (*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _curr_call;;
+				-> rrel_2: rrel_assign: rrel_scp_var: _call_args_types;;
+			*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr5;;
+			=> nrel_goto: .agent_of_check_function_argument_wait_argument_types;;
+		*);;
+
+		-> .agent_of_check_function_argument_wait_argument_types (*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr5;;
+			=> nrel_goto: .agent_of_check_function_argument_gen_is_equal;;
+		*);;
+
+		//проверка совпадения типов
+		//gen answer for is equal two args sets
+		->.agent_of_check_function_argument_gen_is_equal(*
+			<- genEl;;
+			-> rrel_1: rrel_assign: rrel_node: rrel_scp_var: _is_equal;;
+			=> nrel_goto: .agent_of_check_function_argument_check_argument_types;;
+		*);;
+		//check two args sets
+		-> .agent_of_check_function_argument_check_argument_types (*
+			<- call;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_check_two_sets_of_args;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: ... (*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _func_args_types;;
+				-> rrel_2: rrel_fixed: rrel_scp_var: _call_args_types;;
+				-> rrel_3: rrel_assign: rrel_scp_var: _is_equal;;
+			*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr6;;
+			=> nrel_goto: .agent_of_check_function_argument_wait_argument_types_answer;;
+		*);;
+
+		-> .agent_of_check_function_argument_wait_argument_types_answer (*
+			<- waitReturn;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr6;;
+			=> nrel_goto: .agent_of_check_function_argument_is_types_equal;;
+		*);;
+		//check answer
+		->.agent_of_check_function_argument_is_types_equal(*
+			<-ifEq;;
+			->rrel_1:rrel_fixed:rrel_scp_var: _is_equal;;
+			->rrel_2:rrel_fixed:rrel_scp_const: [1];;
+			=>nrel_then: .agent_of_check_function_argument_is_exist;;
+			=>nrel_else: .agent_of_check_function_argument_get_curr_call;;
+		*);;
+		->.agent_of_check_function_argument_is_exist(*
+			<-searchElStr3;;
+			->rrel_1:rrel_fixed:rrel_scp_var: _answer;;
+			->rrel_2:rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+			->rrel_3: rrel_fixed: rrel_scp_var: _curr_call;;
+			=>nrel_then: .agent_of_check_function_argument_get_curr_call;;
+			=>nrel_else: .agent_of_check_function_argument_add_curr_call_to_answer1;;
+		*);;
+		//add to answer
+		->.agent_of_check_function_argument_add_curr_call_to_answer1(*
+			<-genElStr3;;
+			->rrel_1:rrel_fixed:rrel_scp_var: _answer;;
+			->rrel_2:rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+			->rrel_3: rrel_fixed: rrel_scp_var: _curr_call;;
+			=>nrel_goto: .agent_of_check_function_argument_get_curr_call;;
+		*);;
+
+//else
+		-> .agent_of_check_function_argument_operator2BC 
+		(*
+			<- printEl;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			=> nrel_goto: .operator1;;
+		*);;  
+//end of agent
+		-> .operator1(*
+			<-searchSetStr3;;
+			->rrel_1:rrel_fixed:rrel_scp_var:_answer;;
+			->rrel_2:rrel_assign:rrel_scp_var:_arc;;
+			->rrel_3:rrel_assign: rrel_scp_var: _node;;
+			->rrel_set_3:rrel_assign: rrel_scp_var: _temp_answer;;
+			=>nrel_then: .operator2;;
+			=>nrel_else: .agent_of_check_function_argument_operator3A;;
+		*);;
+
+		->.operator2(*
+			<-searchElStr3;;
+			->rrel_1:rrel_fixed:rrel_scp_var: _temp_answer;;
+			->rrel_2:rrel_assign:rrel_scp_var: _deleted_arc;;
+			->rrel_3:rrel_assign:rrel_scp_var: _node;;
+			=>nrel_then: .operator3;;
+			=>nrel_else: .agent_of_check_function_argument_operator3A;;
+		*);;
+
+		->.operator3(*
+			<-eraseEl;;
+			->rrel_1:rrel_fixed:rrel_scp_var:rrel_erase:_deleted_arc;;
+			=>nrel_goto:.operator4;;
+		*);;
+
+		->.operator4(*
+			<-searchElStr3;;
+			->rrel_1:rrel_fixed:rrel_scp_var: _param2;;
+			->rrel_2:rrel_assign:rrel_scp_var: _arc1;;
+			->rrel_3:rrel_fixed:rrel_scp_var: _node;;
+			=>nrel_then: .operator5;;
+			=>nrel_else: .operator2;;
+		*);;
+
+		->.operator5(*
+			<- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _arc1;;
+			=> nrel_goto:.operator6;;
+		*);;
+
+		->.operator6(*
+			<-searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: called_function;;
+			->rrel_2:rrel_assign:rrel_scp_var: _arc1;;
+			->rrel_3:rrel_fixed:rrel_scp_var: _node;;
+			=>nrel_then: .operator7;;
+			=>nrel_else: .operator2;;
+		*);;
+
+		->.operator7(*
+			<- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _arc1;;
+			=> nrel_goto:.operator8;;
+		*);;
+
+		->.operator8(*
+			<-searchElStr5;;
+			->rrel_1:rrel_fixed:rrel_scp_var: _node;;
+			->rrel_2:rrel_assign:rrel_scp_var: _arc1;;
+			->rrel_3:rrel_fixed:rrel_scp_var: _param1;;
+			->rrel_4:rrel_assign:rrel_scp_var: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_function_prototype;;
+			=>nrel_then: .operator9;;
+			=>nrel_else: .operator2;;
+		*);;
+
+		->.operator9(*
+			<- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _arc1;;
+			=> nrel_goto:.operator10;;
+		*);;
+
+		->.operator10(*
+			<- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _arc2;;
+			=> nrel_goto:.operator2;;
+		*);;
+
+		//
+		-> .agent_of_check_function_argument_operator3A
+			(*
+			<- genElStr3;;
+
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _param1;;
+
+		  	=> nrel_goto: .agent_of_check_function_argument_operator3B;;
+			*);;
+			
+		-> .agent_of_check_function_argument_operator3B
+		(*
+			<- genElStr3;;
+
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _param2;;
+
+		  	=> nrel_goto: .agent_of_check_function_argument_operator3C;;
+		*);;
+
+		-> .agent_of_check_function_argument_operator3C(*
+			<- genElStr3;;
+
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_const: nrel_function_prototype;;
+
+		  	=> nrel_goto: .agent_of_check_function_argument_operator3D;;
+		*);;
+
+		-> .agent_of_check_function_argument_operator3D(*
+			<- genElStr3;;
+
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_const: called_function;;
+
+		  	=> nrel_goto: .agent_of_check_function_argument_operator_gen_answer;;
+		*);;
+		
+		// Связываем ответ и вопрос отношением ответ*
+        -> .agent_of_check_function_argument_operator_gen_answer (*
+            <- genElStr5;;
+            -> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+            -> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc;;
+            -> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+            -> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+            -> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+            =>nrel_goto: .agent_of_check_function_argument_operator_return;;
+        *);;
+        // Оператор завершения агентной программы
+        -> .agent_of_check_function_argument_operator_return (*
+            <- return;;
+        *);;
+	*);;
+*);;
