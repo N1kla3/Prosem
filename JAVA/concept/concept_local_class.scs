@@ -1,7 +1,7 @@
 
 sc_node_not_relation -> concept_local_class;;
 sc_node_not_relation -> concept_class;;
-sc_node_not_relation -> concept_method;;
+
 sc_node_not_relation -> concept_class_member;;
 
 sc_node_norole_relation -> nrel_realization;;
